@@ -1,0 +1,29 @@
+Scope Notes: 
+  . scope descripe the location in your program wherevarible is accesible 
+  . local variables can not used and reference outside of the  methods 
+  . once you define a varibles outside method you cannot reference it inside the methods and does not have access 
+
+
+global variables:
+  . you can creat global variables by putting a $ at the beginning of the name 
+  . you can refrence global variables inside any method 
+  . methods can access any glopal variables 
+
+constants:
+  . constants cannot reassigned 
+  . constants defined by capitalizeing the first letter 
+  . by convention we capitalize the whole name 
+  . you can mutate the constant name 
+  . constants used in  the global scope   
+
+
+hints: 
+  . use global scope sparingly to minimizing methods that referencing data that is outside of them 
+  . write methods that accept data as arguments as it is explicit where the data is coming from 
+  . blocks of code don't have their own scope they are really a part of the containing method's scope 
+
+
+variables References:
+  . mutation change the content of the variables not the memory location 
+  . reassigning change the memory location 
+  . 
