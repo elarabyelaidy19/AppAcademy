@@ -37,6 +37,7 @@ count_down(10)
 #   the recursive step where swe continue  the recursion by making another subsquent call 
 
 
+# factorial recursive function 
 
 def factorial(n)
   if n == 1 
@@ -44,4 +45,15 @@ def factorial(n)
   end 
 
   n * factorial(n - 1)
+end 
+
+
+# fibonacchi recursive function 
+
+def fibonacchi(n)
+  if n == 1 || n == 2 
+    return 1 
+  end 
+
+  fibonacchi(n - 1) + fibonacchi(n - 2)
 end 
