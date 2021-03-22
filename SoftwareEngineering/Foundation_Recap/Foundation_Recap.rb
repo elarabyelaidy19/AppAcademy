@@ -1,6 +1,6 @@
 # spaceship operators <=>
 
-
+ a <=> b 
 # will return -1 if a less than b
 # will return 0 if a == b
 # will return 1 if a grater than b 
@@ -24,6 +24,8 @@ end
 compare(2, 9)
 compare(2, 2)
 compare(9, 2)
+
+# =====================================
 
 def bubble_sort(array, &proc)
   sorted = false 
