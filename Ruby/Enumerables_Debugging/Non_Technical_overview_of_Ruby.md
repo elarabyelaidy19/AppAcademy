@@ -40,8 +40,25 @@ Unit testing is a way of testing an application by breaking the application down
 
 Unit testing is often automated at larger or more sophisticated companies.
 
-Integration Test
+# Integration Test
 Integration testing is a form of testing in which units of code are combined ("integrated") and the results of their interactions are tested. This type of testing is done after each of the individual units has been tested.
 
 # Test Coverage
 "Test coverage" refers to how much of a software program has been tested. This can refer to several things, including the percentage of functions that have been called by the test suite, or the percentage of statements in the code that have been executed by the test suite. 
+
+
+# Debugging 
+ - it takes 10x of time to debuge code as to write it. master debugging and you master programming.
+
+## Rules 
+ - **READ THE ERROR**
+ - Perform a Mental **Stack Trace**
+ - **Write code that's testable**, write all your code inside of methods.
+ - **Pay technical debt**,  fix the design immediately. refactoring will probably create new bugs to fix.
+ - **Don't read the source** Do not spend more than 1min doing this in real life.
+ - Use a REPL to isolate the problem **PRY**
+ - use debugger **bybug**
+
+# Common Exception 
+
+ ## 
