@@ -17,8 +17,8 @@ end
 
 def no_consecutive_repeats(array)
 
-  array.each do |i|
-    if i == i + 1
+  (0...array.length - 1).each do |idx|
+    if array[i] == array[i + 1]
       return false 
     else 
       return true 
