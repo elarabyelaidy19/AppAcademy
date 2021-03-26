@@ -69,3 +69,41 @@ def longest_streak(str)
 
 end 
 
+
+#bi_prime?
+#Write a method bi_prime?(num) that accepts a number as an arg and returns a boolean indicating whether or not the number is a bi-prime.
+#A bi-prime is a positive integer that can be obtained by multiplying two prime numbers.
+
+def bi_prime?(num)
+  prime_facts = prime_factors(num)
+
+  prime_facts.any? do |a|
+    b = num / a * 1.0 
+    prime_facts.include?(b)
+  end 
+
+end 
+
+end 
+
+def prime?(num)
+  if num < 2
+    return false 
+  end 
+
+  (2...num).each do |i|
+    if num % i == 0
+      return false 
+    else 
+      return true 
+    end 
+  end 
+end 
+
+def prime_factors(num)
+  (2..num).select { |i| num % i == 0 && prime?(i) }
+end 
+
+
+
+
