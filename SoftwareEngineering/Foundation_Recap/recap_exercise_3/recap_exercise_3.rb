@@ -129,3 +129,27 @@ def vigenere_cipher(message, keys)
   end 
   new_str
 end 
+
+
+
+# vowel_rotate
+# Write a method vowel_rotate(str) that accepts a string as an arg and returns the string
+# where every vowel is replaced with the vowel the appears before it sequentially in the original string.
+# The first vowel of the string should be replaced with the last vowel.
+
+def vowel_rotate(str)
+ 
+  new_str = str[0..-1]
+  vowels = "aeiou"
+
+  vowel_idxs = (0...str.length).select { |i| vowels.include?(str[i]) }
+  rotated_vowel_idxs = vowel_idx.rotate(-1)
+
+  vowel_idxs.each_with_index do |vowel_idx, i|
+    new_vowel = str[rotated_vowel_idxs[i]]
+    new_str[vowel_idx] = new_vowel
+  end 
+
+  new_str
+end  
+
