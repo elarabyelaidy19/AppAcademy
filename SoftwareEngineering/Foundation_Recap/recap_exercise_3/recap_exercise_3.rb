@@ -153,3 +153,98 @@ def vowel_rotate(str)
   new_str
 end  
 
+
+
+# Proc Problems
+
+
+# String#select
+# Extend the string class by defining a String#select method that accepts a block. 
+# The method should return a new string containing characters of the original string that return true when passed into the block.
+# If no block is passed, then return the empty string. Do not use the built-in Array#select in your solution.
+
+
+def select(&prc)
+  return '' if prc.nil?
+  new_str = ''
+
+  self.each_char do |char|
+    new_str += char if prc.call(char)
+  end 
+
+  new_str
+
+# String#map!
+# Extend the string class by defining a String#map! method that accepts a block. 
+# The method should modify the existing string by replacing every character with the result of calling the block, passing in the original character and it's index.
+# Do not use the built-in Array#map or Array#map! in your solution. 
+
+
+  def map!(&prc)
+    self.each_char.with_index do |char, idx|
+        self[idx] = prc.call(char, idx)
+    end
+  end 
+
+end
+
+
+
+# Recursion Problems 
+
+# multiply
+# Write a method multiply(a, b) that takes in two numbers and returns their product.
+# You must solve this recursively (no loops!)
+# You must not use the multiplication (*) operator
+
+def multiply)(a, b)
+  return 0 if b == 0
+
+  if b < 0
+    - (a + multiply(a, (-b) - 1))
+  else 
+    a + multiply(a, b - 1)
+  end 
+
+end 
+
+
+# lucas_sequence
+# The Lucas Sequence is a sequence of numbers. The first number of the sequence is 2. 
+# The second number of the Lucas Sequence is 1.
+# To generate the next number of the sequence, we add up the previous two numbers. 
+# For example, the first six numbers of the sequence are: 2, 1, 3, 4, 7, 11, ...
+# Write a method lucasSequence that accepts a number representing a length as an arg.
+# he method should return an array containing the Lucas Sequence up to the given length. 
+
+def lucas_sequence(length)
+
+  return [] if length == 0
+  return [2] if length == 1
+  return [1, 2] if length == 2
+
+  seq = lucas_sequence(length - 1)
+  seq << seq[-1] + seq[-2]
+  seq 
+end 
+
+
+#prime_factorization
+#The Fundamental Theorem of Arithmetic states that every positive integer is either a prime
+#or can be represented as a product of prime numbers.
+#Write a method prime_factorization(num) that accepts a number and returns an array 
+#representing the prime factorization of the given number. This means that the array should
+#contain only prime numbers that multiply together to the given num. 
+#The array returned should contain numbers in ascending order.
+
+
+def prime_factorization(num)
+  (2...num).each do |fact|
+      if (num % fact == 0)
+          otherFact = num / fact
+          return [ *prime_factorization(fact), *prime_factorization(otherFact) ]
+      end
+  end
+
+  [num]
+end
