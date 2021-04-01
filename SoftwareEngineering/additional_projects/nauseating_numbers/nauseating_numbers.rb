@@ -97,12 +97,6 @@ def perfect_square?(num)
 end  
 
 
-
-
-
-
-
-
 p perfect_square(1)     # true
 p perfect_square(4)     # true
 p perfect_square(64)    # true
@@ -112,3 +106,40 @@ p perfect_square(2)     # false
 p perfect_square(40)    # false
 p perfect_square(32)    # false
 p perfect_square(50)    # false
+
+
+# Phase 2: Nothing you can't handle.
+
+# anti_prime?
+# Write a method anti_prime? that accepts a number as an argument.
+# The method should return true if the given number has more divisors than all positive numbers less than the given number.
+# For example, 24 is an anti-prime because it has more divisors than any positive number less than 24.
+# Math Fact: Numbers that meet this criteria are also known as highly composite numbers.
+
+def num_factors(num)
+  (1..num).count { |i| num % i ==0 }
+end 
+
+def anti_prime?(num)
+  amount = num_factors(num)
+  (1...num).all? { |i| amount > num_factors(i) }
+end 
+
+
+  
+
+
+end 
+p anti_prime?(24)   # true
+p anti_prime?(36)   # true
+p anti_prime?(48)   # true
+p anti_prime?(360)  # true
+p anti_prime?(1260) # true
+p anti_prime?(27)   # false
+p anti_prime?(5)    # false
+p anti_prime?(100)  # false
+p anti_prime?(136)  # false
+p anti_prime?(1024) # false
+
+
+
