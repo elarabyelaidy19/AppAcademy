@@ -338,3 +338,185 @@ def squaragonal?(grid)
 
   left_diagonal.all? { |ele| ele == left_diagonal(0) } || right_diagonal.all? { |ele| ele == right_diagonal(0)}
 end 
+
+
+# pascals_triangle
+# Pascal's triangle is a 2-dimensional array with the shape of a pyramid.
+# The top of the pyramid is the number 1. 
+# To generate further levels of the pyramid, 
+# every element is the sum of the element above and to the left with the element above and to the right. 
+# Nonexisting elements are treated as 0 when calculating the sum.
+# For example, here are the first 5 levels of Pascal's triangle:
+
+#      1
+ #    1 1
+  #  1 2 1
+  # 1 3 3 1
+#  1 4 6 4 1
+# Write a method pascals_triangle that accepts a positive number, n, as an argument and returns 
+# a 2-dimensional array representing the first n levels of pascal's triangle.
+
+
+def adjacent_sums(array) 
+  sum = []
+
+  (0...array.length - 1).each do |i|
+    sum << array[i] + array[i + 1]
+  end 
+
+  sum 
+end 
+
+
+def pascals_triangle(n)
+  triangle = [[1]]
+
+  while triangle.length < n 
+    level_above = triangle.last
+    new_level = [1]
+    next_level += adjacent_sums(level_above)
+    next_level << 1
+    triangle << next_level
+  end 
+  triangle
+end 
+
+
+
+#Examples
+
+
+p pascals_triangle(5)
+# [
+#     [1],
+#     [1, 1],
+#     [1, 2, 1],
+#     [1, 3, 3, 1],
+#     [1, 4, 6, 4, 1]
+# ]
+
+p pascals_triangle(7)
+# [
+#     [1],
+#     [1, 1],
+#     [1, 2, 1],
+#     [1, 3, 3, 1],
+#     [1, 4, 6, 4, 1],
+#     [1, 5, 10, 10, 5, 1],
+#     [1, 6, 15, 20, 15, 6, 1]
+# ]
+
+
+
+# ==================================================================
+
+# mersenne_prime
+# A "Mersenne prime" is a prime number that is one less than a power of 2. 
+# This means that it is a prime number with the form 2^x - 1, where x is some exponent.
+# For example:
+# 3  is a Mersenne prime because it is prime and 3 = 2^2 - 1
+# 7 is a Mersenne prime because it is prime and 7 = 2^3 - 1
+# 11 is not a Mersenne prime because although it is prime, it does not have the form 2^x - 1
+# The first three Mersenne primes are 3, 7, and 31.
+# Write a method mersenne_prime that accepts a number, n, as an argument and returns the n-th Mersenne prime.
+
+
+def prime?(num)
+  return false if num < 2 
+  (2...num).none? { |i| num % i == 0}
+end 
+
+def mersenne_prime(n)
+  x = -1
+  count = 0
+  while count < n 
+    x += 1
+    candidate = 2**x - 1
+    count += 1 if prime?(candidate)
+  end 
+  2**x -1 
+end 
+
+#Examples
+
+p mersenne_prime(1) # 3
+p mersenne_prime(2) # 7
+p mersenne_prime(3) # 31
+p mersenne_prime(4) # 127
+p mersenne_prime(6) # 131071
+
+
+#triangular_word?
+#A triangular number is a number of the form (i * (i + 1)) / 2 where i is some positive integer. 
+#Substituting i with increasing integers gives the triangular number sequence. 
+#The first five numbers of the triangular number sequence are 1, 3, 6, 10, 15. 
+#Below is a breakdown of the calculations used to obtain these numbers:
+
+#i	(i * (i + 1)) / 2
+#1	1
+#2	3
+#3	6
+#4	10
+#5	15
+# We can encode a word as a number by taking the sum of its letters based on their position in the alphabet.
+# For example, we can encode "cat" as 24 because c is the 3rd of the alphabet, a is the 1st, and t is the 20th:
+
+# 3 + 1 + 20 = 24
+
+# Write a method triangular_word? that accepts a word as an argument and returns a boolean indicating whether
+# or not that word's number encoding is a triangular number. 
+# You can assume that the argument contains lowercase letters.
+
+def triangular_sequence(num)
+  seq = []
+  i = 1
+  while i <= num 
+    seq << (i * (i + 1)) / 2
+    i += 1 
+  end 
+  seq
+end 
+
+def triangular_word(word)
+  alpha = ('a' .. 'z').to_a 
+  value = word.split(' ').map { |char| alpha.index(char) + 1 }.sum
+  triangular_nums = triangular_sequence(value)
+  triangular_nums.include?(value)
+end 
+
+
+
+# Examples
+
+p triangular_word?('abc')       # true
+p triangular_word?('ba')        # true
+p triangular_word?('lovely')    # true
+p triangular_word?('question')  # true
+p triangular_word?('aa')        # false
+p triangular_word?('cd')        # false
+p triangular_word?('cat')       # false
+p triangular_word?('sink')      # false
+
+
+
+# onsecutive_collapse
+# Write a method consecutive_collapse that accepts an array of numbers as an argument.
+# The method should return a new array that results from continuously removing consecutive numbers that
+#  are adjacent in the array. If multiple adjacent pairs are consecutive numbers, remove the leftmost pair first.
+# For example:
+# [3, 4, 1] -> [1]
+
+def collapse(num)
+  (0...nums.length - 1).each do |i|
+    if num[i] + 1 == num[i + 1] || num[i] == num[i + 1] + 1
+      return num[0...i] + num[i + 2..-1]
+    end 
+  end 
+
+  nums 
+end 
+
+def onsecutive_collapse(numbers)
+  numbers.each { numbers = collapse(numbers) }
+  numbers 
+end 
