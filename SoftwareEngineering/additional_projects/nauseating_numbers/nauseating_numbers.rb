@@ -520,3 +520,29 @@ def onsecutive_collapse(numbers)
   numbers.each { numbers = collapse(numbers) }
   numbers 
 end 
+
+#Write a method pretentious_primes that takes accepts an array and a number, n, as arguments. 
+# The method should return a new array where each element of the original array is replaced according to the following rules:
+#when the number argument is positive, 
+#replace an element with the n-th nearest prime number that is greater than the element
+#when the number argument is negative, replace an element with the n-th nearest prime number that is less than the element
+
+def next_prime(number, i)
+  step = 1 
+  if i < 0 
+    i = -(i)
+    step = -(step)
+  end 
+
+  prime_count = 0
+  while prime_count < i 
+    return nil if number < 0
+    number += step
+    prime_count += 1 if prime?(number)
+  end 
+  number 
+end 
+
+def pretentious_primes(numbers, n) 
+  numbers.map { |num| next_prime(num, n)}
+end 
