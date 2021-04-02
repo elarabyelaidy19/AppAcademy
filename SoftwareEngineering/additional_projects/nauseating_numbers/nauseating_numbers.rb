@@ -233,3 +233,108 @@ p tribonacci_number(5)  # 7
 p tribonacci_number(6)  # 13
 p tribonacci_number(7)  # 24
 p tribonacci_number(11) # 274
+
+
+# matrix_addition_reloaded
+# Write a method matrix_addition_reloaded that accepts any number of matrices as arguments.
+# The method should return a new matrix representing the sum of the arguments.
+# Matrix addition can only be performed on matrices of similar dimensions,
+# so if all of the given matrices do not have the same "height" and "width", then return nil.
+
+
+def matrix_addition_reloaded(*matrices)
+  matrix = matrices.first
+  height = matrix.length
+  width = matrix[0].length
+  result = Array.new(height) { [0] * width }
+
+  matrices.inject(result) do |m1, m2|
+    return nil if m2.length != height || m2[0].length != width
+    matrix_addition(m1, m2)
+  end 
+end 
+
+
+
+# Examples
+matrix_a = [[2,5], [4,7]]
+matrix_b = [[9,1], [3,0]]
+matrix_c = [[-1,0], [0,-1]]
+matrix_d = [[2, -5], [7, 10], [0, 1]]
+matrix_e = [[0 , 0], [12, 4], [6,  3]]
+
+p matrix_addition_reloaded(matrix_a, matrix_b)              # [[11, 6], [7, 7]]
+p matrix_addition_reloaded(matrix_a, matrix_b, matrix_c)    # [[10, 6], [7, 6]]
+p matrix_addition_reloaded(matrix_e)                        # [[0, 0], [12, 4], [6, 3]]
+p matrix_addition_reloaded(matrix_d, matrix_e)              # [[2, -5], [19, 14], [6, 4]]
+p matrix_addition_reloaded(matrix_a, matrix_b, matrix_e)    # nil
+p matrix_addition_reloaded(matrix_d, matrix_e, matrix_c)    # nil
+
+
+
+# squarocol?
+# Write a method squarocol? that accepts a 2-dimensional array as an argument.
+# The method should return a boolean indicating whether or not any row or column is
+# completely filled with the same element. 
+# you may assume that the 2-dimensional array has "square" dimensions,
+# meaning it's height is the same as it's width.
+
+def squarocol?(grid)
+  return true if grid.any? { |row| row.uniq.length == 1 }
+  return true if grid.transpose.any? { |col| col.uniq.length == 1 }
+  false 
+end 
+
+
+
+p squarocol?([
+    [:a, :x , :d],
+    [:b, :x , :e],
+    [:c, :x , :f],
+]) # true
+
+p squarocol?([
+    [:x, :y, :x],
+    [:x, :z, :x],
+    [:o, :o, :o],
+]) # true
+
+p squarocol?([
+    [:o, :x , :o],
+    [:x, :o , :x],
+    [:o, :x , :o],
+]) # false
+
+p squarocol?([
+    [1, 2, 2, 7],
+    [1, 6, 6, 7],
+    [0, 5, 2, 7],
+    [4, 2, 9, 7],
+]) # true
+
+p squarocol?([
+    [1, 2, 2, 7],
+    [1, 6, 6, 0],
+    [0, 5, 2, 7],
+    [4, 2, 9, 7],
+]) # false
+
+
+
+# Write a method squaragonal? that accepts 2-dimensional array as an argument. The method 
+# across either of its diagonals. You may assume that the 2-dimensional array has "square" dimensions, 
+# meaning its height is the same as its width.
+
+def squaragonal?(grid)
+  right_diagonal = []
+  left_diagonal = []
+
+  size = grid.length
+
+  (0...size).each do |idx|
+    left_diagonal << grid[idx][idx]
+    right_diagonal << grid[idx][size - 1 -idx]
+  end 
+
+  left_diagonal.all? { |ele| ele == left_diagonal(0) } || right_diagonal.all? { |ele| ele == right_diagonal(0)}
+end 
