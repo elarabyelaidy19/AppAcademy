@@ -24,3 +24,15 @@
 * git remote add origin 
 * git branch -M main
 * git push -u origin main
+
+# working with remote 
+* git fetch     >> fetch the commits from the remote repo 
+* git diff main origin/main   >> shows what has changed 
+* git pull --f-only     >> pulls the changes to your own local machine 
+* git merge --f-only    >> works as git pull if you issued git fetch 
+
+
+# from only remote to local 
+* git clone <remote repo url> <local directory name>    >> download only remote repo to local machine 
+
+
