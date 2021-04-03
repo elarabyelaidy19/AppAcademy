@@ -21,7 +21,7 @@
 * git push -u origin main
 
 # push an existing repository from the command line
-* git remote add origin 
+* git remote add origin <repo link>
 * git branch -M main
 * git push -u origin main
 
