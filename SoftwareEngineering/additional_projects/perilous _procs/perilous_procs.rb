@@ -286,6 +286,11 @@ end
 # original word returns true when passed into the key proc. If an original word returns
 # true for multiple key procs, then only the value proc that appears earliest in the hash should be applied.
 
+# p picky_procipher('he said what!',
+#     is_yelled => make_question,
+#     contains_a => reverse
+# ) # "he dias what!???"
+
 def picky_procipher(sentence, hash)
   words = sentence.split(' ')
   new_words = words.map do |word|
