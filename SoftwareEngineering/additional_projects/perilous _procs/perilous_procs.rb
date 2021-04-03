@@ -120,3 +120,29 @@ def xnor_select(array, prc_1, prc_2)
   end 
   selected
 end 
+
+
+# filter_out!
+# Rewrite your previous filter_out method to mutate the input array instead of returning a new array.
+# That is, write a method filter_out! that accepts an array and a block as args. 
+# The method should remove elements of the input array that return true when given to the block.
+# Solve this without using Array.reject!.
+
+def filter_out!(array, &prc)
+  array.uniq.each { |ele| array.reject!(ele) if prc.call(ele) }
+end 
+
+
+# multi_map
+# Write a method multi_map that accepts an array, an optional number (n), and a block as arguments.
+# The method should return a new array where each element of the original array is repeatedly run through the block n times.
+# If the number argument is not passed in, then the the elements should be run through the block once.
+
+def multi_map(array, n = 1, &prc)
+  array = []
+  array.each do |ele|
+    n.times { ele = prc.call(ele) }
+    mapped << ele 
+  end 
+  mapped 
+end 
