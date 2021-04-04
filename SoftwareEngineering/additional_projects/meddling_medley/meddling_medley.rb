@@ -109,6 +109,14 @@ end
 # replaced with the corresponding values in the hash. If a character is not a key of the hash, 
 # then it should be replaced with a question mark ('?'). Space characters (' ') should remain unchanged. 
 
+# p energetic_encoding('sent sea',
+#     'e'=>'i', 's'=>'z', 'n'=>'m', 't'=>'p', 'a'=>'u'
+# ) # 'zimp ziu'
+
+# p energetic_encoding('cat',
+#     'a'=>'o', 'c'=>'k'
+# ) # 'ko?'
+
 def energetic_encoding(string, hash) 
   new_string = ''
 
@@ -124,3 +132,25 @@ def energetic_encoding(string, hash)
   new_string
 end 
     
+
+# uncompress
+# Write a method uncompress that accepts a string as an argument. The string will be formatted so every letter is followed by a number. 
+# The method should return an "uncompressed" version of the string 
+# where every letter is repeated multiple times given based on the number that appears directly after the letter.
+
+# p uncompress('a2b4c1') # 'aabbbbc'
+# p uncompress('b1o2t1') # 'boot'
+# p uncompress('x3y1x2z4') # 'xxxyxxzzzz'
+
+
+def uncompress(string)
+  uncompressed = ''
+  
+  (0...string.length - 1).each do |i|
+    letter = string[i]
+    num = string[i + 1].to_i 
+    uncompressed += letter * num
+  end 
+
+  uncompressed
+end 
