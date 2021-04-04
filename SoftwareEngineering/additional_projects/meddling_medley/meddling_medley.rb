@@ -74,8 +74,30 @@ end
 # The method should return an array containing the characters of the string that appeared more than twice. 
 # The characters in the output array should appear in the same order they occur in the input string. 
 
+# p counted_characters("that's alright folks") # ["t"]
+# p counted_characters("mississippi") # ["i", "s"]
+
 def counted_characters(str) 
   count = Hash.new(0) 
   string.each_char { |char| count[char] += 1 }
   count.select { |char, num| num > 2 }.keys
+end 
+
+
+
+# triplet_true?
+# Write a method triplet_true? that accepts a string as an argument and 
+# returns a boolean indicating whether or not the string contains three of the same character consecutively. 
+
+# p triplet_true?('terrrrrible')   # true
+# p triplet_true?('runninggg')     # true
+# p triplet_true?('bootcamp')      # false
+
+def triplet_true(string) 
+  (0...length - 1 ).each do |i|
+    if string[i..i+2] == string[i] * 3 
+      return true 
+    end 
+  end
+  false  
 end 
