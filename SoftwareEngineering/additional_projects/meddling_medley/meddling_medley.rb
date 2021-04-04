@@ -214,6 +214,152 @@ end
 
 
 
-  
+# reverberate
+# Write a method reverberate that accepts a sentence as an argument.
+# The method should translate the sentence according to the following rules:
 
+# words that are shorter than 3 characters are unchanged
+# words that are 3 characters or longer are translated according to the following rules:
+# if the word ends with a vowel, simply repeat the word twice (example: 'like'->'likelike')
+# if the word ends with a non-vowel, repeat all letters that come after the word's last vowel, including the last vowel itself (example: 'trash'->'trashash')
+# Note that if words are capitalized in the original sentence, they should remain capitalized in the translated sentence. Vowels are the letters a, e, i, o, u.
+
+# p reverberate('We like to go running fast') # "We likelike to go runninging fastast"
+# p reverberate('He cannot find the trash') # "He cannotot findind thethe trashash"
+# p reverberate('Pasta is my favorite dish') # "Pastapasta is my favoritefavorite dishish"
+# p reverberate('Her family flew to France') # "Herer familyily flewew to Francefrance"
+
+
+def reverberate(sentence) 
+  words = sentence.split 
+  new_words = words.map do |word|
+    new_word = word.length > 2 ? translate_word(word) : new_word 
+    new_word = word == word.capitalize ? word.capitalize : word
+  end 
+  new_words.join(' ') 
+end 
+
+
+def translate_word(word)
+  vowels = 'AEIOUaeiou'
+
+  return word + word if vowels.include?(word[-1])
+  i = word.length -1 
+  while i >= 0 
+    if vowels.include?(word[i])
+      word + word[i..-1]
+    end 
+
+    i -= 1
+  end 
+end 
+
+
+
+# isjunct_select
+# Write a method disjunct_select that accepts an array and one or more procs as arguments.
+# The method should return a new array containing the elements that return true when passed into at least one of the given procs.
+
+# longer_four = Proc.new { |s| s.length > 4 }
+# contains_o = Proc.new { |s| s.include?('o') }
+# starts_a = Proc.new { |s| s[0] == 'a' }
+# p disjunct_select(['ace', 'dog', 'apple', 'teeming', 'boot', 'zip'],
+#     longer_four,
+# ) # ["apple", "teeming"]
+# p disjunct_select(['ace', 'dog', 'apple', 'teeming', 'boot', 'zip'],
+#     longer_four,
+#     contains_o
+# ) # ["dog", "apple", "teeming", "boot"]
+# p disjunct_select(['ace', 'dog', 'apple', 'teeming', 'boot', 'zip'],
+#     longer_four,
+#     contains_o,
+#     starts_a
+# ) # ["ace", "dog", "apple", "teeming", "boot"]
+
+
+def disjunct_select(array, *prcs)
+  prcs.select { |ele| prcs.any? { |prc| prc.call(ele) } }
+end 
+
+
+# alternating_vowel
+# Write a method alternating_vowel that accepts a sentence as an argument.
+# The method should return a new sentence where the words alternate between having their first or last vowel removed. 
+# For example:
+
+# the 1st word should be missing its first vowel
+# the 2nd word should be missing its last vowel
+# the 3rd word should be missing its first vowel
+# the 4th word should be missing its last vowel
+# ... and so on
+# Note that words that contain no vowels should remain unchanged. Vowels are the letters a, e, i, o, u. 
+
+
+# p alternating_vowel('panthers are great animals') # "pnthers ar grat animls"
+# p alternating_vowel('running panthers are epic') # "rnning panthrs re epc"
+# p alternating_vowel('code properly please') # "cde proprly plase"
+# p alternating_vowel('my forecast predicts rain today') # "my forecst prdicts ran tday"
+
+def alternating_vowel(sentence)
+  words = sentence.split(' ')
+  new_words = words.map.with_index do |word, i|
+    i.even? ? remove_first_vowel(word) : remove_last_vowel(word)   #  0 is even 
+  end 
+  new_words.join(' ')
+end 
+
+
+def remove_first_vowel(word)
+  vowels = 'aioue' 
+
+  word.each_char.with_index do |char, i|
+    if vowels.include?(char)
+      return word[0...i] + word[i + 1..-1]
+    end 
+  end 
+  word 
+end 
+
+def remove_last_vowel(word) 
+  remove_first_vowel(word.reverse).reverse
+end 
+
+
+
+# silly_talk
+# Write a method silly_talk that accepts a sentence as an argument.
+# The method should translate each word of the sentence according to the following rules:
+# 
+# if the word ends with a vowel, simply repeat that vowel at the end of the word (example: 'code'->'codee')
+# if the word ends with a non-vowel, every vowel of the word should be followed by 'b' and that same vowel (example: 'siren'->'sibireben')
+# Note that if words are capitalized in the original sentence, they should remain capitalized in the translated sentence. Vowels are the letters a, e, i, o, u.
+
+# p silly_talk('Kids like cats and dogs') # "Kibids likee cabats aband dobogs"
+# p silly_talk('Stop that scooter') # "Stobop thabat scobooboteber"
+# p silly_talk('They can code') # "Thebey caban codee"
+# p silly_talk('He flew to Italy') # "Hee flebew too Ibitabaly"
+
+def silly_talk(sentence)
+  words = sentence.split(' ')
+  new_words = words.map do |word|
+    word = transcribe_word(word) 
+    word == word.capitalize ? new_word.capitalize(word) : new_word 
+  end 
+  new_words.join('')
+end 
+
+def transcribe_word(word) 
+  vowels = 'aeiou'
   
+  return word + word[-1] if vowels.include?(word[-1])
+  new_word = ''
+  word.each_char do |char|new_
+    if vowels.include?(char) 
+      new_word += char + 'b' + char
+    else 
+      new_word += char
+    end 
+  end 
+  new_word
+end
+
