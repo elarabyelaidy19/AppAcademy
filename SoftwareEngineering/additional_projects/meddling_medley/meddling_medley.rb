@@ -101,3 +101,26 @@ def triplet_true(string)
   end
   false  
 end 
+
+
+# energetic_encoding
+# Write a method energetic_encoding that accepts a string and a hash as arguments. 
+# The method should return a new string where characters of the original string are
+# replaced with the corresponding values in the hash. If a character is not a key of the hash, 
+# then it should be replaced with a question mark ('?'). Space characters (' ') should remain unchanged. 
+
+def energetic_encoding(string, hash) 
+  new_string = ''
+
+  string.each_char do |char| 
+    if char == ' '
+      new_string += ' '
+    elsif hash.has_key?(char) 
+      new_string += hash[char] 
+    else 
+      new_string += '?'
+    end 
+  end 
+  new_string
+end 
+    
