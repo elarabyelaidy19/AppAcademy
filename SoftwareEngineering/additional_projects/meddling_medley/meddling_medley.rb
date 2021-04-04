@@ -42,3 +42,40 @@ end
 
 new_words.join(' ')
 end
+
+
+# hash_mapped
+# Write a method hash_mapped that accepts a hash, a proc, and a block.
+# The method should return a new hash where each key is the result of the original key when given to the block.
+# Each value of the new hash should be the result of the original values when passed into the proc. 
+
+
+# double = Proc.new { |n| n * 2 }
+# p hash_mapped({'a'=>4, 'x'=>7, 'c'=>-3}, double) { |k| k.upcase + '!!' }
+# # {"A!!"=>8, "X!!"=>14, "C!!"=>-6}
+
+# first = Proc.new { |a| a[0] }
+# p hash_mapped({-5=>['q', 'r', 's'], 6=>['w', 'x']}, first) { |n| n * n }
+# # {25=>"q", 36=>"w"}
+
+
+def hash_mapped(hash, &blk, prc)
+  new_hash = {}   
+  
+  hash.each do |key, val|
+    new_hash[&blk.call(key)] = prc.call(val)
+  end 
+  new_hash
+end 
+
+
+# counted_characters
+# Write a method counted_characters that accepts a string as an argument.
+# The method should return an array containing the characters of the string that appeared more than twice. 
+# The characters in the output array should appear in the same order they occur in the input string. 
+
+def counted_characters(str) 
+  count = Hash.new(0) 
+  string.each_char { |char| count[char] += 1 }
+  count.select { |char, num| num > 2 }.keys
+end 
