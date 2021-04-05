@@ -65,13 +65,10 @@ class Board
   end 
 
   def empty_positions?
-    
-
-
-
-
-
-
+    indicees = (0...@grid.length).to_a 
+    positions = indices.product(indices)
+    positions.any? { |pos|empty?(pos) } 
+  end 
 end 
 
 
