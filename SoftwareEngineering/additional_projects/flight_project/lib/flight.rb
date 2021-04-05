@@ -11,3 +11,22 @@ class Flight
   def passengers 
     @passengers 
   end 
+
+  def full?
+    return true if @passengers.length == @capacity 
+    return false if @passengers.length < @capacity
+  end 
+
+  def board_passenger(passenger) 
+    if !self.full? && passenger.has_flight?(@flight_number) 
+      @passengers << passenger 
+    end 
+  end 
+
+  def list_passengers
+    @passengers.map (:&name)
+  end 
+
+
+
+end 
