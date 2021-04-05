@@ -54,7 +54,7 @@ class Board
       row = i 
       col = @grid.legth -1 - i 
       pos = [row, col] 
-      self[pos] = mark 
+      self[pos] == mark 
     end 
 
     right_to_left || left_to_right 
@@ -65,11 +65,13 @@ class Board
   end 
 
   def empty_positions?
-    indicees = (0...@grid.length).to_a 
+    indices = (0...@grid.length).to_a 
     positions = indices.product(indices)
     positions.any? { |pos|empty?(pos) } 
   end 
 end 
+
+
 
 
 
