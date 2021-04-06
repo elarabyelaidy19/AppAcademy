@@ -14,3 +14,5 @@ class HumanPlayer
     pos 
   end 
 end 
+
+
