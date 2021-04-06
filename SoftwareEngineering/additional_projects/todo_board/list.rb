@@ -1,3 +1,5 @@
+require './item.rb'
+
 class List
 
   attr_accessor :label
@@ -20,5 +22,26 @@ class List
   def valid_index?(index)
     index >= 0 && index < self.size
   end 
+
+  def swap(index_1, index_2)
+    return false if !self.valid_index?(index_1) || !self.valid_index?(index_2)
+    @items[index_1], @items[index_2] = @items[index_2],  @items[index_1]
+    true 
+  end 
+
+  def [](index)
+    return nil if !valid_index?(index)
+    @items[index]
+  end 
+
+end 
+
+ 
+
+
+
+
+
+
 
 
