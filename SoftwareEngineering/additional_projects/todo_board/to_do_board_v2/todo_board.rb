@@ -1,52 +1,59 @@
-require './list.rb' 
+require './list.rb'
 
-class TodoBoard 
+class TodoBoard
+    def initialize
+        @lists = {}
+    end
+    def get_command
+        print "\nEnter a command: "
+        cmd, target, *args = gets.chomp.split(' ')
 
-  def initialize(label) 
-    @list = List.new(label) 
-  end 
-
-  def get_command
-    print "/nEnter a command: "
-    cmd, *args = gets.chomp.splt(' ')
-
-    case cmd 
-      when 'mktodo'
-        @list.add_item(*args)
-      when 'up'
-        @list.up(*args.map(&:to_i))
-      when 'down'
-        @list.down(*args.map(&:to_i)) 
-      when 'swap' 
-        @list.swap(*args.map(&:to_i)) 
-      when 'sort'
-        @list.sort_by_date! 
-      when 'priority'
-        @list.print_priority
-      when 'print'
-        if args.empty?
-          @list.print 
+        case cmd
+        when 'ls'
+            @lists.keys.each { |label| puts ' ' + label }
+        when 'showall'
+            @lists.each_value(&:print)
+        when 'mklist'
+            @lists[target] = List.new(target)
+        when 'mktodo'
+            @lists[target].add_item(*args)
+        when 'toggle'
+            @lists[target].toggle_item(args[0].to_i)
+        when 'rm'
+            @lists[target].remove_item(args[0].to_i)
+        when 'purge'
+            @lists[target].purge
+        when 'up'
+            @lists[target].up(*args.map(&:to_i))
+        when 'down'
+            @lists[target].down(*args.map(&:to_i))
+        when 'swap'
+            @lists[target].swap(*args.map(&:to_i))
+        when 'sort'
+            @lists[target].sort_by_date!
+        when 'priority'
+            @lists[target].print_priority
+        when 'print'
+            if args.empty?
+                @lists[target].print
+            else
+                @lists[target].print_full_item(args[0].to_i)
+            end
+        when 'quit'
+            return false
         else
-          list.print_full_item(args[0].to_i)
-        end 
-      when 'quit'
-        return false
-      else 
-        print ' unspecified command' 
-      end 
+            print "Sorry, that command is not recognized."
+        end
 
-      true 
-    end 
-  end 
+        true
+    end
 
     def run
-      while true
-        return if !get_command
-      end 
+        while true
+            return if !get_command
+        end
     end
-    
-end 
 
+end
 
-
-
+TodoBoard.new.run 

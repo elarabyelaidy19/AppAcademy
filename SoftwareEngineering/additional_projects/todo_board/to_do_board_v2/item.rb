@@ -8,7 +8,7 @@ class Item
        true 
   end 
  
-  attr_reader :deadline
+  attr_reader :deadline, :done 
   attr_accessor :title, :description
 
   def initialize(title, deadline, description)
