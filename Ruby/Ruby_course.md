@@ -60,5 +60,28 @@ Integration testing is a form of testing in which units of code are combined ("i
  - use debugger **bybug**
 
 # Common Exception 
+ *  NameError 
+    occur when you try to use variable oe method that hasn't be defined 
+  * Uinitalized Constant didn't find the class or the constant 
+  * **NoMethodError** call method that does'nt exist 
+  * **ArguementError** passed the wrong number of arguements 
+  * **TypeError pass** the wrong type of thing to a method 
+  * **LoadError gem** does not exit, error with file path 
+  * **SyntaxError**  writing ungrammatical ruby code 
+  
+# More Byebug Commands:
+# Debugging CheetSheet 
+ * find the top error line that looks familiar. a. If the line is familiar: stick a debugger on the line above the error. b. If the line is not familiar: cut everything out and start adding things back until the error changes. c. If there’s no error message at all: head to the first user-facing part of your code.
+ * Stick the debugger in, poke around on the line directly above the error. Example debuggers for a few languages: byebug (ruby), ipdb (python), debugger (javascript). [2]
 
- ## 
+  * Repeat steps 1 and 2.
+
+# braking your methods into parts  
+  * 
+  * 
+
+
+
+
+ `code()`
+ ~~~ java 
