@@ -118,6 +118,17 @@ end
 # separated by the given string separator.
 # If no separator is given, an empty string is used. 
 
+def my_join(separator = "") 
+  join = "" 
+
+  self.length.times do |i| 
+    join += self[i] 
+    join += separator unless i == self.length - 1 
+  end 
+  join 
+end 
+
+
 
 
 
