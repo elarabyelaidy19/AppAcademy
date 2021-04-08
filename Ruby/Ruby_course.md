@@ -77,7 +77,8 @@ Integration testing is a form of testing in which units of code are combined ("i
   * Repeat steps 1 and 2.
 
 # braking your methods into parts  
-  * 
+  * named the variables descriptivively 
+  * broke complicated lines to smaller parts  
   * 
 
 

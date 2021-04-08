@@ -23,4 +23,17 @@ base_to_the_smaller_exponet = exponent(base, smaller_exponent)
 exponent(base, power) = base * base_to_the_smaller_exponet 
 
 
+# = ============================================
 
+reminder = a / 2
+def return_number(a)
+  ((a / 2)**2) * (65 - (a / 2))
+end
+
+# then 
+reminder = a / 2
+def return_number(a) 
+  ((reminder)**2) * (65 - reminder)
+end 
+
+puts return_number(30)
