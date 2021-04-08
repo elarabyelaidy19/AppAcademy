@@ -78,9 +78,57 @@ def my_flatten
     flattened 
 end 
 
+# Write my_zip to take any number of arguments. It should return a new array 
+# containing self.length elements. Each element of the new array should
+# be an array with a length of the input arguments + 1 and contain the merged 
+# elements at that index.If the size of any argument is less than self, nil is returned for that location.
 
-def 
+
+def my_zip(*arrays)
+  zipped = [] 
+
+  self.length.times do |i| 
+    subzip = [self[i]]
+    
+    arrays.my_each do |array| 
+      subzip << array[i]  
+    end 
+
+    zipped << subzip 
+  end 
+  zipped 
+end 
+
+# My Rotate
+# Write a method my_rotate that returns a new array containing all the elements
+# of the original array in a rotated order. By default, the array should rotate 
+# by one element. If a negative value is given, the array is rotated in the opposite direction.
+
+
+def my_rotate(positions = 1) 
+  split_idx = positions % self.length 
+
+  self.drop(split_idx) + self.take(split_idx) 
+end 
+
+
+
+# My Join
+# my_join returns a single string containing all the elements of the array,
+# separated by the given string separator.
+# If no separator is given, an empty string is used. 
+
+
+
+
+
+
   
+
+
+
+
+
 
 
 
