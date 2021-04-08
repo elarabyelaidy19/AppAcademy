@@ -129,7 +129,19 @@ def my_join(separator = "")
 end 
 
 
+# My Reverse
+# Write a method that returns
+# a new array containing all the elements of the original array in reverse order.
 
+def my_reverse
+  reversed = [] 
+
+  self.my_each do |ele| 
+    reversed.unshift(ele) 
+  end 
+
+  reversed
+end 
 
 
 
