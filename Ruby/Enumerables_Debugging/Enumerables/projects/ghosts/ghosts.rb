@@ -1,19 +1,25 @@
 require "set" 
-require "player" 
+require_relative "player" 
 
 class GhostGame 
 
-  ALPHABET = ("a".."z") 
+  ALPHABET = Set.new("a".."z") 
   MAX_LOSS_COUNT = 5 
 
   def initialize(*players) 
-    words = File.readlines("dictionary.txr").map(&:chomp) 
+    words = File.readlines("dictionary.txt").map(&:chomp) 
     @dictionary = Set.new(words) 
     @players = players 
     @losses = Hash.new { |losses, player| losses[player] = 0 }
   end 
 
+  def run
+    play_round until game_over? 
+    puts "#{winner} wins!"
+  end 
+
   private 
+
   attr_reader :fragment, :dictionary, :losses, :players
 
   def game_over? 
@@ -39,17 +45,9 @@ class GhostGame
 
   def valid_play?(letter) 
     return false unless ALPHABET.include?(letter)
+
     potential_fragment = fragment + letter 
     dictionary.any? { |word| word.start_with?(potential_fragment) }  
-  end 
-
-  def current_player 
-    @players.first 
-  end 
-
-  def next_player 
-    players.rotate! 
-    players.rotate! until losses[current_player] < MAX_LOSS_COUNT 
   end 
 
   def is_word?(fragment) 
@@ -60,20 +58,30 @@ class GhostGame
     is_word?(fragment) 
   end 
 
-  def previous_player
+  def current_player 
+    players.first 
+  end 
+
+    def previous_player
     (players.count - 1).downto(0).each do |idx| 
       player = players[idx] 
 
       return player if losses[player] < MAX_LOSS_COUNT 
     end 
-  end  
+  end 
+
+  def next_player!
+    players.rotate! 
+    players.rotate! until losses[current_player] < MAX_LOSS_COUNT 
+  end 
+ 
 
   def remaining_players 
-    losses.count { |k, v| v < MAX_LOSS_COUNT } 
+    losses.count { |_, v| v < MAX_LOSS_COUNT } 
   end 
 
   def winner 
-    (player, k) = losses.find { |k, losses| losses < MAX_LOSS_COUNT } 
+    (player, _) = losses.find { |_, losses| losses < MAX_LOSS_COUNT } 
     player
   end 
 
@@ -87,49 +95,50 @@ class GhostGame
     puts "let's play a round of ghosts" 
     display_standings
   end 
+  
+  def take_turn
+    system("clear")
+    puts "It's #{current_player}'s turn!"
+    letter = nil
 
-  def take_turn 
-    system("clear") 
-    puts "I'ts #{current_player}'s turn!" 
-    letter = nil 
+    until letter
+      letter = current_player.guess(fragment)
 
-    until letter 
-      letter = current_player.guess(fragment) 
+      unless valid_play?(letter)
+        current_player.alert_invalid_move(letter)
+        letter = nil
+      end
+    end
 
-      unless valid_play?(letter) 
-        current_player.alert_invalid_move(letter) 
-        letter = nil 
-      end 
-    end 
+    add_letter(letter)
+    puts "#{current_player} added the letter '#{letter}' to the fragment."
+  end
+  
+  def display_standings
+    puts "Current standings:"
 
-    add_letter(letter) 
-    puts "#{current_player} added the letter #{letter} " 
-  end 
-
-  def display_standings 
-    puts "current standing:" 
-    
     players.each do |player|
       puts "#{player}: #{record(player)}"
-    end 
+    end
 
-    sleep(2) 
-  end 
+    sleep(2)
+  end
 
-  def update_standings 
-    system("clear") 
-    puts "#{previous_player} spelled #{fragment}." 
-    puts "#{previous_player} gets a letter!" 
-    sleep(1) 
+  def update_standings
+    system("clear")
+    puts "#{previous_player} spelled #{fragment}."
+    puts "#{previous_player} gets a letter!"
+    sleep(1)
 
     if losses[previous_player] == MAX_LOSS_COUNT - 1
-      puts "#{previous_player} Has been eliminated!"
-      sleep(1)  
-    end 
-
-    losses[previous_player] += 1 
+      puts "#{previous_player} has been eliminated!"
+      sleep(1)
+    end
+    
+    losses[previous_player] += 1
+    
     display_standings
-  end 
+  end
 end 
 
 

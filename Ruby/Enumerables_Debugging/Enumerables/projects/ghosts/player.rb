@@ -19,17 +19,17 @@ class Player
   end
 
   def inspect
-    "HumanPlayer #{name} "
+    "HumanPlayer: #{name}"
   end  
 
   def to_s 
     name 
   end 
   
-  
   private
   def prompt(fragment) 
-    puts "the current fragment is #{fragment} "
-    print "add a letter" 
+    puts "the current fragment is #{fragment}"
+    print "add a letter: " 
   end 
+  
 end 
