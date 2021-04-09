@@ -133,6 +133,17 @@ class GhostGame
 end 
 
 
+if $PROGRAM_NAME == __FILE__ 
+  game = GhostGame.new( 
+    Player.new("Gizmo"), 
+    Player.new("Breakfast"), 
+    Player.new("Toby"),
+    Player.new("Leonardo")
+  )
+
+  game.run 
+end 
+
 
 
  
