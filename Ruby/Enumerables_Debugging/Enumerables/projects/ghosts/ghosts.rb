@@ -13,6 +13,18 @@ class GhostGame
     @losses = Hash.new { |losses, player| losses[player] = 0 }
   end 
 
+  def play_round 
+    @fragment = "" 
+    welcome 
+
+    until round_over? 
+      take_turn 
+      next_player! 
+    end  
+
+    update_standings 
+  end 
+
 
   def add_letter(letter)  
     fragment << letter
@@ -66,6 +78,7 @@ class GhostGame
   def welcome 
     system("clear") 
     puts "let's play a round of ghosts" 
+    display_standings
   end 
 
   def take_turn 
@@ -95,6 +108,24 @@ class GhostGame
 
     sleep(2) 
   end 
+
+  def update_standings 
+    system("clear") 
+    puts "#{previous_player} spelled #{fragment}." 
+    puts "#{previous_player} gets a letter!" 
+    sleep(1) 
+
+    if losses[previous_player] == MAX_LOSS_COUNT - 1
+      puts "#{previous_player} Has been eliminated!"
+      sleep(1)  
+    end 
+
+    losses[previous_player] += 1 
+    display_standings
+  end 
+end 
+
+
 
 
  
