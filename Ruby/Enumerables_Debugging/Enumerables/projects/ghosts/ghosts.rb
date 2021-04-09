@@ -59,7 +59,45 @@ class GhostGame
   end 
 
   def record(player) 
+    count = losses[player] 
+    "GHOST".slice(0, count) 
+  end  
 
+  def welcome 
+    system("clear") 
+    puts "let's play a round of ghosts" 
+  end 
+
+  def take_turn 
+    system("clear") 
+    puts "I'ts #{current_player}'s turn!" 
+    letter = nil 
+
+    until letter 
+      letter = current_player.guess(fragment) 
+
+      unless valid_play?(letter) 
+        current_player.alert_invalid_move(letter) 
+        letter = nil 
+      end 
+    end 
+
+    add_letter(letter) 
+    puts "#{current_player} added the letter #{letter} " 
+  end 
+
+  def display_standings 
+    puts "current standing:" 
+    
+    players.each do |player|
+      puts "#{player}: #{record(player)}"
+    end 
+
+    sleep(2) 
+  end 
+
+
+ 
 
 
 
