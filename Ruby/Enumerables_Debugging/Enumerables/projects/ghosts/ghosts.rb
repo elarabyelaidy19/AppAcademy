@@ -13,6 +13,13 @@ class GhostGame
     @losses = Hash.new { |losses, player| losses[player] = 0 }
   end 
 
+  private 
+  attr_reader :fragment, :dictionary, :losses, :players
+
+  def game_over? 
+    remaining_players == 1 
+  end 
+
   def play_round 
     @fragment = "" 
     welcome 
