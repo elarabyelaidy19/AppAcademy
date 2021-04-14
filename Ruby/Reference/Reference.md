@@ -101,7 +101,41 @@ end
  * long method 
  * too many parameters 
  * Data clump 'if you see a group of data always being passed around together, this is usually a good candidate for refactoring out into an object.' start_date, end_date >> date_range
- * 
+ * long method chain using many dots "However, the longer your method chains get, the more likely you should apply Low of demeter. 
+ * Indecent Exposure:  Classes should share the bare minimum interface with the outside world. If you don't have a compelling reason to make a method or variable public, hide it. **minimize the amount of coupling between our classes and objects.**
+ * Speculative Generality:  Follow the principle of **YAGNI** ('You ain't gonna need it'). 
+ * general object: Good OO design results in classes that are lightly coupled. it shouldn't need to know everything about what every other object is doing 
+ * Dead code: don't leave commented-out (or otherwise unused) code in your code base. 
 
 
+# hash and equal 
+ * == value equality >> checks if two objects have the same value. 
 
+ * eql? Hash equal >> assess general equality 
+ == method perform type conversion eql? does not 
+  * eql? is used by Hash to check if an object is a key in a hash.
+  
+ ```ruby 
+ a.eql? b  is equivelnt to a.hash == b.hash 
+ ```
+
+ * equal? Identity equality >> does simple identity comparison(pointer comparison) if they the same object 
+
+ ```ruby 
+ class Dog
+   # ...
+end
+
+a = Dog.new
+b = Dog.new
+a = c
+
+a.equal? b #=> false
+a.equal? c #=> true
+``` 
+
+* === (case equality) >> This is the method that case uses to determine which block to execute.
+
+# swap function 
+ * you can not write swap fun in ruby there is no way to get access to the name of the arguments outside a function. 
+ *
