@@ -70,12 +70,38 @@ end
 ```
 
 # Method Decomposition & Design 
-
+## Atomic Methods 
 * Each method should do one thing " Atomic Method" **Single Responsibility Principle**  
 * Methods should be short 
 * every method should one thing and only one thing 
 
+## don't use golpal state 
+* method should be like a mathematical function take something and return somrething 
+* do not rely on anything besides what is explicity passed to it 
+* should not have side effect 
+* communicate its result through its return value 
+* **the only way in should be the arguments, the only way out should be the return value.** 
 
+## do not modify arguments 
+```ruby 
+def combine_ingredients(alcohols, mixers)
+  drinks = []
+
+  alcohols.length.times do
+    drinks << [alcohols.pop, mixers.pop] # don't modify arguments i
+  end
+
+  drinks
+end
+``` 
+# Refactoring (code smells) 
+ * `` A code smell is any symptom in the source code of a program that possibly indicates a deeper problem. Code smells are usually not bugs — they are not technically incorrect and don't currently prevent the program from functioning.`` 
+
+ * Duplicated code 
+ * long method 
+ * too many parameters 
+ * Data clump 'if you see a group of data always being passed around together, this is usually a good candidate for refactoring out into an object.' start_date, end_date >> date_range
+ * 
 
 
 
