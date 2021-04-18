@@ -23,3 +23,19 @@ def reverse_recursivly(str)
 end 
 
 p reverse_recursivly("hello world")
+
+
+def reverse_iterative(str) 
+  reversed = "" 
+
+  i = 0 
+  while i < str.length 
+    char = str[i] 
+    reversed = char + reversed
+
+    i += 1 
+  end 
+  reversed 
+end 
+
+p reverse_iterative("hello")
