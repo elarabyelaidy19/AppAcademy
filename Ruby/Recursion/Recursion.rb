@@ -14,3 +14,12 @@ def upcase_recursivly(str)
 end 
 
 p upcase_recursivly("hello world") 
+
+
+def reverse_recursivly(str) 
+  return str if str.length <= 1
+
+  str[-1] + reverse_recursivly(str[0..-2]) 
+end 
+
+p reverse_recursivly("hello world")
