@@ -22,5 +22,36 @@
 
 # working directory and Staging area  
 
-# branching and merging  
+# branching and merging 
 
+
+## Git add 
+ * use git add < files > or git add -A instead of git add .  or git add -u
+ * git add . you add everything to the staging area, this is wrong you might include files that have sensitive info **discourge** 
+ * git add -A take all changes to the staging area **discourge**
+ * git add < file > **recommended** avoid adding unwanted files 
+ * 
+## Aliasing 
+ * replacement of a word with another  git commit -m >> gcm 
+ * create your own alias to the command that you are using frequently 
+
+
+
+
+# YAML JSON Serialization 
+
+## serialization 
+ * convert objects to a representation so it can be saved to HD or send acrosss network 
+
+## JSON 
+ * a way of representing serialized data descended from Javasript using `code` json.parse
+ * it support some primitive data type 
+ * the message format of the web API 
+ * JSON does not know how to serialize more complicated classes you can fix by defining `code` to_json
+
+## YAML 
+ * meant to solve the pronlem of saving custom classes 
+ 
+ * json is most used serialization technology **XML** comes second 
+ * in order of server-side ruby, YAML is the leader because of its better support of deserializing classes.
+  
