@@ -34,6 +34,7 @@
 ## Aliasing 
  * replacement of a word with another  git commit -m >> gcm 
  * create your own alias to the command that you are using frequently 
+## fixing commit authorship 
 
 
 
