@@ -16,8 +16,12 @@ class Stack
     ivar.pop 
   end 
 
-  def peek 
+  def top 
     ivar.last  
+  end 
+
+  def bottom
+    ivar.first 
   end 
 
 end  
