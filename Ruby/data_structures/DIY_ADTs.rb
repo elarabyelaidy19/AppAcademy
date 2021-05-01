@@ -72,4 +72,7 @@ p queue.enqueue(3)
 puts 
 p queue.dequeue
 puts
-p queue.peek
+p queue.peek 
+
+
+
