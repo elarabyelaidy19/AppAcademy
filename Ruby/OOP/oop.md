@@ -48,4 +48,10 @@ end
 
 
 # UML 
- * 
+ * Unified Modeling Language describe classes and behavior 
+ * classes can relate to each other in several differnt way 
+ * **"has a"** relationship for example Piece is the parent Pawn is child and Game has Board
+ * component of class UML 
+  * name 
+  * set of attributes marked (+) for public, (-)private, (#)protected  
+  * set of methods marked underlined
