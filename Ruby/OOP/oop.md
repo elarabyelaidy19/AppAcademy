@@ -11,4 +11,9 @@
  * **rescue**  
  * **ensure** there is must run code if there is exception or not
  * **retry** repeat the bgine block from beginning until an operation complete succefully 
- 
+ * implicit begin blocks 
+ * you can add an error message so the user knowa what wnt wrong 
+ * there are exceptions class in ruby 
+
+# Decomposition into objects
+ * breaking complex problems into classes or functions 
