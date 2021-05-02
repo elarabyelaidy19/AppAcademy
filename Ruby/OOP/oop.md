@@ -17,3 +17,27 @@
 
 # Decomposition into objects
  * breaking complex problems into classes or functions 
+
+# inheritance and DRY 
+ * when defining a class avoid duplicating code 
+ * you can write a **generic** clde that can process any kind of the same type 
+ * do not introduce subclasses untill you are facing two diffrent subclasses of the base class AND two SC have diffrent behavior 
+ * do not use inheritance untill it serve a purpose
+
+
+# Encapsulation/Information hidding 
+ * **private metods** the only way to access is within the class itself
+ *  
+ ```ruby 
+   class Airplane
+  def fly
+    start_engine
+    ...
+  end
+
+  private
+  def start_engine
+    ...
+  end
+end
+ ```
