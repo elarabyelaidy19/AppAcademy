@@ -10,3 +10,5 @@
  * **raise** used to raise exception instead of returnung 
  * **rescue**  
  * **ensure** there is must run code if there is exception or not
+ * **retry** repeat the bgine block from beginning until an operation complete succefully 
+ 
