@@ -27,7 +27,11 @@
 
 # Encapsulation/Information hidding 
  * **private metods** the only way to access is within the class itself
- *  
+ * all methods after private are private to the class 
+ * Ones which users of the class should not call, either for safety reasons or because they're low level details that do not concerns them
+ * instance are private, you expose them with attr_accessor 
+
+
  ```ruby 
    class Airplane
   def fly
@@ -41,3 +45,7 @@
   end
 end
  ```
+
+
+# UML 
+ * 
