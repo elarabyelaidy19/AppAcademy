@@ -49,4 +49,49 @@ p u.full_name
 puts 
 p su.full_name
 puts
-p su.delete_user(u)
+p su.delete_user(u) 
+
+#  = =========================================================================================
+
+
+class Animal
+  def make_n_noises(n = 2)
+    n.times { print "Growl " }
+  end
+end
+
+class Liger < Animal
+  def make_n_noises(num = 4)
+    num.times { print "Roar " }
+    # here we'll call super without any arguments. This will pass on `num`
+    # implicitly to super. You can think of this call to super as:
+    # `super(num)`
+    super
+  end
+end
+
+Liger.new.make_n_noises(3) # => Roar Roar Roar Growl Growl Growl
+
+
+
+# ================================================================================================ 
+
+class Animal
+  attr_reader :species
+
+  def initialize(species)
+    @species = species
+  end
+end
+
+class Human < Animal
+  attr_reader :name
+
+  def initialize(name)
+    # super calls the original definition of the method
+    # If we hadn't passed "Homo Sapiens" to super, then `name` would have
+    # been passed by default.
+    super("Homo Sapiens")
+    @name = name
+  end
+end
