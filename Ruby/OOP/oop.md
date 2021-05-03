@@ -64,4 +64,9 @@ end
  * module consits of methods that can be mixed in to a ruby classes
  * we mix in a module using **include** 
  * **extend** method mix in class methods as class methods 
+
+# Load/require/require_relative
+ * **require** looking for files in same dir you can write explict paths to looking outside file directory  `code` require './board.rb'
+ * **require relative** it looking for the root of the source file `code` require_relative 'board'
+ * **laod** laod files it can load the sam file more than once, it helps more with REPL, do not use it in source file  
  * 

@@ -50,4 +50,33 @@ class Cat
 end
 
 Cat.new("Gizmo")
-Cat.find("Gizmo") # finds Gizmo Cat object
+Cat.find("Gizmo") # finds Gizmo Cat object 
+
+
+
+################################################################ 
+
+# Mix in inumerables module into Array and Hash 
+
+module Enumerable
+  def map(&prc)
+    results = []
+
+    # notice how we need `each` to write `map`
+    self.each { |el| results << prc.call(el) }
+
+    results
+  end
+
+  ...
+end
+
+class Array < Object
+  include Enumerable
+  ...
+end
+
+class Hash < Object
+  include Enumerable
+  ...
+end 
