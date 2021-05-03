@@ -55,3 +55,13 @@ end
   * name 
   * set of attributes marked (+) for public, (-)private, (#)protected  
   * set of methods marked underlined
+
+## Exampole of UML 
+  * https://assets.aaonline.io/fullstack/ruby/assets/Chess_Diagram.png 
+
+
+# Modules 
+ * module consits of methods that can be mixed in to a ruby classes
+ * we mix in a module using **include** 
+ * **extend** method mix in class methods as class methods 
+ * 
