@@ -1,5 +1,7 @@
 # PHASE 2
 
+FRUITS = ["apple", "banana", "orange"]
+
 class CoffeError < StandardError 
   def message 
      "I can't have any more caffeine. My poor heart couldn' t take it. You can try again."
@@ -18,7 +20,6 @@ def convert_to_int(str)
 end
 
 # PHASE 3
-FRUITS = ["apple", "banana", "orange"]
 
 def reaction(maybe_fruit)
   if FRUITS.include? maybe_fruit
@@ -47,6 +48,9 @@ end
 # PHASE 4
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
+    raise ArgumentError.new("'name' cannot be blank") if name.empty?
+    raise ArgumentError.new("'fav_pasttime' cannot be blank") if fav_pastime.empty?
+    raise ArgumentError.new("'yrs_known' must be greater than or equal to 5 (best friendships take time)") if yrs_known.to_i < 5
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
