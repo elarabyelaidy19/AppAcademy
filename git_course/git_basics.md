@@ -35,4 +35,6 @@
 # from only remote to local 
 * git clone <remote repo url> <local directory name>    >> download only remote repo to local machine 
 
-
+# important commands 
+ * git reset: unstage all staged changes (so that the staged files return to "Changes not staged for commit") 
+ * 
