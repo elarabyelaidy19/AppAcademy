@@ -69,4 +69,10 @@ end
  * **require** looking for files in same dir you can write explict paths to looking outside file directory  `code` require './board.rb'
  * **require relative** it looking for the root of the source file `code` require_relative 'board'
  * **laod** laod files it can load the sam file more than once, it helps more with REPL, do not use it in source file  
- * 
+
+
+# public/private/protected
+ * **public** methods can be called by anyone, all methods are public by devault except of initialize wich is always privte 
+ * **private** can not call with explicit reciver, can call only in the definig class, private methods are inherted private 
+ * **protected** can be invoked only by objects of the definig class and its subclasses 
+ 
