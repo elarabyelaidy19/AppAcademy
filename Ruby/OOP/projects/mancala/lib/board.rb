@@ -74,6 +74,14 @@ class Board
     @cups[7..12].all? { |cup| cup.empty? } 
   end
 
-  def winner
+  def winner 
+    player1_count = @cups[6].count 
+    player2_count = @count[13].count 
+
+    if player1_count == player2_count 
+      :draw
+    else 
+      player1_count > player2_count ? @name1 : @name2 
+    end 
   end
 end
