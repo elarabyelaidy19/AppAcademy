@@ -19,8 +19,8 @@ class Board
   end
 
   def valid_move?(start_pos)
-    raise "invalid starting cup" if start_pos < 0 || start_pos > 12
-    raise "strting cup is empty" if @cups[start_pos].empty?
+    raise "Invalid starting cup" if start_pos < 0 || start_pos > 12
+    raise "Starting cup is empty" if @cups[start_pos].empty?
   end
 
   def make_move(start_pos, current_player_name) 
@@ -36,7 +36,7 @@ class Board
       # places stones in the correct current player cups  
       if cup_idx == 6 
         @cups[6] << stones.pop if current_player_name == @name1 
-      elsif 
+      elsif cup_idx == 13
         @cups[13] << stones.pop if current_player_name == @name2 
       else 
         @cups[cup_idx] << stones.pop 
@@ -76,7 +76,7 @@ class Board
 
   def winner 
     player1_count = @cups[6].count 
-    player2_count = @count[13].count 
+    player2_count = @cups[13].count 
 
     if player1_count == player2_count 
       :draw
@@ -85,3 +85,6 @@ class Board
     end 
   end
 end
+
+
+
