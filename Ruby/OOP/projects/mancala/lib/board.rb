@@ -19,13 +19,37 @@ class Board
   end
 
   def valid_move?(start_pos)
+    raise "invalid starting cup" if start_pos < 0 || start_pos > 12
+    raise "strting cup is empty" if @cups[start_pos].empty?
   end
 
-  def make_move(start_pos, current_player_name)
+  def make_move(start_pos, current_player_name) 
+    # empty cups
+    stones = @cups[start_pos] 
+    @cups[start_pos] = []
+
+    #distributes stones 
+    cup_idx = start_pos 
+    until stones.empty?
+      cup_idx += 1 
+      cup_idx = 0 if cup_idx > 13
+      # places stones in the correct current player cups  
+      if cup_idx == 6 
+        @cups[6] << stones.pop if current_player_name == @name1 
+      elsif 
+        @cups[13] << stones.pop if current_player_name == @name2 
+      else 
+        @cups[cup_idx] << stones.pop 
+      end 
+    end
+    
+    render
+    
   end
 
   def next_turn(ending_cup_idx)
     # helper method to determine whether #make_move returns :switch, :prompt, or ending_cup_idx
+
   end
 
   def render
