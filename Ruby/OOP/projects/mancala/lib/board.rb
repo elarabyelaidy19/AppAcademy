@@ -44,7 +44,7 @@ class Board
     end
     
     render
-    
+    next_turn(cup_idx)
   end
 
   def next_turn(ending_cup_idx)
