@@ -1,6 +1,6 @@
 # PHASE 2
 
-FRUITS = ["apple", "banana", "orange"]
+FRUITS = ["apple", "banana", "orange"].freeze
 
 class CoffeError < StandardError 
   def message 
@@ -13,11 +13,6 @@ class NotAFruitError < StandardError
     "That doesn't look like a fruit. You tricked me. * runs away *"
   end 
 end 
-
-
-def convert_to_int(str)
-  Integer(str)
-end
 
 # PHASE 3
 
@@ -49,8 +44,8 @@ end
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
     raise ArgumentError.new("'name' cannot be blank") if name.empty?
-    raise ArgumentError.new("'fav_pasttime' cannot be blank") if fav_pastime.empty?
     raise ArgumentError.new("'yrs_known' must be greater than or equal to 5 (best friendships take time)") if yrs_known.to_i < 5
+    raise ArgumentError.new("'fav_pasttime' cannot be blank") if fav_pastime.empty?
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime

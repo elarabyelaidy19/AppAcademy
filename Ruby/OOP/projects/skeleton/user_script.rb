@@ -1,11 +1,11 @@
 require_relative 'super_useful'
 
-puts "'five' == #{convert_to_int('five')}"
+
 
 feed_me_a_fruit
 
-sam = BestFriend.new('', 1, '')
+sam = BestFriend.new('elaraby', 25, 'elaidy')
 
-sam.talk_about_friendship
-sam.do_friendstuff
-sam.give_friendship_bracelet
+p sam.talk_about_friendship
+p sam.do_friendstuff
+p sam.give_friendship_bracelet
