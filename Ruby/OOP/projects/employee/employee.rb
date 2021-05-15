@@ -25,3 +25,8 @@ class Manager < Employee
     super(name, title, salary, boss) 
     @employee = [] 
   end 
+
+  def add_employee(subordinate) 
+    employee << subordinate 
+    subordinate
+  end 
