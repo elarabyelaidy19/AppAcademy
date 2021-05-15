@@ -17,3 +17,11 @@ class Employee
    @salary * multiplier
   end 
 end 
+
+class Manager < Employee 
+  attr_reader :employee 
+
+  def initialize(name, title, salary, boss = nil) 
+    super(name, title, salary, boss) 
+    @employee = [] 
+  end 
