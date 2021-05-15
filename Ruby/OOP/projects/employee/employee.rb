@@ -6,4 +6,9 @@ class Employee
     @name = name 
     @title = title 
     @salary = salary
+    self.boss = boss
   end  
+
+  def boss =(boss) 
+    @boss = boss 
+  end 
