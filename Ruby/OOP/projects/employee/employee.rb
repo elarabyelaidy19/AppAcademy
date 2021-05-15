@@ -30,3 +30,7 @@ class Manager < Employee
     employee << subordinate 
     subordinate
   end 
+
+  def bonus(multiplier) 
+    total_subsalary * multiplier
+  end 
