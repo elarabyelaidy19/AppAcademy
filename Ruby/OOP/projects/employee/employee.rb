@@ -32,12 +32,12 @@ class Manager < Employee
   end 
 
   def bonus(multiplier) 
-    total_subsalary * multiplier
+    self.total_subsalary * multiplier
   end 
 
   def total_subsalary
     total_subsalary = 0 
-    employee.each do |employee| 
+    self.employee.each do |employee| 
       if employee.is_a(Manager) 
         total_subsalary += employee.salary + employee.total_subsalary 
       else  
@@ -46,5 +46,6 @@ class Manager < Employee
     end 
     total_subsalary
   end 
+end 
 
 
