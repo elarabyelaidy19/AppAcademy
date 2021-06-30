@@ -40,7 +40,15 @@ class Simon
   end 
 
   def require_sequence
-
+    puts "Repeat the sequence by entering the first letter of each color on a new line."
+    @seq.each do |color|
+      user_color = gets.chomp
+      if color[0] != user_color
+        @game_over = true
+        break
+      end
+    end
+    sleep 0.25
   end
 
   def add_random_color 
