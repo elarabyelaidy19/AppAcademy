@@ -9,8 +9,14 @@ class Simon
     @seq = [] 
   end
 
-  def play
+  def play 
+    until @game_over 
+      take_turn 
+      system("clear") 
+    end 
 
+    game_over_message 
+    reset_game 
   end
 
   def take_turn 
