@@ -22,4 +22,16 @@ describe Desert do
     end 
   end 
 
+  it 'raise an error if the amount is not a number' do 
+    expect { Desert.new("brownie", "tons")}.to raise_error('Amount must be a number') 
+  end 
+end 
+
+describe '#eat' do 
+  it 'calls #dip on the drink' do 
+    expect(milk).to receive(:dip).with(brownie) 
+    brownie.eat(milk)
+  end 
+end 
+ 
 
