@@ -15,23 +15,26 @@ describe Desert do
    end 
 
    context 'with huge amount' do 
-    subject(:brownie) { Desert.new("brownie", 10000) } 
+     subject(:brownie) { Desert.new("brownie", 10000) } 
 
-    it 'sets the type to the giant amount' do 
-      expect(brownie.type).to eq('giant amount') 
+     it 'sets the type to the giant amount' do 
+      expect(brownie.type).to eq('giant brownie') 
+     end 
+    end
+ 
+
+    it 'raise an error if the amount is not a number' do 
+      expect { Desert.new("brownie", "tons")}.to raise_error('Amount must be a number') 
     end 
   end 
 
-  it 'raise an error if the amount is not a number' do 
-    expect { Desert.new("brownie", "tons")}.to raise_error('Amount must be a number') 
+  
+  describe '#eat' do 
+    it 'calls #dip on the drink' do 
+      expect(milk).to receive(:dip).with(brownie) 
+      brownie.eat(milk)
+    end 
   end 
 end 
 
-describe '#eat' do 
-  it 'calls #dip on the drink' do 
-    expect(milk).to receive(:dip).with(brownie) 
-    brownie.eat(milk)
-  end 
-end 
- 
 
