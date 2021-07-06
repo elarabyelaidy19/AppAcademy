@@ -14,4 +14,12 @@ describe Desert do
     expect(brownie.amount).to eq(50) 
    end 
 
+   context 'with huge amount' do 
+    subject(:brownie) { Desert.new("brownie", 10000) } 
+
+    it 'sets the type to the giant amount' do 
+      expect(brownie.type).to eq('giant amount') 
+    end 
+  end 
+
 
