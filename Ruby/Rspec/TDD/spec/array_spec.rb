@@ -15,3 +15,10 @@ describe 'uniq' do
       expect(array).to include(item) 
     end 
   end 
+
+  it "doesn't modify the original array" do 
+    expect { uniq(array) }.to_not change(array) 
+  end 
+end 
+
+
