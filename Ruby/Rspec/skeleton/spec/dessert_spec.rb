@@ -30,13 +30,23 @@ describe Dessert do
   describe "#add_ingredient" do
     it "adds an ingredient to the ingredients array" do 
       brownie.add_ingredient("chocolate") 
-      expect(brownie.ingredient).to include("chocolate") 
+       expect(brownie.ingredient).to include("chocolate") 
     end
    end
 
   describe "#mix!" do
     it "shuffles the ingredient array" do 
-      
+     ingredients = ["chocolate", "flour", "egg", "sugar", "butter"]  
+
+     ingredients.each do |ingredient| 
+      brownie.add_ingredient(ingredient) 
+     end 
+
+     expect(brownie.ingredients).to eq(ingredient) 
+     brownie.mix! 
+     expect(brownie.ingredients).not_to eq(ingredients) 
+     expect(brownie.ingredients.sort).to eq(ingredients.sort) 
+   end
   end
 
   describe "#eat" do
