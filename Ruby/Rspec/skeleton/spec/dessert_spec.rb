@@ -6,7 +6,7 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 =end
 
 describe Dessert do
-  let(:chef) { double("chef"), name: "tucker" } 
+  let(:chef) { double("chef", name: "tucker") } 
   let (:brownie) { Dessert.new("brownie", 100, chef) } 
 
   describe "#initialize" do
@@ -19,18 +19,18 @@ describe Dessert do
     end 
 
     it "starts ingredients as an empty array" do 
-      expect(brownie.ingredient).to be_empty 
+      expect(brownie.ingredients).to be_empty 
     end 
 
     it "raises an argument error when given a non-integer quantity" do 
-      expect { Dessert.new("cake", "tons" chef) }.to raise_error(ArgumentError) 
+      expect { Dessert.new("cake", "tons", chef) }.to raise_error(ArgumentError) 
     end 
   end
 
   describe "#add_ingredient" do
     it "adds an ingredient to the ingredients array" do 
       brownie.add_ingredient("chocolate") 
-       expect(brownie.ingredient).to include("chocolate") 
+       expect(brownie.ingredients).to include("chocolate") 
     end
    end
 
@@ -42,7 +42,7 @@ describe Dessert do
       brownie.add_ingredient(ingredient) 
      end 
 
-     expect(brownie.ingredients).to eq(ingredient) 
+     expect(brownie.ingredients).to eq(ingredients) 
      brownie.mix! 
      expect(brownie.ingredients).not_to eq(ingredients) 
      expect(brownie.ingredients.sort).to eq(ingredients.sort) 
@@ -62,7 +62,7 @@ describe Dessert do
 
   describe "#serve" do
     it "contains the titleized version of the chef's name" do 
-      allow(chef).to receive(:titleized).and_return("chef tucker the great Baker") 
+      allow(chef).to receive(:titleize).and_return("Chef Tucker the Great Baker") 
       expect(brownie.serve).to eq("Chef Tucker the Great Baker has made 100 brownies!") 
     end
   end
