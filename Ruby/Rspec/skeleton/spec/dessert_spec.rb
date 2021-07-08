@@ -22,15 +22,21 @@ describe Dessert do
       expect(brownie.ingredient).to be_empty 
     end 
 
-    it "raises an argument error when given a non-integer quantity"
+    it "raises an argument error when given a non-integer quantity" do 
+      expect { Dessert.new("cake", "tons" chef) }.to raise_error(ArgumentError) 
+    end 
   end
 
   describe "#add_ingredient" do
-    it "adds an ingredient to the ingredients array"
-  end
+    it "adds an ingredient to the ingredients array" do 
+      brownie.add_ingredient("chocolate") 
+      expect(brownie.ingredient).to include("chocolate") 
+    end
+   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    it "shuffles the ingredient array" do 
+      
   end
 
   describe "#eat" do
