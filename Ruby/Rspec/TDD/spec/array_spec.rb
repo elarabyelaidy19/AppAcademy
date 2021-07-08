@@ -12,12 +12,12 @@ describe 'uniq' do
 
   it "only contains elements of the original array" do 
     uniqued_array.each do |el| 
-      expect(array).to include(item) 
+      expect(array).to include(el) 
     end 
   end 
 
   it "doesn't modify the original array" do 
-    expect { uniq(array) }.to_not change(array) 
+    expect { uniq(array) }.to_not change{array} 
   end 
 end 
 
