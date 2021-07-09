@@ -12,3 +12,12 @@ class TowersOfHanoiGame
   def won? 
     @stacks[0].empty? && stacks[1..2].any?(&:empty?)
   end 
+
+  def valid_move?(from_tower, to_tower)
+    return false unless [from_tower, to_tower].all? { |i| i.between(0, 2) } 
+    
+    !@stacks[from_tower].empty? && ( 
+      @stacks[to_tower].empty? || 
+      @stacks[to_tower].last > @stacks[from_tower].last 
+    )
+  end 
