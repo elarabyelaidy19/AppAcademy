@@ -24,3 +24,19 @@ def two_sum(array)
 end 
 
 p two_sum([-5, -3, 1, 3])
+
+
+def transpose(rows) 
+  dimension = rows.first.count 
+  cols = Array.new(dimension) { Array.new(dimension) } 
+
+  dimension.times do |i| 
+    dimension.times do |j| 
+      col[j][i] = rows[i][j] 
+    end 
+  end 
+
+  cols 
+end
+
+
