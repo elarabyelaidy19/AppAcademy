@@ -55,6 +55,21 @@ describe "transpose" do
   end 
 end 
 
+describe "pick_stock" do 
+  it 'pick simple pair' do 
+    expect(pick_stocks([3, 1, 0, 4, 6, 9])).to eq([2, 5]) 
+  end 
+  
+  it 'find a better pair' do 
+    expect(pick_stocks([3, 2, 5, 0, 6])).to eq([3, 4]) 
+  end 
+
+  it 'does not buy in a crash' do 
+    expect(pick_stocks([5, 4, 3, 2, 1])).to be_nil 
+  end 
+end 
+
+
 
 
 
