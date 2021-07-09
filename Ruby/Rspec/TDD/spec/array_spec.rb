@@ -22,3 +22,23 @@ describe 'uniq' do
 end 
 
 
+describe 'two_sum' do 
+  let(:array) { [-5, -3, 1, 3] }
+  let(:one_zero) { [3, 0, 4] }
+  let(:two_zeros) { [3, 0, 4, 0] } 
+
+  it " finds two sum pairs" do 
+    expect(two_sum(array)).to eq([[1, 3]]) 
+  end 
+
+  it " handle one zero" do 
+    expect(two_sum(one_zero)).to eq([])
+  end 
+
+  it " handle two zeros" do 
+    expect(two_sum(two_zeros)).to eq([[1, 3]]) 
+  end 
+end 
+
+
+
