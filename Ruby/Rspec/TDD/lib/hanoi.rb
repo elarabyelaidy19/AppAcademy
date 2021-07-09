@@ -39,4 +39,12 @@ class TowersOfHanoiGame
     render 
   end 
 
+  private 
+  attr_reader :stacks 
+
+  if PROGRAM_NAME == __FILE__ 
+    TowersOfHanoiGame.new.play 
+  end 
+end 
+
   
