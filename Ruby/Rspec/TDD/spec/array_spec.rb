@@ -40,7 +40,20 @@ describe 'two_sum' do
   end 
 end 
 
-
+describe "transpose" do 
+  it "transpose a matrix" do 
+    matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ]
+    expect(transpose(matrix)).to eq([
+      [1, 4, 7],
+      [2, 5, 8],
+      [3, 6, 9]
+    ])
+  end 
+end 
 
 
 

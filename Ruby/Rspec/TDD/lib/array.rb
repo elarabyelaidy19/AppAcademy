@@ -32,7 +32,7 @@ def transpose(rows)
 
   dimension.times do |i| 
     dimension.times do |j| 
-      col[j][i] = rows[i][j] 
+      cols[j][i] = rows[i][j] 
     end 
   end 
 
