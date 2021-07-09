@@ -55,7 +55,7 @@ describe "transpose" do
   end 
 end 
 
-describe "pick_stock" do 
+describe "pick_stocks" do 
   it 'pick simple pair' do 
     expect(pick_stocks([3, 1, 0, 4, 6, 9])).to eq([2, 5]) 
   end 

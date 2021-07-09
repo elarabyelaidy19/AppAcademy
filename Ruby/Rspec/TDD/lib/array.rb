@@ -45,8 +45,8 @@ def pick_stocks(prices)
   best_profit = 0 
   best_pair = nil 
   
-  prices.each do |buy_date| 
-    prices.each do |sell_date| 
+  prices.each_index do |buy_date| 
+    prices.each_index do |sell_date| 
 
       next if sell_date < buy_date 
 
