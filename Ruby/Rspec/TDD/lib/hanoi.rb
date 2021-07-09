@@ -33,3 +33,10 @@ class TowersOfHanoiGame
       'Tower 1:  ' + @stacks[1].join('  ') + "\n" +
       'Tower 2:  ' + @stacks[2].join('  ') + "\n"
   end
+
+  def display
+    system('clear') 
+    render 
+  end 
+
+  
