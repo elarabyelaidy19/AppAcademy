@@ -27,3 +27,9 @@ class TowersOfHanoiGame
     raise "cannot move to smaller disc" unless valid_move?(from_tower, to_tower) 
     @stacks[to_tower] << @stacks[from_tower].pop 
   end 
+
+  def render
+    'Tower 0:  ' + @stacks[0].join('  ') + "\n" +
+      'Tower 1:  ' + @stacks[1].join('  ') + "\n" +
+      'Tower 2:  ' + @stacks[2].join('  ') + "\n"
+  end
