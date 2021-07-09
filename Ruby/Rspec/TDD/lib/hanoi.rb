@@ -21,3 +21,9 @@ class TowersOfHanoiGame
       @stacks[to_tower].last > @stacks[from_tower].last 
     )
   end 
+
+  def move(from_tower, to_tower) 
+    raise "can not move from empty stack" if @stacks[from_tower].empty? 
+    raise "cannot move to smaller disc" unless valid_move?(from_tower, to_tower) 
+    @stacks[to_tower] << @stacks[from_tower].pop 
+  end 
