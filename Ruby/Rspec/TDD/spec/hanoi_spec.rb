@@ -38,3 +38,36 @@ describe TowersOfHanoiGame do
       .to raise_error("cannot move onto smaller disk")
     end
   end
+
+  describe "#won?" do
+    it "is not won at the start" do
+      expect(towers).not_to be_won
+    end
+
+    it "is won when all disks are moved to tower 1" do
+      # Perform the moves to move the game into winning position
+      towers.move(0, 1)
+      towers.move(0, 2)
+      towers.move(1, 2)
+      towers.move(0, 1)
+      towers.move(2, 0)
+      towers.move(2, 1)
+      towers.move(0, 1)
+
+      expect(towers).to be_won
+    end
+
+    it "is won when all disks are moved to tower 2" do
+      # Perform the moves to move the game into winning position
+      towers.move(0, 2)
+      towers.move(0, 1)
+      towers.move(2, 1)
+      towers.move(0, 2)
+      towers.move(1, 0)
+      towers.move(1, 2)
+      towers.move(0, 2)
+
+      expect(towers).to be_won
+    end
+  end
+end
