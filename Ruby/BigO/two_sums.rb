@@ -60,5 +60,44 @@ def two_sum?(arr, target_sum)
   false
 end 
 
+
+def two_sum_indices(arr, target_sum) 
+  complements = {} 
+
+  arr.each_with_index do |el, i| 
+    complement, j =complements[target_sum - el] 
+    return [i, j] if complement 
+
+    complements[el] = [el, i] 
+  end 
+  nil 
+end 
+
+def four_sum?(arr, target_sum) 
+
+  hash = Hash.new 
+  two_sum_hash = Hash.new 
+  three_sum_hash = Hash.new 
+
+  arr.each do |num| 
+    return true if three_sum_hash[target_sum - num] 
+
+    two_sum_hash.each_key do |key| 
+      three_sum_hash[key + num] = true 
+    end 
+
+    hash.each_key do |key| 
+      two_sum_hash[key + num| = true  
+    end 
+
+    hash[num] = true  
+  end 
+
+  false
+   
+end 
+
+
+
  
 
