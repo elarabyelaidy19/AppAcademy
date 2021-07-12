@@ -38,3 +38,18 @@ def my_min_2(list)
   list.each { |num| min_num = num if num < min_num } 
   min_num
 end 
+
+# cubic time 
+# cubic space 
+
+def largest_contiguous_subsum1(list)
+  subs  = [] 
+
+  list.each_with_index do |idx1| 
+    (idx1..list.length - 1).each do |idx2| 
+      subs << list[idx1..idx2] 
+    end 
+  end 
+
+  subs.map { |sub| sub.inject(:+) }.max
+end 
