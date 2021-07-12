@@ -36,3 +36,14 @@ def second_anagram?(str1, str2)
 end 
 
 
+# linearithmic time  
+# linear space 
+def third_anagram?(str1, str2) 
+  sorted_strings = [str1, str2].map do |str| 
+    str.split('').sort.join 
+  end 
+
+  sorted_strings.first == sorted_strings.last 
+end 
+
+
