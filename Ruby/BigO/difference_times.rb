@@ -11,3 +11,21 @@ def my_min_1a(list)
   end 
   min_num
 end 
+
+
+
+# quadratic time 
+# constant space 
+
+def my_min_1b(list) 
+  list.each_with_index do |num1, i1| 
+    min = true 
+    list.each_with_index do |num2, i2| 
+      next if i2 == i1 
+      min = false if num2 < num1 
+    end 
+    return num1 if min
+  end 
+end 
+
+
