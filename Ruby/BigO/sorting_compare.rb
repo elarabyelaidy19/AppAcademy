@@ -83,3 +83,21 @@ class SortingDemo
       merge_sort(array_to_test)
     end
   end
+
+  def self.run_performance_tests(multiplier = 5, rounds = 3)
+    [1, 10, 100, 1000, 10000].each do |size|
+      size *= multiplier
+      wait_for_keypress(
+        "Press any key to benchmark sorts for #{size} elements"
+      )
+      performance_test(size, rounds)
+    end
+  end
+
+  def self.wait_for_keypress(prompt)
+    puts prompt
+    STDIN.getch
+  end
+end
+
+SortingDemo.run_performance_tests()
