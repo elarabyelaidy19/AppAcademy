@@ -36,3 +36,21 @@ class SortingDemo
       &prc
     )
   end
+
+  # NB: In Ruby, shift is an O(1) operation. This is not true of all languages.
+  def self.merge(left, right, &prc)
+    merged_array = []
+    prc = Proc.new { |num1, num2| num1 <=> num2 } unless block_given?
+    until left.empty? || right.empty?
+      case prc.call(left.first, right.first)
+      when -1
+        merged_array << left.shift
+      when 0
+        merged_array << left.shift
+      when 1
+        merged_array << right.shift
+      end
+    end
+
+    merged_array + left + right
+  end
