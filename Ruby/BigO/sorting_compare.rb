@@ -65,3 +65,21 @@ class SortingDemo
       [merge/count, bubble/count]
     end
   end
+
+  def self.random_arr(n)
+    Array.new(n) { rand(n) }
+  end
+
+  def self.run_bubble_sort(arrays)
+    arrays.each do |array|
+      array_to_test = array.dup
+      bubble_sort(array_to_test)
+    end
+  end
+
+  def self.run_merge_sort(arrays)
+    arrays.each do |array|
+      array_to_test = array.dup
+      merge_sort(array_to_test)
+    end
+  end
