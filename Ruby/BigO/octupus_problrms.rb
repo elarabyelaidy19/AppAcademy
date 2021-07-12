@@ -55,3 +55,18 @@ def nlogn_biggest_fish(fishes)
   #return the first element
   fishes.merge_sort(&prc)[0]
 end
+
+
+
+
+def linear_biggest_fish(fishes) 
+  biggest_fish = fishes.first 
+
+  fishes.each do |fish| 
+    if fish.length > biggest_fish.length 
+      biggest_fish = fish 
+    end 
+  end 
+
+  biggest_fish
+end 
