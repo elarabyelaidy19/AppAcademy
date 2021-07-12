@@ -13,6 +13,8 @@ end
 
 # -===========================================================
 
+# linearlogarithmic time 
+
 class Array
   #this should look familiar
   def merge_sort(&prc)
@@ -57,7 +59,7 @@ def nlogn_biggest_fish(fishes)
 end
 
 
-
+# linear time 
 
 def linear_biggest_fish(fishes) 
   biggest_fish = fishes.first 
