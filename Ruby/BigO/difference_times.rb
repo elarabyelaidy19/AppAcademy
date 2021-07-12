@@ -29,3 +29,12 @@ def my_min_1b(list)
 end 
 
 
+# linear time 
+# constant space  
+
+def my_min_2(list) 
+  min_num = list.first 
+
+  list.each { |num| min_num = num if num < min_num } 
+  min_num
+end 
