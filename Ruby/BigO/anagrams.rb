@@ -47,3 +47,22 @@ def third_anagram?(str1, str2)
 end 
 
 
+def fourth_anagram(str1, str2) 
+letter_counts1 = Hash.new(0) 
+letter_counts2 = Hash.new(0) 
+
+str1.each_char { |letter| letter_counts1[letter] += 1 }
+str2.each_char { |letter| letter_counts2[letter] += 1 } 
+
+letter_counts1 == letter_counts2
+end 
+
+def fourth_anagram_one_hash(str1, str2) 
+  letter_sums = Hash.new(0) 
+
+  str1.each_char { |letter| letter_sums[letter] += 1 }
+  str2.each_char { |letter| letter_sums[letter] -= 1 } 
+
+  letter_sums.each_value.all? { |sum| sum == 0 } 
+end 
+
