@@ -72,3 +72,25 @@ def linear_biggest_fish(fishes)
 
   biggest_fish
 end 
+
+
+
+# Dancing fish 
+#  linear time O(n) 
+
+tiles_hash = {
+    "up" => 0,
+    "right-up" => 1,
+    "right"=> 2,
+    "right-down" => 3,
+    "down" => 4,
+    "left-down" => 5,
+    "left" => 6,
+    "left-up" => 7
+}
+
+def slow_dance(direction, tiles_array) 
+  tiles_array.each_with_index do |tile, index| 
+    return index if direction == tile 
+  end 
+end 
