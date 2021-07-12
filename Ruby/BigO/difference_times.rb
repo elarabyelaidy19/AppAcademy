@@ -53,3 +53,21 @@ def largest_contiguous_subsum1(list)
 
   subs.map { |sub| sub.inject(:+) }.max
 end 
+
+
+# linear time 
+# constant space  
+
+def largest_contiguous_subsum2(list)  
+
+  largest = list.first 
+  current = list.first 
+
+  (1..list.length).each do |i| 
+    current = 0 if current < 0 
+    current += list[i] 
+    largest = current if largest < current 
+  end 
+
+  largest
+end 
