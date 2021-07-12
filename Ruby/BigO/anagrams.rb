@@ -1,3 +1,6 @@
+# factorial time 
+# factorial space 
+
 def first_anagram?(str1, str2) 
   all_anagrams(str1).include?(str2) 
 end 
@@ -15,6 +18,21 @@ def all_anagrams(string)
   end 
 
   new_anagrams
+end 
+
+# quadratic time 
+# linear space 
+
+def second_anagram?(str1, str2) 
+  arr1, arr2 = str1.split(''), str2.split('') 
+
+  arr1.each do |letter| 
+    target_idx = arr2.find_index(letter) 
+    return false unless target_idx 
+    arr2.delete_at(target_idx) 
+  end 
+
+  arr2.empty? 
 end 
 
 
