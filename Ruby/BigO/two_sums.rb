@@ -31,3 +31,5 @@ def okay_two_sum_a?(arr, target_sum)
   end 
   false 
 end 
+
+p okay_two_sum_a?([2, 4, 6, 1, 8], 15)  # => false 
