@@ -48,7 +48,17 @@ def okay_two_sum_b?(arr, target_sum)
   false 
 end 
 
+# make two sum function using hashes 
+def two_sum?(arr, target_sum) 
+  complements = {} 
 
+  arr.each do |el| 
+    return true if complements[target_sum - el] 
+    complements[el] = true 
+  end 
+  
+  false
+end 
 
-
+ 
 
