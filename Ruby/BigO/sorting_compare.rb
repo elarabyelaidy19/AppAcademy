@@ -20,3 +20,19 @@ class SortingDemo
 
     array
   end
+
+  def self.bubble_sort(array)
+    bubble_sort!(array.dup)
+  end
+
+  # Merge Sort: O(n*lg(n))
+  def self.merge_sort (array, &prc)
+    return array if array.length <= 1
+
+    mid_idx = array.length / 2
+    merge(
+      merge_sort(array.take(mid_idx), &prc),
+      merge_sort(array.drop(mid_idx), &prc),
+      &prc
+    )
+  end
