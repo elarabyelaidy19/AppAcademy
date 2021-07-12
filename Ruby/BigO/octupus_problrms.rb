@@ -94,3 +94,8 @@ def slow_dance(direction, tiles_array)
     return index if direction == tile 
   end 
 end 
+
+
+def fast_dance(direction, tiles_array) 
+  tiles_hash[direction] 
+end 
