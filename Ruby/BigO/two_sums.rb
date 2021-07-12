@@ -33,3 +33,22 @@ def okay_two_sum_a?(arr, target_sum)
 end 
 
 p okay_two_sum_a?([2, 4, 6, 1, 8], 15)  # => false 
+
+
+
+# linearithmic time 
+# linear space 
+def okay_two_sum_b?(arr, target_sum) 
+  arr = arr.sort 
+
+  arr.each_with_index do |el, i| 
+    match_idx = arr.bsearch_index { |el2| (target_sum - el) <=> el2 } 
+    return true if match_idx && match_idx != i 
+  end 
+  false 
+end 
+
+
+
+
+
