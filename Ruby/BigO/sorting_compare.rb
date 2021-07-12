@@ -54,3 +54,14 @@ class SortingDemo
 
     merged_array + left + right
   end
+
+  def self.performance_test(size, count)
+    arrays_to_test = Array.new(count) { random_arr(size) }
+
+    Benchmark.benchmark(Benchmark::CAPTION, 9, Benchmark::FORMAT,
+                        "Avg. Merge:  ", "Avg. Bubble: ") do |b|
+      merge = b.report("Tot. Merge:  ") { run_merge_sort(arrays_to_test) }
+      bubble = b.report("Tot. Bubble: ") { run_bubble_sort(arrays_to_test) }
+      [merge/count, bubble/count]
+    end
+  end
