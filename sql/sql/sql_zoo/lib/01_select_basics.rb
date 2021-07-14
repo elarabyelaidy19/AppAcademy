@@ -61,7 +61,13 @@ end
 def scandinavia
   # Show the name and the population for 'Denmark', 'Finland', 'Norway', and
   # 'Sweden'
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  SELECT 
+    name, population  
+  FROM 
+    countries 
+  WHERE 
+    name in ('Denmark', 'Finland', 'Norway', 'Sweden'); 
   SQL
 end
 
