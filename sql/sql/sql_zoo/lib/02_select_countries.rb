@@ -54,7 +54,7 @@ def population_in_millions
   # millions.
   execute(<<-SQL)
   SELECT
-    name, population/100000 
+    name, population/100000 AS population_millions
   FROM 
     countries 
   WHERE 
@@ -65,6 +65,12 @@ end
 def name_and_population
   # Show the name and population for 'France', 'Germany', and 'Italy'
   execute(<<-SQL)
+  SELECT 
+    name, population
+  FROM 
+    countries 
+  WHERE 
+    name in ('france', 'germany', 'italy');
   SQL
 end
 
