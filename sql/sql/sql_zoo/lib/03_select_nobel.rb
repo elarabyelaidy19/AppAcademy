@@ -62,7 +62,13 @@ end
 
 def millennial_peace_prizes
   # Give the name of the 'Peace' winners since the year 2000, including 2000.
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  SELECT 
+    winner 
+  FROM 
+    nobles 
+  WHERE 
+    subject = "peace" AND year >= 2000; 
   SQL
 end
 
