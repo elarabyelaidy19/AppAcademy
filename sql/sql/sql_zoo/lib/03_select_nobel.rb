@@ -76,6 +76,12 @@ def eighties_literature
   # Show all details (yr, subject, winner) of the Literature prize winners
   # for 1980 to 1989 inclusive.
   execute(<<-SQL)
+  SELECT * 
+  FROM 
+    nobles 
+  WHERE 
+    SUBJECT = "LITERATURE" 
+    AND YEAR BETWEEN 1980 AND 1989;
   SQL
 end
 
