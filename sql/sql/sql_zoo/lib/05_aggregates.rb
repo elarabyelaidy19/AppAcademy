@@ -69,6 +69,13 @@ end
 def country_counts
   # For each continent show the continent and number of countries.
   execute(<<-SQL)
+  select 
+    continent,
+    count(*) 
+  from 
+    countries 
+  group by 
+    continent;
   SQL
 end
 
