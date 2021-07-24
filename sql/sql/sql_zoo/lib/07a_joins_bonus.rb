@@ -118,6 +118,17 @@ def song_title_counts
   # Select the song names that appear on more than two albums. Also select the
   # COUNT of times they show up.
   execute(<<-SQL)
+  select 
+    tracks.song, 
+    count(distinct albums.asin) 
+  from 
+    tracks 
+  join 
+    albums on tracks.album = albums.asin 
+  group by 
+    tracks.song 
+  having
+    count( distinct albums.asin) > 2;
   SQL
 end
 
@@ -126,6 +137,18 @@ def best_value
   # pence. Find the good value albums - show the title, the price and the number
   # of tracks.
   execute(<<-SQL)
+    select 
+      albums.title, 
+      albums.price, 
+      count(tracks.*)
+    from 
+      albums 
+    join 
+      tracks on albums.asin = tracks.album 
+    group by 
+      albums.price 
+    having 
+      (albums.price / count(tracks.*) < .5;
   SQL
 end
 
