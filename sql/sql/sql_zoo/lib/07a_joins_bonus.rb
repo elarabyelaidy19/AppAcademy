@@ -104,7 +104,13 @@ end
 def eponymous_albums
   # An 'eponymous album' has a `title` that is the same as its recording
   # artist's name. Select the titles of all the eponymous albums.
-  execute(<<-SQL)
+  execute(<<-SQL
+  select 
+    albums.title 
+  from 
+    albums 
+  where 
+    albums.title = albums.artist; 
   SQL
 end
 
