@@ -63,12 +63,28 @@ def trek_films
   # these movies include the words Star Trek in the title). Order results by
   # year.
   execute(<<-SQL)
+  select 
+    id,
+    title,
+    yr
+  from 
+    movies 
+  where 
+    title like '%star trek%'
+  order by 
+    yr; 
   SQL
 end
 
 def films_by_id
   # What are the titles of the films with id 1119, 1595, 1768?
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  select 
+    title
+  from 
+    movies
+  where 
+    id in (1119, 1595, 1768);
   SQL
 end
 
