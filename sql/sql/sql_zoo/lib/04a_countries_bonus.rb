@@ -56,5 +56,20 @@ def large_neighbors
   # Some countries have populations more than three times that of any of their
   # neighbors (in the same continent). Give the countries and continents.
   execute(<<-SQL)
+  select 
+    c1.name, 
+    c1.continent 
+  from 
+    countries c1 
+  where 
+    c1.population > ( 
+      select 
+        max(c2.population) 
+      from 
+        countries c2 
+      where 
+        c1.population = 3 * c2.population 
+        and c1.continent = c2.continent 
+    );
   SQL
 end
