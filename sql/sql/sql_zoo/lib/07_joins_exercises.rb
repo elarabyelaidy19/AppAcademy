@@ -58,12 +58,34 @@ def ford_supporting_films
   # role. [Note: the ord field of casting gives the position of the actor. If
   # ord=1 then this actor is in the starring role]
   execute(<<-SQL)
+   select 
+    movies.title 
+  from 
+    movies
+  join 
+    casting on movies.id = casting.movie_id
+  join 
+    actors on actors.id = casting.actor_id
+  where 
+    actors.title = ' harrison ford' 
+    and casting.ord != 1;
   SQL
 end
 
 def films_and_stars_from_sixty_two
   # List the title and leading star of every 1962 film.
   execute(<<-SQL)
+  select 
+    movies.title
+    actors.name 
+  from 
+    movies
+  join 
+    casting on casting.movie_id = movies.id 
+  join 
+    actors on actors.id = casting.actor_id 
+  where 
+    casting.ord = 1 and movies.yr = 1962; 
   SQL
 end
 
