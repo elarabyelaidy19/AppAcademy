@@ -90,13 +90,25 @@ end
 
 def glenn_close_id
   # What id number does the actress 'Glenn Close' have?
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  select 
+    id 
+  from 
+    actros
+  where 
+    name = 'glenn closw';
   SQL
 end
 
 def casablanca_id
   # What is the id of the film 'Casablanca'?
   execute(<<-SQL)
+  select 
+    id 
+  from 
+    movies 
+  where 
+    title = 'casablanca';
   SQL
 end
 
