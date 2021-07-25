@@ -42,4 +42,63 @@ class Department
     @name = options['name']
   end
 
- 
+  def create
+    # in this example, we'll only allow new rows to be created; never
+    # modified.
+    raise 'already saved!' unless self.id.nil?
+
+    # execute an INSERT; the '?' gets replaced with the value name. The
+    # '?' lets us separate SQL commands from data, improving
+    # readability, and also safety (lookup SQL injection attack on
+    # wikipedia).
+    SchoolDatabase.instance.execute(<<-SQL, name)
+      INSERT INTO
+        departments (name)
+      VALUES
+        (?)
+    SQL
+
+    @id = SchoolDatabase.instance.last_insert_row_id
+  end
+
+  def professors
+    results = SchoolDatabase.instance.execute(<<-SQL, self.id)
+      SELECT
+        *
+      FROM
+        professors
+      WHERE
+        professors.department_id = ?
+    SQL
+
+    results.map { |result| Professor.new(result) }
+  end
+end
+
+class Professor
+  attr_accessor :id, :first_name, :last_name, :department_id
+
+  def initialize(options = {})
+    @id, @first_name, @last_name, @department_id =
+      options.values_at('id', 'first_name', 'last_name', 'department_id')
+  end
+
+  def create
+    raise 'already saved!' unless self.id.nil?
+
+    # execute an INSERT; the '?' gets replaced with the value name. The
+    # '?' lets us separate SQL commands from data, improving
+    # readability, and also safety (lookup SQL injection attack on
+    # wikipedia).
+    params = [self.first_name, self.last_name, self.department_id]
+    SchoolDatabase.instance.execute(<<-SQL, *params)
+      INSERT INTO
+        professors (first_name, last_name, department_id)
+      VALUES
+        (?, ?, ?)
+    SQL
+
+    @id = SchoolDatabase.instance.last_insert_row_id
+  end
+end
+{"mode":"full","isActive":false}
