@@ -17,18 +17,38 @@ require_relative './sqlzoo.rb'
 def num_stops
   # How many stops are in the database?
   execute(<<-SQL)
+  select 
+    count(distinct (stops.id)) 
+  from 
+    stops;
   SQL
 end
 
 def craiglockhart_id
   # Find the id value for the stop 'Craiglockhart'.
   execute(<<-SQL)
+  select 
+    stops.id 
+  from 
+    stops 
+  where 
+    stops.name = 'craigelockhart';
   SQL
 end
 
 def lrt_stops
   # Give the id and the name for the stops on the '4' 'LRT' service.
   execute(<<-SQL)
+  select 
+    routes.stop_id, 
+    stops.name
+  from  
+    routes 
+  join 
+    stops on stops.id = routes.stop_id 
+  where 
+    routes.copmany = 'lrt' 
+    and routes.num = 4;
   SQL
 end
 
@@ -53,7 +73,6 @@ def connecting_routes
   execute(<<-SQL)
   SQL
 end
-
 def cl_to_lr
   # Consider the query:
   #
