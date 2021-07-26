@@ -46,6 +46,13 @@ def all_depts_join
   # NB: you can avoid RIGHT OUTER JOIN (and just use LEFT) by swapping
   # the FROM and JOIN tables.
   execute(<<-SQL)
+  select 
+    teachers.name, 
+    depts.name 
+  from 
+    depts 
+  left outer join 
+    teachers on depts.id = teachers.dept_id;
   SQL
 end
 
@@ -54,6 +61,11 @@ def teachers_and_mobiles
   # 444 2266' if no number is given. Show teacher name and mobile
   # #number or '07986 444 2266'
   execute(<<-SQL)
+  select 
+    teachers.name, 
+    coalesce(teachers.mobile, '07986 444 2266') 
+  from 
+    teachers;
   SQL
 end
 
