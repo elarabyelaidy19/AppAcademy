@@ -73,7 +73,14 @@ def teachers_and_depts
   # Use the COALESCE function and a LEFT JOIN to print the teacher name and
   # department name. Use the string 'None' where there is no
   # department.
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  select 
+    teachers.name 
+    coalesce(depts.name, 'none') 
+  from 
+    teachers 
+  left outer join 
+    departments on teachers.dept_id = depts.id;
   SQL
 end
 
@@ -82,6 +89,14 @@ def num_teachers_and_mobiles
   # mobile phones.
   # NB: COUNT only counts non-NULL values.
   execute(<<-SQL)
+  select 
+    count(teachers.name), 
+    count(teachers.mobile) 
+  from 
+    teachers 
+  where 
+    teachers.name is not null 
+    and teachers.mobile is not null;
   SQL
 end
 
@@ -90,6 +105,15 @@ def dept_staff_counts
   # the number of staff. Structure your JOIN to ensure that the
   # Engineering department is listed.
   execute(<<-SQL)
+    select 
+      depts.name, 
+      count(teachers.id) 
+    from 
+      depts 
+    left outer join 
+      teachers on depts.id = teachers.dept_id 
+    group by 
+      dept.name;
   SQL
 end
 
