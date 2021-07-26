@@ -141,7 +141,22 @@ def cl_to_lr_by_name
   # copies of the stops table we can refer to stops by name rather than by
   # number. Change the query so that the services between 'Craiglockhart' and
   # 'London Road' are shown.
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  SELECT
+      a.company,
+      a.num,
+      stopa.name,
+      stopb.name
+    FROM
+      routes a
+    JOIN
+      routes b ON a.company = b.company AND a.num = b.num
+    JOIN
+      stops stopa ON a.stop_id = stopa.id
+    JOIN
+      stops stopb ON b.stop_id = stopb.id
+    WHERE
+      stopa.name = 'Craiglockhart' AND stopb.name = 'London Road'
   SQL
 end
 
@@ -149,6 +164,16 @@ def haymarket_and_leith
   # Give the company and num of the services that connect stops
   # 115 and 137 ('Haymarket' and 'Leith')
   execute(<<-SQL)
+  SELECT DISTINCT
+      start_routes.company,
+      start_routes.num
+    FROM
+      routes AS start_routes
+    JOIN
+      routes AS end_routes ON start_routes.company = end_routes.company
+        AND start_routes.num = end_routes.num
+    WHERE
+      start_routes.stop_id = 115 AND end_routes.stop_id = 137
   SQL
 end
 
