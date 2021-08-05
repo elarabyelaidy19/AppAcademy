@@ -70,6 +70,9 @@ def pulp_fiction_actors
   # practice using joins
   # display the id and name of all actors in the movie Pulp Fiction
   # hint: use 'select', 'joins', 'where'
+  Actor.join(movies)
+  .select('actor.id, actor.name')
+  .where('movies.title = ?', "Pulb fiction")
 
 end
 
