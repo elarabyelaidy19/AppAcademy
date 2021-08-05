@@ -60,6 +60,9 @@ def alphabetized_actors
   # Note: Ubuntu users may find that special characters
   # are alphabetized differently than the specs.
   # This spec might fail for Ubuntu users. It's ok!
+  Actor.select(:id, :name) 
+  .order_by(:name)
+  .limit(10)
 
 end
 
