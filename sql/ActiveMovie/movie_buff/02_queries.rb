@@ -8,13 +8,21 @@ def eighties_b_movies
 end
 
 def bad_years
-  # List the years in which a movie with a rating above 8 was not released.
-
+  # List the years in which a movie with a rating above 8 was not released. 
+  Movie 
+    .group(:year)
+    .having(' MAX(score) < 8 ') 
+    .pluck(:year) 
 end
 
 def cast_list(title)
   # List all the actors for a particular movie, given the title.
   # Sort the results by starring order (ord). Show the actor id and name.
+  Actor 
+    .select(:id, :name) 
+    .joins(:movies)  
+    .where({ movies: {title: title} }) 
+    .order('casting.ord ASC') 
 
 end
 
