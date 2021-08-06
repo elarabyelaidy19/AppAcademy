@@ -37,7 +37,13 @@ def costars(name)
 end
 
 def actor_out_of_work
-  # Find the number of actors in the database who have not appeared in a movie
+  # Find the number of actors in the database who have not appeared in a movie 
+
+  Actor 
+    .select(:id) 
+    .joins(' left outer joins castings castings.actor_id = actor.id') 
+    .where({castings: { movie_id: nil } }) 
+    .count
 
 end
 
