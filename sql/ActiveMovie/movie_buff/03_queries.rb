@@ -9,7 +9,13 @@ def what_was_that_one_with(those_actors)
 end
 
 def golden_age
-  # Find the decade with the highest average movie score.
+  # Find the decade with the highest average movie score. 
+  Movie 
+    .select('AVG(score) AS avg_score', '(year/10) * 10 AS decade') 
+    .group('decade')  
+    .order('avg_score DESC') 
+    .first
+    .decade
 
 end
 
