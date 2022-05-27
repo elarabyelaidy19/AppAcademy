@@ -142,5 +142,5 @@ arr = [1,11,14,12,11,13,17,9]
 arr.inject { |acc, ele| acc + ele} 
 arr.inject { |acc, ele| acc * ele } 
 arr.inject { |acc, ele| acc > ele ? ele : acc } # return min element  
-arr.injetc(&:+) # sum
+arr.injetc(&:+) # sum call to_proc on the method
 ```
