@@ -143,4 +143,34 @@ arr.inject { |acc, ele| acc + ele}
 arr.inject { |acc, ele| acc * ele } 
 arr.inject { |acc, ele| acc > ele ? ele : acc } # return min element  
 arr.injetc(&:+) # sum call to_proc on the method
+(0..10).injetc([0,1]) { |fib| fib << fib.last(2).inject(&:+) }
+``` 
+
+# Scope
+-  Scope describes the location in your program where a variable is accessible. 
+- **Lexical Scope:** Lexical scope describes how a variable name evaluates in nested code
+- **Local Scope:** scope the function create inside it, the suronded scope also considered local scope.
+- **Global Scope:** any variables define in global scope can be refernced anywhere in your code.
+- Methods create there own scope. and have not access to it surrounded scope. code out in the open as another local scope, although it's not a method.
+- Constants exists in global scope. constants can not be reassigned but it can be mutated. 
+- Blocks and other structures like conditions or while loops don't have their own scope, they are really a part of the containing method's scope.  
+ 
+
+
+# Reference  
+- every var create a refernce to it's value in memory, when you update the value the ref doesn't change. 
+- assigning the same var to another it will point to the same location in memory. if you modify one of them it will change the value of the other one. 
+- reassign create new ref memory location.
+
+```ruby 
+str = 'hi' 
+str2 = 'hi' 
+str == str2 # true 
+str.equal?(str2) # false different objects and diff memory locations 
+
+str = str2  
+str.equal?(str2) # true we assigned the reference to the same memory location
+
+grid = Array.new(3, Array.new(3)) # create 2D array of the same array meaning the inner arrays have the same memory address change in one array it will change all 
+grid = Array.new(3) { Array.new(3) } # create 2D array of distinct arrays 
 ```
