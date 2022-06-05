@@ -174,3 +174,123 @@ str.equal?(str2) # true we assigned the reference to the same memory location
 grid = Array.new(3, Array.new(3)) # create 2D array of the same array meaning the inner arrays have the same memory address change in one array it will change all 
 grid = Array.new(3) { Array.new(3) } # create 2D array of distinct arrays 
 ```
+
+
+# Test Driven Development 
+- TDD (Test Driven Development) is a strategy to develop programs where the requirements for the program are turned into test cases. 
+- the behaviours of components are examples of simple test cases. 
+
+```ruby 
+1- start with an empty definition 
+2- wirte a new test  
+3- make changes to the code to make it pass
+def prime?(n) 
+  return false if n < 2
+  (2..n).each do |i| 
+      return false if n % i == 0 
+  end 
+
+end 
+```
+
+# Rspec
+- **Automated Test:** developers will code test suites, a collection of test cases that are intended to show that a program demonstrates some specified set of behaviours. 
+- **describe:** names the method being tested. 
+- **it:** express the behaviour of the method being tested. 
+- **expect:** show how that behavior is tested.
+- **context:** outline differnt scenarios that our code is expected to satisfy.
+``` 
+/example_project
+  ├── lib
+  │   ├── add.rb
+  │   └── prime.rb
+  └── spec
+      ├── add_spec.rb
+      └── prime_spec.rb
+```
+
+```ruby 
+def add(a, b) 
+  a + b
+end 
+
+describe "add method" do 
+  it "should accept two number as arguments" do 
+    expect { add(a,b) }.to_not raise_error
+  end 
+
+  context "add positive numbers" do 
+    it "should add two numbers and return the result" do 
+      expect(add(1, 4)).to eq(5) 
+      expect(add(12, 0)).to eq(12)
+    end  
+  end 
+
+  context "add negative numbers" do 
+    it "should add two numbers and return the result" do 
+      expect(add(-1, -4)).to eq(-5) 
+      expect(add(-12, -3)).to eq(-15)
+    end
+  end 
+
+end 
+```
+
+
+# Exceptions
+- Upon reaching an exception, the default behavior in ruby is to terminate the program. and you can define the behaviour to deal with exception. 
+- **begin..rescue**: to handle exceptions 
+## Types of ruby errors 
+<b>
+
+- ZeroDivisionError
+- ArgumentError
+- TypeError
+- NameError
+- NoMethodError
+- IndexError 
+
+</b>
+
+## Handling Exceptions
+
+```ruby 
+n = 0 
+begin  
+  puts " dividing 10 by #{n} " 
+  ans = 10 / n 
+  puts "the answer is #{ans}" 
+rescue 
+  puts "division by zero error occured" 
+end 
+
+```
+
+## Raising Exceptions
+- we need exceptions to raise an message when an exceptional event occurs. 
+- it helps to hide the ineternal working of your code. 
+-  **raise** is how we bring up an exception, whereas **begin...rescue** is how we react to that exception.
+
+
+```ruby 
+def format(fn, ln) 
+  if !(fn.instance_of?(String) && ln.instance_of?(String)) 
+    raise "argumnets must be string"
+  end
+   
+  return fn.upcase +" " + ln.upcase
+end 
+
+fn = 24 
+ln = true 
+
+begin 
+  puts format(fn, ln) 
+rescue 
+  puts "there is an exceptions happend"
+end  
+
+puts format("agmed", "wahed") # agmed wahed 
+puts format(6, true) # NoMethodError: undefined method `capitalize' for 42:Integer 
+
+```
