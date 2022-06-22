@@ -44,4 +44,12 @@ def replace(s)
         end 
     end   
     s
+end  
+
+
+def power_of_two?(num) 
+    (0..50).each do |n| 
+        return true if 2**n == num 
+    end 
+    false
 end 

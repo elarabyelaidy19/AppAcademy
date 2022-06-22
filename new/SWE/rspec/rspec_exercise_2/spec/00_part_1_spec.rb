@@ -70,7 +70,7 @@ describe "Part 1:" do
     it "should accept a number as an arg" do
       expect { power_of_two?(16) }.to_not raise_error
     end
-
+    
     it "should not use the built-in Math#log methods" do
       expect(Math).to_not receive(:log2)
       expect(Math).to_not receive(:log)
