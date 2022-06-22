@@ -20,3 +20,28 @@ def merge(h1, h2)
     end 
     h
 end
+
+
+def censor(s, arr) 
+    words = s.split(" ") 
+    new_words = words.map do |w| 
+        if arr.include?(w.downcase) 
+            replace(w) 
+        else  
+            w 
+        end
+    end 
+
+    new_words.join(" ") 
+    
+end 
+
+def replace(s) 
+    vowels = "aioueAIOUE"  
+    s.each_char.with_index do |c, i| 
+        if vowels.include?(c)  
+            s[i] = "*" 
+        end 
+    end   
+    s
+end 
