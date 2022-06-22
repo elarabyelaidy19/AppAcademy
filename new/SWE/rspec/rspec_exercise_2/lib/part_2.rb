@@ -14,4 +14,26 @@ def palindrome?(s)
     true 
 end 
 
-def substrings()
+def substrings(s) 
+    res = []  
+    l = s.length  
+    (0...l).each do |i| 
+        (i...l).each do |j| 
+            res << s[i..j]
+        end 
+    end 
+    res 
+end  
+puts substrings("jumb")
+
+
+
+
+def palindrome_substrings(s) 
+    strs = substrings(s) 
+    res = []
+    strs.each do |str| 
+        res << str if palindrome?(str) && str.length > 1
+    end
+    res
+end 
