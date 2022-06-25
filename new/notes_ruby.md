@@ -293,4 +293,53 @@ end
 puts format("agmed", "wahed") # agmed wahed 
 puts format(6, true) # NoMethodError: undefined method `capitalize' for 42:Integer 
 
+``` 
+
+
+# Blocks 
+- blocks is a code block that is passed into a method to bexcuted.
+- `["a", "b", "c"].map(&:upcase)` &:upcase 
+  - :upcase is a symbol that referring to the String#upcase method. 
+  - & convert this method to an object that can be passed to a method.
+
+```ruby  
+array.map { |block_param| block_param.method } 
+array.map(&:method) 
+
+```
+
+# Procs 
+- proc is an object that contains a block of code. they allow to save blocks to variables.
+- proc.call will evaluate the last line of the block.
+- using & to convert a block to a proc and proc to block.
+
+```ruby
+# creating a proc 
+doubler = Proc.new { |n| n * 2 }
+# calling a proc
+doubler.call(2) # 4
+
+# Passing a proc to a method
+
+def add_and_proc(a, b, proc) 
+  sum = a + b
+  proc.call(sum) 
+end
+
+doubler = Proc.new() { |n| n * 2 } 
+add_and_proc(2, 3, doubler) # 8
+
+
+# Automatic Procs  - when you don't want to create a proc but you want to use a block.  
+def add_and_proc(a, b, &proc) 
+  sum = a + b
+  proc.call(sum) 
+end
+
+add_and_proc(2, 3) { |n| n * 2 } # 8
+
+# proc into a method
+double = Proc.new { |n| n * 2 }
+[1,2,3].map(&double) # [2, 4, 6]
+
 ```

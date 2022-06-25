@@ -37,3 +37,20 @@ def palindrome_substrings(s)
     end
     res
 end 
+
+
+def contains_duplicate(arr)
+   arr.any? { |n| arr.count(n) > 1 }
+end 
+
+
+def contains_duplicate(arr) 
+    freq = [0] * 10**9 
+    arr.each do |n| 
+        freq[n]+=1 
+    end 
+    freq.each do |n| 
+        return false if n > 1
+    end 
+    true 
+end  
