@@ -343,3 +343,21 @@ double = Proc.new { |n| n * 2 }
 [1,2,3].map(&double) # [2, 4, 6]
 
 ```
+
+
+
+# Classes 
+### Class and instance variables
+- calss variable is shared by all instances of the class starts with @@. changing class variable will change it for all instances.
+- an @instance_variable will be a distinct variable in each instance of a class; changing the variable will only affect that one instance 
+- a @@class_variable will be shared among all instances of a class; changing the variable will effect all instances because all instances of the class. 
+- a CLASS_CONSTANT will be shared among all instances of a class, but cannot be changed. 
+
+### Class and instance methods
+- an instance method is one that is called on an instance of a class 
+- A class method is a method that is called directly on the class. 
+- we define class methods by adding self. to the front of a method name. In this context, self refers to the Dog class itself. we cannot call class methods on an instance; instead we call it on the Dog class directly .
+- Class#method_name means method_name is an instance method
+- Class::method_name means method_name is a class method
+
+
