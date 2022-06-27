@@ -361,3 +361,20 @@ double = Proc.new { |n| n * 2 }
 - Class::method_name means method_name is a class method
 
 
+
+# Monkey Batching
+- we can add methods to an existing class. 
+- self in context of a class is the class itself. 
+- self in context of an method is object that called the method. 
+
+
+```ruby 
+class String 
+    def upcase? 
+        self.upcase == self
+    end 
+end 
+puts "HELLO".upcase?
+
+
+```
