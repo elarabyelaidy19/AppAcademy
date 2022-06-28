@@ -81,7 +81,6 @@ from posts;
 select product, (price - coalsece(discount, 0)) as price  
 from products; 
 == 
-
 select product, ( 
     price - case 
                 when discount is null then 0 

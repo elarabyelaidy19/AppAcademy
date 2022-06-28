@@ -375,6 +375,21 @@ class String
     end 
 end 
 puts "HELLO".upcase?
+```
 
 
+# Requiring Files And User Inputs
+- **require_relative** is a method we can use to specify a path to another ruby file. As its name suggests, we need to specify a path that is relative to our current location. 
+- The **gets** method is unique in that when it is called, it will halt execution of the code and allow the user to type characters until they press enter on their keyboard. 
+- every string returned from gets will end in \n as a result of this. We should be very aware of this extra character when using gets.  
+- To fix the issue in the previous code, we can use a string method, **chomp** to remove all newline chars (\n) at the end of a string by returning a new string. 
+- gets take string
+
+```ruby 
+
+p "enter your name" 
+name = gets.chomp  # to delete /n
+p "enter your age" 
+age = gets.chomp.to_i # delete /n and convert string into int
+p "your name is #{name} and your age is #{age}" 
 ```
