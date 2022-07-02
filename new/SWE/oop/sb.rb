@@ -52,6 +52,7 @@ class Queue
     def queue 
         @queue ||= []
     end
+     
 end 
 
 q = Queue.new 

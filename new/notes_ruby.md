@@ -393,3 +393,18 @@ p "enter your age"
 age = gets.chomp.to_i # delete /n and convert string into int
 p "your name is #{name} and your age is #{age}" 
 ```
+
+
+# OOP 
+
+## Abstraction and Encapsulation
+
+## Getters and Setters
+- getters and setters are used to access and modify instance variables. 
+- attr_reader is used to create getters for instance variables.
+- attr_writer is used to create setters for instance variables.
+- attr_accessor is used to create both getters and setters for instance variables. 
+- Only use getters and setters for what you want to expose in your classes.
+
+## Syntatic Sugar
+- syntatic sugar is a way to make your code more readable.
