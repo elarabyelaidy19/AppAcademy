@@ -1,3 +1,6 @@
+# Active Record
+
+
 # Controller 
 
 ## params 
