@@ -52,7 +52,9 @@ class Code
   def num_near_matches(code) 
     count = 0 
     (0...code.length).each do |i| 
-      count += 1 if self.pegs.include?(code[i]) && code[i] != self[i]  
+      if code[i] != self[i] && self.pegs.include?(code[i]) 
+        count += 1 
+      end 
     end 
     count
   end 
