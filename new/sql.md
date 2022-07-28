@@ -89,4 +89,32 @@ select product, (
     ) as net_price
 from products; 
 
+``` 
+
+# Sqlite3 
+- to create a database in sqlite3, you need to use the sqlite3 command line tool. 
+- first create file.sql and write the sql commands in it cat the file commands in file.db in the sqlite3 database. then open the database in sqlite3 using sqlite3 database_name.db. 
+ ```cat import_db.sql | sqlite3 db_name.db```
+- you can run sql query in pry by require sqlite3 and then run sqlite3.db.execute("query").
+```ruby
+# - create an instance of sqlite3 with the database file. 
+sqlite3 = SQLite3::Database.new("db_name.db")
+# - execute the query.
+sqlite3.execute("select * from table_name")
 ```
+
+## Create connection to database in sqlite3:
+- initialize a new instance of SQLite3::Database and pass the db_file.db to the parent class.
+```ruby 
+class DBConnection < SQLite3::Database
+  include Singleton
+
+  def initialize
+    super('db_name.db')
+    self.type_translation = true
+    self.results_as_hash = true
+  end
+end 
+
+```  
+
