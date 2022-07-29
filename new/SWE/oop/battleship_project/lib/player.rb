@@ -1,3 +1,6 @@
-class Player
+class Player    
+    def
+        
+    end 
 
 end
