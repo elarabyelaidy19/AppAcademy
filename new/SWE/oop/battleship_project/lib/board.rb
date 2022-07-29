@@ -40,7 +40,7 @@ class Board
     end 
 
     def place_random_ships
-        num = @size * 0.25
+        num = (@size * 0.25).floor
         while self.num_ships < num 
             row = rand(0...@grid.length) 
             col = rand(0...@grid.length) 
