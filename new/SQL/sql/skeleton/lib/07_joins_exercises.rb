@@ -94,7 +94,13 @@ def andrews_films_and_leads
   from movies 
   join castings on movies.id = castings.movie_id
   join actors on castings.actor_id = actors.id
-  where actors.name = 'Julie Andrew' 
+  where movies.id in ( 
+    select movies.id 
+    from movies  
+    join castings on movies.id = castings.movie_id
+    join actors on castings.actor_id = actors.id 
+    where name = 'Julie Andrews'
+  ) and ord = 1  
   SQL
 end
 
@@ -102,6 +108,14 @@ def prolific_actors
   # Obtain a list in alphabetical order of actors who've had at least 15
   # starring roles.
   execute(<<-SQL)
+  select name 
+  from actors
+  join castings on actors.id = castings.actor_id 
+  join movies on movies.id = castings.movie_id 
+  where ord = 1 
+  group by name 
+  having count(name) >= 15 
+  order by name asc
   SQL
 end
 
@@ -109,11 +123,29 @@ def films_by_cast_size
   # List the films released in the year 1978 ordered by the number of actors
   # in the cast (descending), then by title (ascending).
   execute(<<-SQL)
+  select title, count(actors.id)
+  from movies  
+  join castings on movies.id = castings.movie_id
+  join actors on castings.actor_id = actors.id 
+  where yr = 1978 
+  group by movies.id
+  order by count(*) desc, title asc
   SQL
 end
 
 def colleagues_of_garfunkel
   # List all the people who have played alongside 'Art Garfunkel'.
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  select name 
+  from movies
+  join castings on movies.id = castings.movie_id
+  join actors on castings.actor_id = actors.id
+  where name != 'Art Garfunkel' and title in ( 
+    select title 
+    from movies  
+    join castings on movies.id = castings.movie_id
+    join actors on castings.actor_id = actors.id 
+    where name = 'Art Garfunkel'
+  )
   SQL
 end
