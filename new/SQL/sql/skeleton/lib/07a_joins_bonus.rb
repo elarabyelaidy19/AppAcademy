@@ -117,15 +117,27 @@ def top_track_counts
   # Wagner's Ring cycle has an imposing 173 tracks, Bing Crosby clocks up 101
   # tracks. List the top 10 albums. Select both the album title and the track
   # count, and order by both track count and title (descending).
-  execute(<<-SQL)
-  
+  execute(<<-SQL) 
+  select title, count(song) 
+  from albums a 
+  join tracks t on a.asin = t.album 
+  group by title 
+  order by count(song) desc, title desc
+  limit 10
   SQL
 end
 
 def rock_superstars
   # Select the artist who has recorded the most rock albums, as well as the
   # number of albums. HINT: use LIKE '%Rock%' in your query.
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  select artist, count(distinct a.title)
+  from albums a 
+  join styles s on a.asin = s.album 
+  where style like '%Rock%' 
+  group by a.artist 
+  order by count desc 
+  limit 1
   SQL
 end
 
@@ -137,6 +149,7 @@ def expensive_tastes
   # HINT: Start by getting the number of tracks per album. You can do this in a
   # subquery. Next, JOIN the styles table to this result and use aggregates to
   # determine the average price per track.
-  execute(<<-SQL)
+  execute(<<-SQL) 
+  
   SQL
 end
