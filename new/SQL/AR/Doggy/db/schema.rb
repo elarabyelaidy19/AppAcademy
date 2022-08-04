@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_03_043744) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_04_012712) do
   create_table "dogs", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -22,11 +22,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_043744) do
     t.integer "toy_id", null: false
   end
 
-  create_table "owners", force: :cascade do |t|
-    t.string "name"
+  create_table "kitties", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "owner_index", unique: true
+    t.string "home_page_url"
+    t.index ["home_page_url"], name: "index_kitties_on_home_page_url"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "name_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name_address"], name: "owner_index", unique: true
   end
 
   create_table "toys", force: :cascade do |t|
