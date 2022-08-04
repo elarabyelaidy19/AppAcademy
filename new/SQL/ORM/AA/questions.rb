@@ -41,6 +41,8 @@ class Questions
         Reply.find_by_question_id(@id)
     end 
 
-
+    def question_followers
+        QuestionFollow.followers_for_question_id(@id)
+    end 
 
 end 

@@ -35,4 +35,9 @@ class User
     users.map { |user| User.new(user) }
   end
 
+  def followed_questions 
+    followed_questions_for_user_id(@id)
+  end 
+
+  
 end 
