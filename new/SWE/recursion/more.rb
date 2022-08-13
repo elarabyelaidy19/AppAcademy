@@ -82,4 +82,57 @@ def exp2(base, power)
 end 
 
 p exp2(2,3)
-p exp2(2,4)
+p exp2(2,4) 
+
+
+
+class Array
+    def deep_dup(arr) 
+        return arr.dup if arr.empty? 
+        new_array = [] 
+        self.each do |ele| 
+            new_array << (ele.is_a? Array ? ele.deep_dup : ele)  
+        end 
+        new_array
+    end  
+
+    def dd_map
+        map { |ele| ele.is_a? Array ? ele.dd_map : ele }
+    end 
+end 
+
+
+def fibs_rec(n) 
+    if n <= 2 
+        return [0, 1].take(n) 
+    else  
+        fibs = fibs_rec(n-1) 
+        fibs << fibs[-1] + fibs[-2] 
+    end
+    fibs 
+end 
+
+# p fibs_rec(8)
+
+def bsearch(array, target) 
+    helper(array, target, 0, array.length)
+end 
+
+def helper(arr, target, starts ,ends) 
+    return nil if starts > ends
+    middle = (starts + ends) / 2  
+    if (arr[middle] == target)
+        return middle 
+    elsif arr[middle] > target 
+        return helper(arr, target, starts, middle-1) 
+    else 
+        return helper(arr, target, middle+1, ends) 
+    end 
+end
+
+p bsearch([1,2,4,6,7], 3)
+
+p bsearch([1,2,4,6,7], 2)
+
+p bsearch([1,2,4,6,7], 7)
+
