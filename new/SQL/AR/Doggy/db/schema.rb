@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_04_012712) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_15_083305) do
   create_table "dogs", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "owner_id"
+    t.index ["name"], name: "index_dogs_on_name"
   end
 
   create_table "dogs_toys", id: false, force: :cascade do |t|
@@ -26,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_04_012712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "home_page_url"
-    t.index ["home_page_url"], name: "index_kitties_on_home_page_url"
+    t.index ["home_page_url"], name: "index_kitties_on_home_page_url", unique: true
   end
 
   create_table "owners", force: :cascade do |t|
@@ -41,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_04_012712) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "color"
+    t.integer "dog_id"
     t.index ["name"], name: "index_toys_on_name"
   end
 

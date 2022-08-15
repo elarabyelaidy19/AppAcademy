@@ -1,0 +1,278 @@
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at /mnt/c/git/AppAcademy/new/SQL/AR/skeleton/bin/rails:9)
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "prereq_id" integer, "instructor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "enrollments"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "enrollments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "student_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170710184251)[0m
+  [1m[35m (8.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170710184213),
+(20170710184239);
+
+[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-15 13:32:10.448675"], ["updated_at", "2022-08-15 13:32:10.448675"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "65805bb32ba1622825504b25a666a1a58333cf17"], ["created_at", "2022-08-15 13:32:10.466124"], ["updated_at", "2022-08-15 13:32:10.466124"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "prereq_id" integer, "instructor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "enrollments"[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "enrollments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "student_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170710184251)[0m
+  [1m[35m (8.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170710184213),
+(20170710184239);
+
+[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-15 13:32:10.560866"], ["updated_at", "2022-08-15 13:32:10.560866"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-08-15 13:32:10.574105"], ["key", "environment"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "65805bb32ba1622825504b25a666a1a58333cf17"], ["created_at", "2022-08-15 13:32:10.586366"], ["updated_at", "2022-08-15 13:32:10.586366"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 13:32:10.678222"], ["updated_at", "2022-08-15 13:32:10.678222"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 13:32:10.681948"], ["updated_at", "2022-08-15 13:32:10.681948"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 13:32:10.682563"], ["updated_at", "2022-08-15 13:32:10.682563"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 13:32:10.683077"], ["updated_at", "2022-08-15 13:32:10.683077"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 13:32:10.683779"], ["updated_at", "2022-08-15 13:32:10.683779"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("name", "instructor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ruby 101"], ["instructor_id", 5], ["created_at", "2022-08-15 13:32:10.697177"], ["updated_at", "2022-08-15 13:32:10.697177"]]
+  [1m[36mCourse Create (0.0ms)[0m  [1m[32mINSERT INTO "courses" ("name", "prereq_id", "instructor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ruby 102"], ["prereq_id", 1], ["instructor_id", 5], ["created_at", "2022-08-15 13:32:10.698277"], ["updated_at", "2022-08-15 13:32:10.698277"]]
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments"[0m
+  [1m[36mEnrollment Create (0.6ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 1], ["student_id", 3], ["created_at", "2022-08-15 13:32:10.711469"], ["updated_at", "2022-08-15 13:32:10.711469"]]
+  [1m[36mEnrollment Create (0.1ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 1], ["student_id", 4], ["created_at", "2022-08-15 13:32:10.713168"], ["updated_at", "2022-08-15 13:32:10.713168"]]
+  [1m[36mEnrollment Create (0.1ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 2], ["student_id", 1], ["created_at", "2022-08-15 13:32:10.713943"], ["updated_at", "2022-08-15 13:32:10.713943"]]
+  [1m[36mEnrollment Create (0.0ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 2], ["student_id", 2], ["created_at", "2022-08-15 13:32:10.714677"], ["updated_at", "2022-08-15 13:32:10.714677"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (2.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 13:57:37.071863"], ["updated_at", "2022-08-15 13:57:37.071863"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 13:57:37.073612"], ["updated_at", "2022-08-15 13:57:37.073612"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 13:57:37.074163"], ["updated_at", "2022-08-15 13:57:37.074163"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 13:57:37.074704"], ["updated_at", "2022-08-15 13:57:37.074704"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 13:57:37.075214"], ["updated_at", "2022-08-15 13:57:37.075214"]]
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Destroy (0.4ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mCourse Destroy (0.0ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[31mrollback transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (7.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 13:59:22.960320"], ["updated_at", "2022-08-15 13:59:22.960320"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 13:59:22.961966"], ["updated_at", "2022-08-15 13:59:22.961966"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 13:59:22.962540"], ["updated_at", "2022-08-15 13:59:22.962540"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 13:59:22.963092"], ["updated_at", "2022-08-15 13:59:22.963092"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 13:59:22.963678"], ["updated_at", "2022-08-15 13:59:22.963678"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Destroy (0.4ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mCourse Destroy (0.0ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[31mrollback transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (7.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 14:00:55.073081"], ["updated_at", "2022-08-15 14:00:55.073081"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 14:00:55.074334"], ["updated_at", "2022-08-15 14:00:55.074334"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 14:00:55.074812"], ["updated_at", "2022-08-15 14:00:55.074812"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 14:00:55.075277"], ["updated_at", "2022-08-15 14:00:55.075277"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 14:00:55.075760"], ["updated_at", "2022-08-15 14:00:55.075760"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Destroy (0.4ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mCourse Destroy (0.0ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[31mrollback transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (3.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 14:01:59.833410"], ["updated_at", "2022-08-15 14:01:59.833410"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 14:01:59.835528"], ["updated_at", "2022-08-15 14:01:59.835528"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 14:01:59.836073"], ["updated_at", "2022-08-15 14:01:59.836073"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 14:01:59.836565"], ["updated_at", "2022-08-15 14:01:59.836565"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 14:01:59.837092"], ["updated_at", "2022-08-15 14:01:59.837092"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Destroy (0.4ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mCourse Destroy (0.0ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[31mrollback transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (7.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 14:03:23.959017"], ["updated_at", "2022-08-15 14:03:23.959017"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 14:03:23.960526"], ["updated_at", "2022-08-15 14:03:23.960526"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 14:03:23.961345"], ["updated_at", "2022-08-15 14:03:23.961345"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 14:03:23.962040"], ["updated_at", "2022-08-15 14:03:23.962040"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 14:03:23.962622"], ["updated_at", "2022-08-15 14:03:23.962622"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Destroy (0.4ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mCourse Destroy (0.0ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[31mrollback transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (7.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Destroy (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CJ"], ["created_at", "2022-08-15 14:03:56.402127"], ["updated_at", "2022-08-15 14:03:56.402127"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flarnie"], ["created_at", "2022-08-15 14:03:56.403550"], ["updated_at", "2022-08-15 14:03:56.403550"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jeff"], ["created_at", "2022-08-15 14:03:56.404091"], ["updated_at", "2022-08-15 14:03:56.404091"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Georges St. Pierre"], ["created_at", "2022-08-15 14:03:56.404613"], ["updated_at", "2022-08-15 14:03:56.404613"]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ned"], ["created_at", "2022-08-15 14:03:56.405124"], ["updated_at", "2022-08-15 14:03:56.405124"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Destroy (0.4ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mCourse Destroy (0.0ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[31mrollback transaction[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from require at bin/rails:9)
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (13.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ali"], ["created_at", "2022-08-15 14:04:56.427128"], ["updated_at", "2022-08-15 14:04:56.427128"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (6.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."student_id" = ?[0m  [["student_id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (4.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mEnrollment Create (10.9ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_id", 2], ["student_id", 6], ["created_at", "2022-08-15 14:06:37.948439"], ["updated_at", "2022-08-15 14:06:37.948439"]]
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEnrollment Load (1.0ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."student_id" = ?[0m  [["student_id", 6]]
