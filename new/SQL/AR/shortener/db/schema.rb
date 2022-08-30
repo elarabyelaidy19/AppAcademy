@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_162502) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_155908) do
   create_table "shortend_urls", force: :cascade do |t|
     t.string "short_url", null: false
     t.string "long_url", null: false
@@ -26,6 +26,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_162502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.string "shortend_url_id", null: false
+    t.string "visitor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index "\"shortend_url\"", name: "index_visits_on_shortend_url"
+    t.index ["visitor_id"], name: "index_visits_on_visitor_id"
   end
 
 end
