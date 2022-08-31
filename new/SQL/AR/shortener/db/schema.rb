@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_155908) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_165808) do
   create_table "shortend_urls", force: :cascade do |t|
     t.string "short_url", null: false
     t.string "long_url", null: false
@@ -21,10 +21,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_155908) do
     t.index ["submitter_id"], name: "index_shortend_urls_on_submitter_id"
   end
 
+  create_table "tag_topics", force: :cascade do |t|
+    t.string "topic", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic"], name: "index_tag_topics_on_topic", unique: true
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.string "url_id", null: false
+    t.string "tag_topic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_topic_id"], name: "index_taggings_on_tag_topic_id"
+    t.index ["url_id"], name: "index_taggings_on_url_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "premium", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -2,7 +2,9 @@ class ShortendUrl < ApplicationRecord
     
     validates :short_url, :long_url, :submitter_id, presence: true
     validates :short_url, uniqueness: true
-    
+     validate :no_spamming, :nonpremium_max
+
+
     belongs_to :submitter,
         primary_key: :id,
         class_name: :User,
@@ -18,7 +20,16 @@ class ShortendUrl < ApplicationRecord
         through: :visits, 
         source: :visitor
 
-    
+    has_many :taggings,  
+        class_name: :Tagging, 
+        foreign_key: :url_id, 
+        primary_key: :id, 
+        dependent: :destroy 
+
+    has_many :tag_topics,
+        through: :taggings,
+        source: :tag_topic 
+
   
     def self.random_code
         loop do
@@ -27,7 +38,7 @@ class ShortendUrl < ApplicationRecord
         end
     end
 
-    def self.create_short!(user, long_url)
+    def self.create_for_user_and_long_url!(user, long_url)
         ShortendUrl.create!(
             submitter_id: user.id,
             long_url: long_url,
@@ -51,4 +62,25 @@ class ShortendUrl < ApplicationRecord
     end 
   
 
+    def no_spamming
+        last_minute = ShortendUrl
+            .where('created_at >= ?', 1.minute.ago)
+            .where(submitter_id: submitter_id)
+            .length
+
+        errors[:maximum] << 'of five short urls per minute' if last_minute >= 5
+    end  
+
+    def nonpremium_max 
+        return if User.find(self.submitter_id).premium
+
+        number_of_urls = ShortendUrl
+                .where(submitter_id: submitter_id)
+                .length
+
+        if number_of_urls >= 5
+            errors[:Only] << 'premium members can create more than 5 short urls'
+        end  
+    end  
+    
 end 

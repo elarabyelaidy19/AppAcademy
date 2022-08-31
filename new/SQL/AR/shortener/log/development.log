@@ -480,3 +480,645 @@ Migrating to CreateVisits (20220830155908)
   ↳ app/models/visit.rb:15:in `record_visit!'
   [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/models/visit.rb:15:in `record_visit!'
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTagTopics (20220831152914)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "tag_topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "topic" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tag_topics_on_topic" ON "tag_topics" ("topic")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220831152914"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTaggings (20220831153401)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url_id" varchar NOT NULL, "tag_topic_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_url_id" ON "taggings" ("url_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_tag_topic_id" ON "taggings" ("tag_topic_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220831153401"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTagTopic Load (1.4ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics"[0m
+  [1m[36mShortendUrl Load (1.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.3ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Create (5.8ms)[0m  [1m[32mINSERT INTO "tag_topics" ("topic", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["topic", "music"], ["created_at", "2022-08-31 16:02:40.494315"], ["updated_at", "2022-08-31 16:02:40.494315"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Load (1.4ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.4ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.9ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.0ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.1ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mShortendUrl Load (1.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" INNER JOIN "taggings" ON "tag_topics"."id" = "taggings"."tag_topic_id" WHERE "taggings"."url_id" = ?[0m  [["url_id", "1"]]
+  [1m[36mTagging Load (1.5ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings"[0m
+  [1m[36mShortendUrl Load (1.4ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.3ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics"[0m
+  [1m[36mShortendUrl Load (1.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.5ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.4ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mShortendUrl Load (1.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.1ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mShortendUrl Load (1.3ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.5ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.0ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mShortendUrl Load (9.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.1ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mShortendUrl Load (1.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (2.9ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (2.4ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTagging Create (5.3ms)[0m  [1m[32mINSERT INTO "taggings" ("url_id", "tag_topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url_id", "1"], ["tag_topic_id", "1"], ["created_at", "2022-08-31 16:11:34.033685"], ["updated_at", "2022-08-31 16:11:34.033685"]]
+  [1m[36mTRANSACTION (11.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Load (2.4ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ?[0m  [["tag_topic_id", "1"]]
+  [1m[36mShortendUrl Load (2.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ? /* loading for inspect */ LIMIT ?[0m  [["tag_topic_id", "1"], ["LIMIT", 11]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mShortendUrl Load (1.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mShortendUrl Load (2.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ?[0m  [["tag_topic_id", "1"]]
+  [1m[36mShortendUrl Load (3.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ? /* loading for inspect */ LIMIT ?[0m  [["tag_topic_id", "1"], ["LIMIT", 11]]
+  [1m[36mShortendUrl Load (2.4ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ?[0m  [["tag_topic_id", "1"]]
+  [1m[36mShortendUrl Load (1.7ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ? /* loading for inspect */ LIMIT ?[0m  [["tag_topic_id", "1"], ["LIMIT", 11]]
+  [1m[36mShortendUrl Load (9.7ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ?[0m  [["tag_topic_id", "1"]]
+  [1m[36mShortendUrl Load (2.8ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."shortend_url_id" WHERE "taggings"."tag_topic_id" = ? /* loading for inspect */ LIMIT ?[0m  [["tag_topic_id", "1"], ["LIMIT", 11]]
+  [1m[36mShortendUrl Load (1.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (2.0ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" INNER JOIN "taggings" ON "tag_topics"."id" = "taggings"."tag_topic_id" WHERE "taggings"."url_id" = ?[0m  [["url_id", "1"]]
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "shortend_urls"[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "shortend_urls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "short_url" varchar NOT NULL, "long_url" varchar NOT NULL, "submitter_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_shortend_urls_on_short_url" ON "shortend_urls" ("short_url")[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE INDEX "index_shortend_urls_on_submitter_id" ON "shortend_urls" ("submitter_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "tag_topics"[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "tag_topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "topic" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tag_topics_on_topic" ON "tag_topics" ("topic")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url_id" varchar NOT NULL, "tag_topic_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_tag_topic_id" ON "taggings" ("tag_topic_id")[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_url_id" ON "taggings" ("url_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "visits"[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "visits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "shortend_url_id" varchar NOT NULL, "visitor_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE INDEX "index_visits_on_shortend_url" ON "visits" ("shortend_url")[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE INDEX "index_visits_on_visitor_id" ON "visits" ("visitor_id")[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220831153401)[0m
+  [1m[35m (10.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220829145050),
+(20220829145931),
+(20220829162502),
+(20220830155908),
+(20220831152914);
+
+[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-31 16:37:40.161734"], ["updated_at", "2022-08-31 16:37:40.161734"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ee15f0294fd2a00eca2082ca5ef3477a1e2a60ee"], ["created_at", "2022-08-31 16:37:40.179903"], ["updated_at", "2022-08-31 16:37:40.179903"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "shortend_urls"[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "shortend_urls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "short_url" varchar NOT NULL, "long_url" varchar NOT NULL, "submitter_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_shortend_urls_on_short_url" ON "shortend_urls" ("short_url")[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE INDEX "index_shortend_urls_on_submitter_id" ON "shortend_urls" ("submitter_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "tag_topics"[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "tag_topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "topic" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tag_topics_on_topic" ON "tag_topics" ("topic")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings"[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url_id" varchar NOT NULL, "tag_topic_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_tag_topic_id" ON "taggings" ("tag_topic_id")[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_url_id" ON "taggings" ("url_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "visits"[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "visits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "shortend_url_id" varchar NOT NULL, "visitor_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE INDEX "index_visits_on_shortend_url" ON "visits" ("shortend_url")[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE INDEX "index_visits_on_visitor_id" ON "visits" ("visitor_id")[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220831153401)[0m
+  [1m[35m (7.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220829145050),
+(20220829145931),
+(20220829162502),
+(20220830155908),
+(20220831152914);
+
+[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-31 16:37:40.366592"], ["updated_at", "2022-08-31 16:37:40.366592"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-08-31 16:37:40.378729"], ["key", "environment"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ee15f0294fd2a00eca2082ca5ef3477a1e2a60ee"], ["created_at", "2022-08-31 16:37:40.391647"], ["updated_at", "2022-08-31 16:37:40.391647"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mShortendUrl Load (0.8ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elaraby@google"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "elaraby@google"], ["created_at", "2022-08-31 16:38:50.543437"], ["updated_at", "2022-08-31 16:38:50.543437"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "UXm6OgLMzeSUChW19P1a4A"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "Uj1KlcC6iGWnG01fVScwKQ"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "Uj1KlcC6iGWnG01fVScwKQ"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (3.2ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "Uj1KlcC6iGWnG01fVScwKQ"], ["long_url", "google.com"], ["submitter_id", "1"], ["created_at", "2022-08-31 16:42:14.109894"], ["updated_at", "2022-08-31 16:42:14.109894"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.9ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Load (1.5ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Create (7.4ms)[0m  [1m[32mINSERT INTO "visits" ("shortend_url_id", "visitor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shortend_url_id", "1"], ["visitor_id", "1"], ["created_at", "2022-08-31 16:44:04.688351"], ["updated_at", "2022-08-31 16:44:04.688351"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mVisit Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "visits" WHERE "visits"."shortend_url_id" = ?[0m  [["shortend_url_id", "1"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "visits" ON "users"."id" = "visits"."visitor_id" WHERE "visits"."shortend_url_id" = ?[0m  [["shortend_url_id", "1"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Create (3.6ms)[0m  [1m[32mINSERT INTO "tag_topics" ("topic", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["topic", "music"], ["created_at", "2022-08-31 16:46:46.083529"], ["updated_at", "2022-08-31 16:46:46.083529"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTagTopic Load (1.7ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.0ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.5ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.9ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTagTopic Load (1.4ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" ORDER BY "tag_topics"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" ORDER BY "shortend_urls"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTagTopic Load (1.2ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" WHERE "tag_topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTagging Create (5.2ms)[0m  [1m[32mINSERT INTO "taggings" ("url_id", "tag_topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url_id", "1"], ["tag_topic_id", "1"], ["created_at", "2022-08-31 16:49:57.908113"], ["updated_at", "2022-08-31 16:49:57.908113"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTagTopic Load (1.5ms)[0m  [1m[34mSELECT "tag_topics".* FROM "tag_topics" INNER JOIN "taggings" ON "tag_topics"."id" = "taggings"."tag_topic_id" WHERE "taggings"."url_id" = ?[0m  [["url_id", "1"]]
+  [1m[36mShortendUrl Load (1.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."url_id" WHERE "taggings"."tag_topic_id" = ?[0m  [["tag_topic_id", "1"]]
+  [1m[36mShortendUrl Load (1.4ms)[0m  [1m[34mSELECT long_url, short_url, COUNT(visits.id) as number_of_visits FROM "shortend_urls" INNER JOIN "taggings" ON "shortend_urls"."id" = "taggings"."url_id" INNER JOIN "visits" ON "visits"."shortend_url_id" = "shortend_urls"."id" WHERE "taggings"."tag_topic_id" = ? GROUP BY "shortend_urls"."short_url", "shortend_urls"."long_url" ORDER BY COUNT(visits.id) DESC LIMIT ?[0m  [["tag_topic_id", "1"], ["LIMIT", 5]]
+  [1m[36mVisit Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "visits"[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPremiumToUser (20220831165808)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "users" ADD "premium" boolean DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220831165808"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mShortendUrl Load (23.5ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jefferson@cats.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (5.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "premium") VALUES (?, ?, ?, ?)[0m  [["email", "jefferson@cats.com"], ["created_at", "2022-08-31 17:25:23.236781"], ["updated_at", "2022-08-31 17:25:23.236781"], ["premium", 1]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "muenster@cats.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "premium") VALUES (?, ?, ?, ?)[0m  [["email", "muenster@cats.com"], ["created_at", "2022-08-31 17:25:42.985097"], ["updated_at", "2022-08-31 17:25:42.985097"], ["premium", 0]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "shortend_urls"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "shortend_urls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "short_url" varchar NOT NULL, "long_url" varchar NOT NULL, "submitter_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_shortend_urls_on_short_url" ON "shortend_urls" ("short_url")[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE INDEX "index_shortend_urls_on_submitter_id" ON "shortend_urls" ("submitter_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "tag_topics"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "tag_topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "topic" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tag_topics_on_topic" ON "tag_topics" ("topic")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings"[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url_id" varchar NOT NULL, "tag_topic_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_tag_topic_id" ON "taggings" ("tag_topic_id")[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_url_id" ON "taggings" ("url_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "premium" boolean DEFAULT 0)[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "visits"[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "visits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "shortend_url_id" varchar NOT NULL, "visitor_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE INDEX "index_visits_on_shortend_url" ON "visits" ("shortend_url")[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE INDEX "index_visits_on_visitor_id" ON "visits" ("visitor_id")[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220831165808)[0m
+  [1m[35m (7.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220829145050),
+(20220829145931),
+(20220829162502),
+(20220830155908),
+(20220831152914),
+(20220831153401);
+
+[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-31 17:45:28.716994"], ["updated_at", "2022-08-31 17:45:28.716994"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "502dd7b55f707a39f0e0da5ccc101f417b65975d"], ["created_at", "2022-08-31 17:45:28.736479"], ["updated_at", "2022-08-31 17:45:28.736479"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "shortend_urls"[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "shortend_urls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "short_url" varchar NOT NULL, "long_url" varchar NOT NULL, "submitter_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_shortend_urls_on_short_url" ON "shortend_urls" ("short_url")[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE INDEX "index_shortend_urls_on_submitter_id" ON "shortend_urls" ("submitter_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "tag_topics"[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "tag_topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "topic" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tag_topics_on_topic" ON "tag_topics" ("topic")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings"[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url_id" varchar NOT NULL, "tag_topic_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_tag_topic_id" ON "taggings" ("tag_topic_id")[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE INDEX "index_taggings_on_url_id" ON "taggings" ("url_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "premium" boolean DEFAULT 0)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "visits"[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "visits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "shortend_url_id" varchar NOT NULL, "visitor_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE INDEX "index_visits_on_shortend_url" ON "visits" ("shortend_url")[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE INDEX "index_visits_on_visitor_id" ON "visits" ("visitor_id")[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220831165808)[0m
+  [1m[35m (7.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220829145050),
+(20220829145931),
+(20220829162502),
+(20220830155908),
+(20220831152914),
+(20220831153401);
+
+[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-31 17:45:28.930753"], ["updated_at", "2022-08-31 17:45:28.930753"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (3.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-08-31 17:45:28.946195"], ["key", "environment"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "502dd7b55f707a39f0e0da5ccc101f417b65975d"], ["created_at", "2022-08-31 17:45:28.961764"], ["updated_at", "2022-08-31 17:45:28.961764"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jefferson@cats.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "premium") VALUES (?, ?, ?, ?)[0m  [["email", "jefferson@cats.com"], ["created_at", "2022-08-31 17:46:07.802534"], ["updated_at", "2022-08-31 17:46:07.802534"], ["premium", 1]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "muenster@cats.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "premium") VALUES (?, ?, ?, ?)[0m  [["email", "muenster@cats.com"], ["created_at", "2022-08-31 17:46:10.014241"], ["updated_at", "2022-08-31 17:46:10.014241"], ["premium", 0]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mShortendUrl Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "NiQBHCkKdapguFNYGJP7zg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "NiQBHCkKdapguFNYGJP7zg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.9ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:13.626604') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.2ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "NiQBHCkKdapguFNYGJP7zg"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:13.722088"], ["updated_at", "2022-08-31 17:48:13.722088"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "VTgjc27Od1KZy5lzGLOHfw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "VTgjc27Od1KZy5lzGLOHfw"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:21.152383') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.0ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "VTgjc27Od1KZy5lzGLOHfw"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:21.156910"], ["updated_at", "2022-08-31 17:48:21.156910"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "PE-V6EU19Cag8cyl3JxcEw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "PE-V6EU19Cag8cyl3JxcEw"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:25.450479') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.8ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "PE-V6EU19Cag8cyl3JxcEw"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:25.461501"], ["updated_at", "2022-08-31 17:48:25.461501"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "PxI0n2Q71zg7XjZfvf9SXA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "PxI0n2Q71zg7XjZfvf9SXA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:27.165043') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.9ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "PxI0n2Q71zg7XjZfvf9SXA"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:27.167710"], ["updated_at", "2022-08-31 17:48:27.167710"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "-Y16lZKgVsWxKsSvq45aJw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "-Y16lZKgVsWxKsSvq45aJw"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:28.360149') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.6ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "-Y16lZKgVsWxKsSvq45aJw"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:28.366640"], ["updated_at", "2022-08-31 17:48:28.366640"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "SPuJQ_cbnD6Igx2Owbm67g"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "SPuJQ_cbnD6Igx2Owbm67g"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:29.207666') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (6.2ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "SPuJQ_cbnD6Igx2Owbm67g"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:29.212792"], ["updated_at", "2022-08-31 17:48:29.212792"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "eIGzJa8IgGceJGkuuohDAQ"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "eIGzJa8IgGceJGkuuohDAQ"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:29.991808') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (14.7ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "eIGzJa8IgGceJGkuuohDAQ"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:29.996187"], ["updated_at", "2022-08-31 17:48:29.996187"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "KaJ0cmaSjPo8-EYTtgJe4Q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "KaJ0cmaSjPo8-EYTtgJe4Q"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:30.775663') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.2ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "KaJ0cmaSjPo8-EYTtgJe4Q"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:48:30.779046"], ["updated_at", "2022-08-31 17:48:30.779046"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "MwOacREnHYqj3Vo1ggOfeA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "MwOacREnHYqj3Vo1ggOfeA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:36.180232') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "1"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (50.8ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "MwOacREnHYqj3Vo1ggOfeA"], ["long_url", "www.smallrodents.com"], ["submitter_id", "1"], ["created_at", "2022-08-31 17:48:36.183208"], ["updated_at", "2022-08-31 17:48:36.183208"]]
+  [1m[36mTRANSACTION (123.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "xSvoCP1za-nvDHgfsNaz4g"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "xSvoCP1za-nvDHgfsNaz4g"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:47:48.605480') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "1"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (8.3ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "xSvoCP1za-nvDHgfsNaz4g"], ["long_url", "www.smallrodents.com"], ["submitter_id", "1"], ["created_at", "2022-08-31 17:48:48.608177"], ["updated_at", "2022-08-31 17:48:48.608177"]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "D9pJv4Nzcq5svyEYgMwEXw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "D9pJv4Nzcq5svyEYgMwEXw"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.6ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:49:17.858411') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "1"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.5ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "D9pJv4Nzcq5svyEYgMwEXw"], ["long_url", "www.smallrodents.com"], ["submitter_id", "1"], ["created_at", "2022-08-31 17:50:17.869917"], ["updated_at", "2022-08-31 17:50:17.869917"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (6.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "1VqtHeKytjYJa3gTggPjXQ"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "1VqtHeKytjYJa3gTggPjXQ"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:49:59.032241') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.3ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "1VqtHeKytjYJa3gTggPjXQ"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:50:59.036714"], ["updated_at", "2022-08-31 17:50:59.036714"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "pcCF5ur-U1wCL_WoY_-pDA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "pcCF5ur-U1wCL_WoY_-pDA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.3ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:00.491645') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.3ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (6.6ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "pcCF5ur-U1wCL_WoY_-pDA"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:00.500753"], ["updated_at", "2022-08-31 17:51:00.500753"]]
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "yGCLBgFemfdoWwWiO6naQg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "yGCLBgFemfdoWwWiO6naQg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:02.570783') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.4ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "yGCLBgFemfdoWwWiO6naQg"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:02.577288"], ["updated_at", "2022-08-31 17:51:02.577288"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "mWCugjEDTvWPS1ELor7LPA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "mWCugjEDTvWPS1ELor7LPA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:03.501341') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.1ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "mWCugjEDTvWPS1ELor7LPA"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:03.505635"], ["updated_at", "2022-08-31 17:51:03.505635"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "zFmZOIWcjgvFwVSzhlZvyA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "zFmZOIWcjgvFwVSzhlZvyA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:04.802959') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.9ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.7ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "zFmZOIWcjgvFwVSzhlZvyA"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:04.807701"], ["updated_at", "2022-08-31 17:51:04.807701"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "rsNuGZfZrpVGWxwzFYTjrg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "rsNuGZfZrpVGWxwzFYTjrg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:05.718845') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.6ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "rsNuGZfZrpVGWxwzFYTjrg"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:05.722695"], ["updated_at", "2022-08-31 17:51:05.722695"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "YzK8C5nvxzZMRT5pc5cSqQ"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "YzK8C5nvxzZMRT5pc5cSqQ"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:06.726902') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (3.5ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "YzK8C5nvxzZMRT5pc5cSqQ"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:06.732189"], ["updated_at", "2022-08-31 17:51:06.732189"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "M1VDZPsjUj1W9eOFuIgMYw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "M1VDZPsjUj1W9eOFuIgMYw"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:07.634133') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.6ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "M1VDZPsjUj1W9eOFuIgMYw"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:07.638040"], ["updated_at", "2022-08-31 17:51:07.638040"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "SLXAt_rGOmjJ1UO7QK45iA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "SLXAt_rGOmjJ1UO7QK45iA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.3ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:08.321777') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (6.8ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "SLXAt_rGOmjJ1UO7QK45iA"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:08.326956"], ["updated_at", "2022-08-31 17:51:08.326956"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "b6VleJB5NnzRn-IT6aZLyg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "b6VleJB5NnzRn-IT6aZLyg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:08.951247') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (2.0ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (10.4ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "b6VleJB5NnzRn-IT6aZLyg"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:08.958037"], ["updated_at", "2022-08-31 17:51:08.958037"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "k0gIbBlINjLpwXC_Mcf3Qw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "k0gIbBlINjLpwXC_Mcf3Qw"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:11.474040') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.5ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "k0gIbBlINjLpwXC_Mcf3Qw"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:11.477901"], ["updated_at", "2022-08-31 17:51:11.477901"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "4PXPhlEHKr2IlhVwKzmwow"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "4PXPhlEHKr2IlhVwKzmwow"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.3ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:12.798881') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (6.2ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "4PXPhlEHKr2IlhVwKzmwow"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:12.803761"], ["updated_at", "2022-08-31 17:51:12.803761"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "IQFhv2nQwnXuHe83bD5QBg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "IQFhv2nQwnXuHe83bD5QBg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (63.7ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:50:13.846849') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.0ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "IQFhv2nQwnXuHe83bD5QBg"], ["long_url", "www.smallrodents.com"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:51:13.915456"], ["updated_at", "2022-08-31 17:51:13.915456"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Load (2.6ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mShortendUrl Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "-TGnItLpClbD8zDj6zS2FQ"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "-TGnItLpClbD8zDj6zS2FQ"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.8ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:14.860642') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.4ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (5.9ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "-TGnItLpClbD8zDj6zS2FQ"], ["long_url", "www.smallrodents.co"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:14.913448"], ["updated_at", "2022-08-31 17:56:14.913448"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "Kd9sn-GvGPMiB80Nhi4RJg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "Kd9sn-GvGPMiB80Nhi4RJg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:17.640483') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.3ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "Kd9sn-GvGPMiB80Nhi4RJg"], ["long_url", "www.smallrodents.c"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:17.646913"], ["updated_at", "2022-08-31 17:56:17.646913"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "iOP_7fzvFLFjvxyZyNmJ8Q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "iOP_7fzvFLFjvxyZyNmJ8Q"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:20.384012') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.5ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "iOP_7fzvFLFjvxyZyNmJ8Q"], ["long_url", "www.smallrodents."], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:20.443937"], ["updated_at", "2022-08-31 17:56:20.443937"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "rdJeqB5hT3BqW4trWQ3RyA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "rdJeqB5hT3BqW4trWQ3RyA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:22.907327') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (6.7ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "rdJeqB5hT3BqW4trWQ3RyA"], ["long_url", "www.smallrodent."], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:22.912108"], ["updated_at", "2022-08-31 17:56:22.912108"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "TxxYfp7K5uk6U1k4IiMvkA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "TxxYfp7K5uk6U1k4IiMvkA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:25.431250') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (1.9ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.0ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "TxxYfp7K5uk6U1k4IiMvkA"], ["long_url", "www.smallroden."], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:25.438425"], ["updated_at", "2022-08-31 17:56:25.438425"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "GFz0KMKmI6IjNYINjF96Xg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "GFz0KMKmI6IjNYINjF96Xg"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:27.767837') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.6ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "GFz0KMKmI6IjNYINjF96Xg"], ["long_url", "www.smallroden"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:27.771299"], ["updated_at", "2022-08-31 17:56:27.771299"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "nqNvu0TjKPvyPp6iTZ4s1w"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "nqNvu0TjKPvyPp6iTZ4s1w"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.2ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:30.693527') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.5ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "nqNvu0TjKPvyPp6iTZ4s1w"], ["long_url", "www.smallrode"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:30.698704"], ["updated_at", "2022-08-31 17:56:30.698704"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShortendUrl Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "A2_ZqxQoO_pGCDgcobBEGA"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mShortendUrl Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shortend_urls" WHERE "shortend_urls"."short_url" = ? LIMIT ?[0m  [["short_url", "A2_ZqxQoO_pGCDgcobBEGA"], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE (created_at >= '2022-08-31 17:55:33.093329') AND "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Load (0.1ms)[0m  [1m[34mSELECT "shortend_urls".* FROM "shortend_urls" WHERE "shortend_urls"."submitter_id" = ?[0m  [["submitter_id", "2"]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShortendUrl Create (4.3ms)[0m  [1m[32mINSERT INTO "shortend_urls" ("short_url", "long_url", "submitter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["short_url", "A2_ZqxQoO_pGCDgcobBEGA"], ["long_url", "www.smallrod"], ["submitter_id", "2"], ["created_at", "2022-08-31 17:56:33.097728"], ["updated_at", "2022-08-31 17:56:33.097728"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
