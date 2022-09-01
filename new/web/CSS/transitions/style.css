@@ -1,0 +1,28 @@
+#delay { 
+    font-size: 14px; 
+    transition-property: font-size; 
+    transition-duration: 4s; 
+    transition-delay: 2s;
+}
+
+#delay:hover { 
+    font-size: 36px; 
+} 
+
+
+
+.box { 
+    width: 100px; 
+    height: 100px; 
+    background-color: blue; 
+    border-width: 1px solid black; 
+    display: block; 
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover { 
+    background-color: burlywood; 
+    width: 200px; 
+    height: 200px; 
+    transform: rotate(180deg);
+}
