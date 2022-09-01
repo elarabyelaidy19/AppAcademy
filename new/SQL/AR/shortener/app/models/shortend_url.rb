@@ -2,7 +2,7 @@ class ShortendUrl < ApplicationRecord
     
     validates :short_url, :long_url, :submitter_id, presence: true
     validates :short_url, uniqueness: true
-     validate :no_spamming, :nonpremium_max
+    validate :no_spamming, :nonpremium_max
 
 
     belongs_to :submitter,
@@ -56,7 +56,7 @@ class ShortendUrl < ApplicationRecord
 
     def num_recent_uniquness 
         visits.select('visitor_id').
-        where('created_at > ?', 10.minutes.ago)
+        where('created_at > ?', 10.minute.ago)
         .distinct
         .count
     end 
@@ -81,6 +81,25 @@ class ShortendUrl < ApplicationRecord
         if number_of_urls >= 5
             errors[:Only] << 'premium members can create more than 5 short urls'
         end  
-    end  
+    end   
+
+
+
+    def self.prune(n) 
+        shortened_urls
+            .joins(:submitter) 
+            .joins('left join visits on visits.shortend_url_id = shortend_urls.id')
+            .where("(shortend_urls.id IN (  
+                    select shortend_urls.id 
+                    from shortend_urls 
+                    join visits on visits.shortend_url_id = shortend_urls.id  
+                    group by shortend_urls.id 
+                    having max(visits.created_at) < \'#{n.minute.ago}\'  
+
+            ) OR ( 
+                visits.id is null and shortend_urls.created_at < \'#{n.minute.ago}\'
+            ))  AND users.premium = \'f\'") 
+            .destroy_all
+    end 
     
 end 
