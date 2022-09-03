@@ -1,0 +1,91 @@
+.header { 
+   display: flex; 
+   justify-content: space-between; 
+   height: 70px;   
+}
+
+.logo { 
+    border: 4px solid black;  
+    padding: 0px 40px 0px 40px;
+}
+
+.sign { 
+    border: 4px solid black; 
+    padding: 0px 40px 0px 40px;   
+}
+
+.sections { 
+    display: flex; 
+    justify-content: space-around; 
+    height: 70px;  
+    border: 2px solid black; 
+    margin-top: 20px; 
+}
+
+a { 
+    text-decoration: none; 
+    color: black; 
+    font-size: 20px; 
+} 
+
+li { 
+    list-style: none; 
+    display: inline-block;
+}
+
+.hero { 
+    text-align: center;  
+    margin-top: 20px 20px 20px 20px;
+}
+
+.author {  
+    display: flex; 
+    justify-content: space-around; 
+    margin-left: 85px;
+}
+
+.social { 
+    margin-right: 85px;
+}
+.social li { 
+    display: inline-block; 
+    margin-left: 5px;
+}
+
+
+.main  { 
+    font-size: 20px;   
+    text-align: center; 
+    margin: 50px 0px 50px 0px; 
+    padding: 0px 350px 0px 350px;
+} 
+
+.more-info { 
+    display: flex; 
+    justify-content: space-around;  
+}
+
+.more-info li { 
+    display: block; 
+    margin: 0px 20px 0px 20px;
+}
+
+
+.footer { 
+    display: flex; 
+    justify-content: space-around;
+    height: 70px;  
+    border: 2px solid black; 
+    margin-top: 20px; 
+}
+
+
+
+.logo-2 { 
+    justify-content: flex-start;
+}
+
+.footer-info li { 
+   margin-left: 10px;
+}
+
