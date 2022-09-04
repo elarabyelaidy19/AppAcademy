@@ -1,24 +1,34 @@
-# README
+# Shortener App 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Background
+shortener is a url shortener inspired by bit.ly, built with ruby and rails. 
 
-Things you may want to cover:
+## Features  
 
-* Ruby version
+## Shorten long URL
+Shorten user long URL with generating random string using `SecureRandom::Urlsafe_base64` in base64 encoding. 
 
-* System dependencies
+## Tracking Visits 
+Tracking how many times a shortened URL has been visited. and fetch all of the shortened URLs a user has visited, number of visits, number of unique visits, number of recent visits.
 
-* Configuration
+## CLI 
+create simple cli to interact with app in user friendly manner. that login user, create short_url based on given long_url, and open short_url in the browser.
 
-* Database creation
 
-* Database initialization
+## TagTopics 
+user can create tags for links.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Pro subscription and Constrains
+basic users can not create more than five short urls, users cannot spamme the app with creating more than 5 links in 1 minute.
 
-* Deployment instructions
 
-* ...
+## Prune Links
+Remove URLs that have not been visited for a given period of time.
+
+
+
+
+
+
+
