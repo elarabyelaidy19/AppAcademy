@@ -1,7 +1,8 @@
 body { 
-    display: grid; 
-    grid-template-columns: 1fr 2fr 1fr;
+  display: grid; 
+  grid-template-columns: 1fr 2fr 1fr;
 }
+
 
 form { 
     grid-column: 2 / span 1; 
@@ -10,7 +11,7 @@ form {
 }
 
 div { 
-    text-align: center;
+  text-align: center;
 }  
 
 
@@ -84,4 +85,4 @@ legend {
   width: 8em;
   margin-top: 1em;
   margin-bottom: 2em;
-}
+} 
