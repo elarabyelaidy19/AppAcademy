@@ -18,8 +18,6 @@ class Response < ApplicationRecord
 
     
     
-    private
-
     def sibiling_responses  
         self.question.responses.where.not(id: self.id)
     end  
@@ -28,7 +26,9 @@ class Response < ApplicationRecord
         if sibiling_responses.any? { |sibiling| sibiling.user_id == self.user_id } 
             errors[:respondent] << "has already answerd"  
         end 
-    end 
+    end  
+
+    
     
     def respond_to_own_poll 
         poll = self.question.poll 
