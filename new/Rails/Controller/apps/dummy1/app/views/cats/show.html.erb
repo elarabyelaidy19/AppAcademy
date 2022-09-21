@@ -1,0 +1,20 @@
+<h1><%= @cat.name %></h1> 
+
+
+<pre> 
+    <%= @cat.to_json %> 
+</pre> 
+
+<ul> 
+    <% @cat.toys.each do |toy| %> 
+        <li> <%= toy.name %> </li>
+    <% end %>
+</ul> 
+
+
+
+<ul>
+    <li><a href="<%= new_cat_toy_url(@cat) %>">New Toy</a></li> 
+    <li><a href="<%= edit_cat_url(@cat) %>" >Edit <%= @cat.name %></a></li>
+    <li><a href="<%= cats_url %>"> Index </a></li>
+</ul>
