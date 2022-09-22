@@ -1292,3 +1292,292 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 63ms (Views: 0.5ms | ActiveRecord: 19.8ms | Allocations: 4205)
 
 
+Started GET "/" for 127.0.0.1 at 2022-09-19 14:40:30 +0200
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-2.7.1/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-2.7.1/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.5ms | Allocations: 570)
+Completed 200 OK in 101ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 5256)
+
+
+Started GET "/" for ::1 at 2022-09-19 14:40:48 +0200
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}, "welcome"=>{"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}}}
+  Rendering /home/elaraby/.rvm/gems/ruby-2.7.1/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-2.7.1/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 366)
+Completed 200 OK in 18ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1165)
+
+
+Started GET "/silly" for ::1 at 2022-09-19 14:41:41 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}, "silly"=>{"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}}}
+Completed 200 OK in 15ms (Views: 0.3ms | Allocations: 273)
+
+
+Started GET "/silly" for ::1 at 2022-09-19 14:42:44 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}, "silly"=>{"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}}}
+Completed 500 Internal Server Error in 38ms (Allocations: 2350)
+
+
+  
+ActionView::MissingTemplate (Missing template silly/fun, application/fun with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/mnt/c/git/AppAcademy/new/Rails/Controller/apps/heros/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actiontext-7.0.3/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/rails/conductor
+               layouts/application
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/show):
+  
+app/controllers/silly_controller.rb:4:in `fun'
+Started GET "/" for ::1 at 2022-09-19 14:43:17 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-2.7.1/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-2.7.1/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 10ms (Views: 0.9ms | Allocations: 233)
+
+
+Started GET "/silly" for ::1 at 2022-09-19 14:43:22 +0200
+Processing by SillyController#fun as HTML
+Completed 500 Internal Server Error in 19ms (Allocations: 1146)
+
+
+  
+ActionView::MissingTemplate (Missing template silly/fun, application/fun with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/mnt/c/git/AppAcademy/new/Rails/Controller/apps/heros/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actiontext-7.0.3/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/rails/conductor
+               layouts/application
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/show):
+  
+app/controllers/silly_controller.rb:4:in `fun'
+Started GET "/silly" for ::1 at 2022-09-19 14:43:44 +0200
+Processing by SillyController#fun as HTML
+Completed 500 Internal Server Error in 23ms (Allocations: 1518)
+
+
+  
+ActionView::MissingTemplate (Missing template silly/fun, application/fun with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/mnt/c/git/AppAcademy/new/Rails/Controller/apps/heros/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actiontext-7.0.3/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/rails/conductor
+               layouts/application
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/show):
+  
+app/controllers/silly_controller.rb:4:in `fun'
+Started GET "/silly" for ::1 at 2022-09-19 14:47:46 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}, "silly"=>{"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}}}
+Completed 500 Internal Server Error in 50ms (Allocations: 1132)
+
+
+  
+ActionView::MissingTemplate (Missing template silly/fun, application/fun with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/mnt/c/git/AppAcademy/new/Rails/Controller/apps/heros/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actiontext-7.0.3/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-2.7.1/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/rails/conductor
+               layouts/application
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/show):
+  
+app/controllers/silly_controller.rb:4:in `fun'
+Started GET "/silly" for ::1 at 2022-09-19 14:50:51 +0200
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SillyController#fun as */*
+  Parameters: {"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}, "silly"=>{"data"=>{"email"=>"elarabyelaidy@gmail.com", "auth_token"=>"[FILTERED]", "query"=>"EXPLAIN SELECT COUNT(id) as count from bugs where created_at >= '2019-03-01' GROUP BY created_at order by id"}}}
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2489)
+
+
+Started GET "/silly" for ::1 at 2022-09-19 14:52:04 +0200
+Processing by SillyController#fun as */*
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/silly?sya=hello" for ::1 at 2022-09-19 14:52:23 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"sya"=>"hello"}
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 150)
+
+
+Started GET "/silly?sya=hello&celebrate=done" for ::1 at 2022-09-19 14:53:03 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"sya"=>"hello", "celebrate"=>"done"}
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started POST "/silly?age=100" for ::1 at 2022-09-19 14:56:09 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"age"=>"100"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 420)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.3) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.3) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.3) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/silly?age=100" for ::1 at 2022-09-19 14:56:33 +0200
+Processing by SillyController#fun as */*
+  Parameters: {"age"=>"100"}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 20ms (Views: 0.7ms | Allocations: 201)
+
+
+Started GET "/silly" for ::1 at 2022-09-19 15:10:04 +0200
+Processing by SillyController#fun as HTML
+Completed 200 OK in 10ms (Views: 0.2ms | Allocations: 172)
+
+
+Started POST "/superheros" for ::1 at 2022-09-19 15:10:18 +0200
+Processing by SuperherosController#create as */*
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 80ms (Allocations: 746)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: superhero):
+  
+app/controllers/superheros_controller.rb:51:in `superhero_params'
+app/controllers/superheros_controller.rb:18:in `create'
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperhero Create (3.7ms)[0m  [1m[32mINSERT INTO "superheros" ("name", "superpower", "secret_identity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Batman"], ["superpower", "Rich"], ["secret_identity", "[FILTERED]"], ["created_at", "2022-09-19 13:10:52.513982"], ["updated_at", "2022-09-19 13:10:52.513982"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperhero Create (3.4ms)[0m  [1m[32mINSERT INTO "superheros" ("name", "superpower", "secret_identity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Superman"], ["superpower", "Rich"], ["secret_identity", "[FILTERED]"], ["created_at", "2022-09-19 13:10:52.527935"], ["updated_at", "2022-09-19 13:10:52.527935"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperhero Create (3.2ms)[0m  [1m[32mINSERT INTO "superheros" ("name", "superpower", "secret_identity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Flash"], ["superpower", "Rich"], ["secret_identity", "[FILTERED]"], ["created_at", "2022-09-19 13:10:52.539263"], ["updated_at", "2022-09-19 13:10:52.539263"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/superheros" for ::1 at 2022-09-19 15:11:38 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SuperherosController#index as */*
+  [1m[36mSuperhero Load (1.1ms)[0m  [1m[34mSELECT "superheros".* FROM "superheros"[0m
+  ↳ app/controllers/superheros_controller.rb:5:in `index'
+Completed 200 OK in 45ms (Views: 8.7ms | ActiveRecord: 6.1ms | Allocations: 9153)
+
+
+Started GET "/superheros" for ::1 at 2022-09-19 15:11:41 +0200
+Processing by SuperherosController#index as */*
+  [1m[36mSuperhero Load (1.0ms)[0m  [1m[34mSELECT "superheros".* FROM "superheros"[0m
+  ↳ app/controllers/superheros_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 1.0ms | Allocations: 1637)
+
+
+Started GET "/superheros/2" for ::1 at 2022-09-19 15:12:50 +0200
+Processing by SuperherosController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mSuperhero Load (1.4ms)[0m  [1m[34mSELECT "superheros".* FROM "superheros" WHERE "superheros"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/superheros_controller.rb:9:in `show'
+Completed 200 OK in 123ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 4430)
+
+
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSuperhero Load (1.8ms)[0m  [1m[34mSELECT "superheros".* FROM "superheros"[0m
+  [1m[36mSuperhero Load (1.2ms)[0m  [1m[34mSELECT "superheros".* FROM "superheros" ORDER BY "superheros"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]

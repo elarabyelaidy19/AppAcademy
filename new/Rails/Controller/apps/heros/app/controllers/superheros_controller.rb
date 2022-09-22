@@ -38,8 +38,12 @@ class SuperherosController < ApplicationController
 
   def destroy
     @superhero = Superhero.find(params[:id])
-    @superhero.destroy
-    redirect_to superheros_path
+    if @superhero.destroy 
+      render json: @superhero 
+    else 
+      render json: @superhero.errors, status: :unprocessable_entity 
+    end 
+    
   end
 
   private
