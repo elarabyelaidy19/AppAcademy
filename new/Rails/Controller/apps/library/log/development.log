@@ -1,0 +1,537 @@
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20220924124128)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "author" varchar NOT NULL, "year" integer, "category" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220924124128"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-24 12:50:47.539246"], ["updated_at", "2022-09-24 12:50:47.539246"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (4.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Hobbit"], ["author", "J.R.R. Tolkien"], ["year", 1937], ["category", "Fantasy"], ["description", "The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature."], ["created_at", "2022-09-24 12:56:31.657327"], ["updated_at", "2022-09-24 12:56:31.657327"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (3.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Lord of the Rings"], ["author", "J.R.R. Tolkien"], ["year", 1954], ["category", "Fantasy"], ["description", "The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, with over 150 million copies sold."], ["created_at", "2022-09-24 12:56:31.672045"], ["updated_at", "2022-09-24 12:56:31.672045"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (3.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Chronicles of Narnia"], ["author", "C.S. Lewis"], ["year", 1950], ["category", "Fantasy"], ["description", "The Chronicles of Narnia is a series of seven fantasy novels by C. S. Lewis. It is considered a classic of children's literature and is the author's best-known work, having sold over 100 million copies in 47 languages. The books have been adapted for radio, television, the stage, and film, with the first series of films released between 2005 and 2010."], ["created_at", "2022-09-24 12:56:31.685013"], ["updated_at", "2022-09-24 12:56:31.685013"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (3.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Hitchhiker's Guide to the Galaxy"], ["author", "Douglas Adams"], ["year", 1979], ["category", "Science Fiction"], ["description", "The Hitchhiker's Guide to the Galaxy is a comedy science fiction series created by Douglas Adams. Originally a radio comedy broadcast on BBC Radio 4 in 1978, it was later adapted to other formats, including stage shows, novels, comic books, a 1981 TV series, a 1984 video game, and 2005 feature film. The series follows the travails of Arthur Dent and his friend Ford Prefect after the Earth is demolished to make way for a galactic freeway."], ["created_at", "2022-09-24 12:56:31.697587"], ["updated_at", "2022-09-24 12:56:31.697587"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (3.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Martian"], ["author", "Andy Weir"], ["year", 2011], ["category", "Science Fiction"], ["description", "The Martian is a science fiction novel written by Andy Weir and published in 2011. The story follows an American astronaut, Mark Watney, as he becomes stranded alone on Mars in the year 2035 and must improvise in order to survive. The novel was inspired by the 2004 documentary The Mars Underground, which Weir watched while working as a software engineer at NASA."], ["created_at", "2022-09-24 12:56:31.709837"], ["updated_at", "2022-09-24 12:56:31.709837"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-09-24 14:56:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.8ms | Allocations: 831)
+Completed 200 OK in 151ms (Views: 50.9ms | ActiveRecord: 0.0ms | Allocations: 7787)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 14:56:50 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:4:in `index'
+Completed 200 OK in 58ms (Views: 16.2ms | ActiveRecord: 7.7ms | Allocations: 19496)
+
+
+Started GET "/books" for ::1 at 2022-09-24 14:57:02 +0200
+Processing by BooksController#index as */*
+  [1m[36mBook Load (6.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:4:in `index'
+Completed 200 OK in 57ms (Views: 12.6ms | ActiveRecord: 6.8ms | Allocations: 1505)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 14:58:58 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 2239.7ms | Allocations: 98043)
+Completed 200 OK in 2288ms (Views: 2247.6ms | Allocations: 99974)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 15:02:41 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 37.6ms | Allocations: 2926)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 3016)
+Completed 500 Internal Server Error in 93ms (Allocations: 4912)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: 
+    4: <ul>
+    5:     <% @books.each do |book| %>
+    6:         <h1><%= book.title %></h1> 
+    7:         <li><%= book.author %></li>
+    8:         <li><%= book.year %></li> 
+  
+app/views/books/index.html.erb:5
+Started GET "/books" for 127.0.0.1 at 2022-09-24 15:02:54 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (6.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 52.2ms | Allocations: 3365)
+  Rendered layout layouts/application.html.erb (Duration: 276.7ms | Allocations: 18081)
+Completed 200 OK in 332ms (Views: 278.7ms | ActiveRecord: 32.8ms | Allocations: 19663)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 15:39:43 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (7.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 234)
+  Rendered layout layouts/application.html.erb (Duration: 233.1ms | Allocations: 14815)
+Completed 200 OK in 366ms (Views: 247.7ms | ActiveRecord: 14.9ms | Allocations: 21383)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 15:40:12 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 156.3ms | Allocations: 3084)
+Completed 200 OK in 202ms (Views: 181.1ms | ActiveRecord: 1.1ms | Allocations: 4729)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 15:40:39 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 2386)
+Completed 200 OK in 68ms (Views: 48.7ms | ActiveRecord: 0.9ms | Allocations: 3217)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 15:40:40 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 2386)
+Completed 200 OK in 56ms (Views: 43.5ms | ActiveRecord: 0.8ms | Allocations: 3137)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 15:40:41 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 2394)
+Completed 200 OK in 53ms (Views: 40.8ms | ActiveRecord: 0.8ms | Allocations: 3145)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 15:40:41 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 48.0ms | Allocations: 2388)
+Completed 200 OK in 63ms (Views: 49.4ms | ActiveRecord: 0.9ms | Allocations: 3139)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2022-09-24 15:43:01 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 46ms (ActiveRecord: 9.1ms | Allocations: 3038)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=7):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books/7" for 127.0.0.1 at 2022-09-24 15:43:14 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 63ms (ActiveRecord: 7.8ms | Allocations: 3086)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=7):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books/7" for 127.0.0.1 at 2022-09-24 15:43:41 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 55ms (ActiveRecord: 8.2ms | Allocations: 3029)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=7):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books/7" for 127.0.0.1 at 2022-09-24 15:44:11 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 71ms (ActiveRecord: 15.3ms | Allocations: 3031)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=7):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books/5" for 127.0.0.1 at 2022-09-24 15:44:17 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 137.6ms | Allocations: 14512)
+Completed 200 OK in 154ms (Views: 139.2ms | ActiveRecord: 0.8ms | Allocations: 17593)
+
+
+Started GET "/books/6" for 127.0.0.1 at 2022-09-24 15:44:20 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 1.3ms | Allocations: 957)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=6):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books/6" for 127.0.0.1 at 2022-09-24 15:46:42 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 60ms (ActiveRecord: 11.8ms | Allocations: 3030)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=6):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/" for 127.0.0.1 at 2022-09-24 15:47:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.9ms | Allocations: 726)
+Completed 200 OK in 107ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 6514)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 15:47:09 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 52.7ms | Allocations: 17878)
+  Rendered layout layouts/application.html.erb (Duration: 648.2ms | Allocations: 53962)
+Completed 200 OK in 713ms (Views: 641.3ms | ActiveRecord: 15.4ms | Allocations: 56017)
+
+
+Started GET "/books/5" for 127.0.0.1 at 2022-09-24 15:47:19 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (3.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 14.1ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 110.6ms | Allocations: 2797)
+Completed 200 OK in 164ms (Views: 125.4ms | ActiveRecord: 3.7ms | Allocations: 5858)
+
+
+Started GET "/books/67" for 127.0.0.1 at 2022-09-24 15:47:24 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 16ms (ActiveRecord: 2.5ms | Allocations: 931)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=67):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books/67" for 127.0.0.1 at 2022-09-24 15:48:16 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Redirected to http://127.0.0.1:3000/books
+Completed 302 Found in 45ms (ActiveRecord: 5.0ms | Allocations: 2777)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 15:48:17 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2807)
+  Rendered layout layouts/application.html.erb (Duration: 192.4ms | Allocations: 17372)
+Completed 200 OK in 209ms (Views: 188.5ms | ActiveRecord: 7.1ms | Allocations: 18231)
+
+
+Started GET "/books/8" for 127.0.0.1 at 2022-09-24 15:48:24 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Redirected to http://127.0.0.1:3000/books
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms | Allocations: 660)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 15:48:24 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 629)
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 3002)
+Completed 200 OK in 62ms (Views: 51.6ms | ActiveRecord: 1.0ms | Allocations: 3341)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:38:47 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 166)
+  Rendered layout layouts/application.html.erb (Duration: 232.7ms | Allocations: 14869)
+Completed 200 OK in 256ms (Views: 244.9ms | Allocations: 16038)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:39:13 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 3031)
+Completed 200 OK in 70ms (Views: 61.6ms | Allocations: 4161)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:39:26 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 3038)
+Completed 200 OK in 72ms (Views: 61.8ms | Allocations: 4159)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:40:03 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 186.6ms | Allocations: 14406)
+Completed 200 OK in 248ms (Views: 188.5ms | ActiveRecord: 8.1ms | Allocations: 18048)
+
+
+Started POST "/books" for 127.0.0.1 at 2022-09-24 16:40:54 +0200
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"title"=>"almokademah", "author"=>"ibn khaldoun", "year"=>"2022-05-03", "category"=>"socilology", "description"=>"lorem ipsum jansdj kjnc jxcj "}
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.0ms | Allocations: 895)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: book):
+  
+app/controllers/books_controller.rb:35:in `book_params'
+app/controllers/books_controller.rb:23:in `create'
+Started POST "/books" for 127.0.0.1 at 2022-09-24 16:40:58 +0200
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"title"=>"almokademah", "author"=>"ibn khaldoun", "year"=>"2022-05-03", "category"=>"socilology", "description"=>"lorem ipsum jansdj kjnc jxcj "}
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms | Allocations: 744)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: book):
+  
+app/controllers/books_controller.rb:35:in `book_params'
+app/controllers/books_controller.rb:23:in `create'
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:41:56 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 175.9ms | Allocations: 14499)
+Completed 200 OK in 227ms (Views: 177.5ms | ActiveRecord: 9.0ms | Allocations: 18618)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 16:43:44 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1077)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 3936)
+Completed 200 OK in 76ms (Views: 60.3ms | ActiveRecord: 1.7ms | Allocations: 5165)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 16:43:50 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 629)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 3016)
+Completed 200 OK in 58ms (Views: 46.2ms | ActiveRecord: 1.2ms | Allocations: 3360)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:48:37 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 3027)
+Completed 200 OK in 66ms (Views: 52.1ms | ActiveRecord: 0.0ms | Allocations: 4176)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:51:42 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 187)
+  Rendered layout layouts/application.html.erb (Duration: 63.9ms | Allocations: 3041)
+Completed 200 OK in 87ms (Views: 71.9ms | Allocations: 4199)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:53:11 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 187)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 3047)
+Completed 200 OK in 92ms (Views: 75.2ms | Allocations: 4209)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:53:31 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 187)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 3041)
+Completed 200 OK in 79ms (Views: 64.7ms | Allocations: 4199)
+
+
+Started POST "/books" for 127.0.0.1 at 2022-09-24 16:56:10 +0200
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"almokademah", "author"=>"ddddd", "year"=>"2022-09-15", "category"=>"non-fiction"}, "description"=>"aqsdasdad  rwtq4tfewf"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:24:in `create'
+  [1m[36mBook Create (10.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "almokademah"], ["author", "ddddd"], ["year", 2022], ["category", "non-fiction"], ["description", nil], ["created_at", "2022-09-24 14:56:10.686616"], ["updated_at", "2022-09-24 14:56:10.686616"]]
+  ↳ app/controllers/books_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/books/6
+Completed 302 Found in 93ms (ActiveRecord: 22.5ms | Allocations: 3946)
+
+
+Started GET "/books/6" for 127.0.0.1 at 2022-09-24 16:56:10 +0200
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (2.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 120.9ms | Allocations: 2569)
+Completed 200 OK in 156ms (Views: 128.2ms | ActiveRecord: 2.3ms | Allocations: 4112)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 16:58:14 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 30.4ms | Allocations: 1027)
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 3892)
+Completed 200 OK in 104ms (Views: 87.4ms | ActiveRecord: 1.1ms | Allocations: 5023)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-24 16:58:32 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 983)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | Allocations: 3847)
+Completed 200 OK in 95ms (Views: 79.3ms | ActiveRecord: 1.4ms | Allocations: 5000)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 16:58:45 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 162)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 2549)
+Completed 200 OK in 61ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 2953)
+
+
+Started POST "/books" for 127.0.0.1 at 2022-09-24 16:58:56 +0200
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"ww", "author"=>"ewew", "year"=>"2022-09-14", "category"=>"non-fiction", "description"=>"sefdvasdfvfsd"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:24:in `create'
+  [1m[36mBook Create (3.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "ww"], ["author", "ewew"], ["year", 2022], ["category", "non-fiction"], ["description", "sefdvasdfvfsd"], ["created_at", "2022-09-24 14:58:56.785151"], ["updated_at", "2022-09-24 14:58:56.785151"]]
+  ↳ app/controllers/books_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/books/7
+Completed 302 Found in 33ms (ActiveRecord: 10.7ms | Allocations: 2307)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2022-09-24 16:58:56 +0200
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 186)
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 2553)
+Completed 200 OK in 84ms (Views: 68.8ms | ActiveRecord: 1.0ms | Allocations: 3415)
+
+

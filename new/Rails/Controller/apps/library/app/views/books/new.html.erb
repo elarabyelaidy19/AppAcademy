@@ -1,0 +1,32 @@
+<h1> Add A Book To Your Library </h1>
+
+<form action="<%= books_url %>" method="post"> 
+    <label for="title">Title</label> 
+    <input type="text" name="book[title]" id="title">
+    <br>
+    
+    <label for="author">Author</label>
+    <input type="text" name="book[author]" id="author">
+    <br>
+    
+    <label for="year">Year</label>
+    <input type="date" name="book[year]" id="year">
+    <br>
+
+    <label for="category">category</label>
+    <select name="book[category]" id="category"> 
+        <option disabled selected >--please select category--</option> 
+        <option value="fiction">Fiction</option>
+        <option value="non-fiction">Non-Fiction</option>
+        <option value="biography">Biography</option>
+        <option value="poetry">Poetry</option>
+        <option value="drama">Drama</option>
+    </select>
+    <br>    
+
+    <label for="description">description</label>
+    <textarea name="book[description]" id="description" cols="30" rows="10" name="book[description]"></textarea>
+    <br>
+    <input type="submit" value="Add Book">
+
+<form>
