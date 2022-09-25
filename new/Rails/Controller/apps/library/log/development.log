@@ -535,3 +535,583 @@ Processing by BooksController#show as TURBO_STREAM
 Completed 200 OK in 84ms (Views: 68.8ms | ActiveRecord: 1.0ms | Allocations: 3415)
 
 
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 18:40:47 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (Duration: 46.6ms | Allocations: 1333)
+  Rendered layout layouts/application.html.erb (Duration: 48.7ms | Allocations: 1422)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 15.4ms | Allocations: 5382)
+
+
+  
+ActionView::Template::Error (':form' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Create New Cat </h1> 
+    2: 
+    3: <%= render :form, @cat %>
+  
+app/views/books/new.html.erb:3
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 18:41:08 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 13.5ms | Allocations: 1798)
+  Rendered books/new.html.erb within layouts/application (Duration: 29.7ms | Allocations: 2058)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 2135)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms | Allocations: 3260)
+
+
+  
+ActionView::Template::Error (undefined method `persisted?' for nil:NilClass):
+    1: <% action_url =  @book.persisted? ? book_url(@book) : books_url %>
+    2: <% form_method = @book.persisted? ? "PATCH" : "POST" %>
+    3: <% submit_text = @book.persisted? ? "EDIT" : "CREATE" %>
+    4: 
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/books/new" for 127.0.0.1 at 2022-09-24 18:41:52 +0200
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 9.7ms | Allocations: 1761)
+  Rendered books/new.html.erb within layouts/application (Duration: 20.2ms | Allocations: 2019)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 2096)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms | Allocations: 3220)
+
+
+  
+ActionView::Template::Error (undefined method `persisted?' for nil:NilClass):
+    1: <% action_url =  @book.persisted? ? book_url(@book) : books_url %>
+    2: <% form_method = @book.persisted? ? "PATCH" : "POST" %>
+    3: <% submit_text = @book.persisted? ? "EDIT" : "CREATE" %>
+    4: 
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:47:11 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 26.9ms | Allocations: 4417)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 4497)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 8.9ms | Allocations: 9642)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `submit_text' for #<ActionView::Base:0x00000000023a00>
+Did you mean?  submit_tag):
+    38:     <label for="description">description</label>
+    39:     <textarea name="book[description]" id="description" cols="30" rows="10" name="book[description]"></textarea>
+    40:     <br>
+    41:     <input type="submit" value="<%=submit_text%>Book">
+    42: 
+    43: <form>
+  
+app/views/books/edit.html.erb:41
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:47:33 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 10.5ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 252.1ms | Allocations: 15017)
+Completed 200 OK in 285ms (Views: 264.9ms | ActiveRecord: 1.5ms | Allocations: 16655)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:47:47 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 7.4ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 3180)
+Completed 200 OK in 88ms (Views: 71.6ms | ActiveRecord: 0.9ms | Allocations: 4828)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:52:22 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 36.7ms | Allocations: 4604)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 4684)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.9ms | Allocations: 6301)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<ActionView::Base:0x000000000240e0>
+Did you mean?  @book):
+    13:     <input type="hidden" name="_method" value="PATCH">
+    14: 
+    15:     <label for="title">Title</label> 
+    16:     <input type="text" name="book[title]" id="title" value="<%= book.title %>">
+    17:     <br>
+    18:     
+    19:     <label for="author">Author</label>
+  
+app/views/books/edit.html.erb:16
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:52:57 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 10.5ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 69.9ms | Allocations: 3287)
+Completed 200 OK in 104ms (Views: 80.2ms | ActiveRecord: 2.2ms | Allocations: 4926)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 18:55:34 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien>    <br>        <label for=", "year"=>"2022-09-24", "description"=>"        The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n    "}, "id"=>"1"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mBook Update (8.8ms)[0m  [1m[33mUPDATE "books" SET "title" = ?, "author" = ?, "year" = ?, "description" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["title", "The Hobbit Triolog"], ["author", "J.R.R. Tolkien>    <br>        <label for="], ["year", 2022], ["description", "        The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n    "], ["updated_at", "2022-09-24 16:55:34.829832"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 19.6ms | Allocations: 4962)
+
+
+  
+ActionView::MissingTemplate (Missing template http://127.0.0.1:3000/books/1 with {:locale=>[:en], :formats=>[:turbo_stream, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/mnt/c/git/AppAcademy/new/Rails/Controller/apps/library/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-3.0.1/gems/actiontext-7.0.4/app/views"
+  * "/home/elaraby/.rvm/gems/ruby-3.0.1/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/index
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/show
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/books_controller.rb:41:in `update'
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:56:23 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.0ms | Allocations: 423)
+  Rendered layout layouts/application.html.erb (Duration: 239.4ms | Allocations: 15112)
+Completed 200 OK in 328ms (Views: 249.9ms | ActiveRecord: 16.9ms | Allocations: 20664)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 18:56:26 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien>    <br>        <label for=>    <br>        <label for=", "year"=>"", "description"=>"                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.0ms | Allocations: 3980)
+
+
+  
+NoMethodError (undefined method `update_attributes' for #<Book id: 1, title: "The Hobbit Triolog", author: "J.R.R. Tolkien>    <br>        <label for=", year: 2022, category: "Fantasy", description: "        The Hobbit is a children's fantasy novel b...", created_at: "2022-09-24 12:56:31.657327000 +0000", updated_at: "2022-09-24 16:55:34.829832000 +0000">
+Did you mean?  update_attribute):
+  
+app/controllers/books_controller.rb:40:in `update'
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:56:43 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 150.5ms | Allocations: 14594)
+Completed 200 OK in 203ms (Views: 152.6ms | ActiveRecord: 11.1ms | Allocations: 19946)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 18:56:45 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien>    <br>        <label for=>    <br>        <label for=", "year"=>"", "description"=>"                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms | Allocations: 1295)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/controllers/books_controller.rb:40:in `update'
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:57:25 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 218.9ms | Allocations: 14591)
+Completed 200 OK in 276ms (Views: 222.1ms | ActiveRecord: 9.1ms | Allocations: 19890)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 18:57:27 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien>    <br>        <label for=>    <br>        <label for=", "year"=>"", "description"=>"                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.2ms | Allocations: 3947)
+
+
+  
+NoMethodError (undefined method `update_attributes' for #<Book id: 1, title: "The Hobbit Triolog", author: "J.R.R. Tolkien>    <br>        <label for=", year: 2022, category: "Fantasy", description: "        The Hobbit is a children's fantasy novel b...", created_at: "2022-09-24 12:56:31.657327000 +0000", updated_at: "2022-09-24 16:55:34.829832000 +0000">
+Did you mean?  update_attribute):
+  
+app/controllers/books_controller.rb:40:in `update'
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:57:38 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.3ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 189.4ms | Allocations: 14584)
+Completed 200 OK in 247ms (Views: 191.0ms | ActiveRecord: 10.2ms | Allocations: 19936)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 18:57:40 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien>    <br>        <label for=>    <br>        <label for=", "year"=>"", "description"=>"                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mBook Update (3.6ms)[0m  [1m[33mUPDATE "books" SET "author" = ?, "year" = ?, "description" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["author", "J.R.R. Tolkien>    <br>        <label for=>    <br>        <label for="], ["year", nil], ["description", "                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n    "], ["updated_at", "2022-09-24 16:57:40.791282"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/books/1
+Completed 302 Found in 30ms (ActiveRecord: 11.6ms | Allocations: 2933)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 18:57:40 +0200
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 2582)
+Completed 200 OK in 67ms (Views: 52.6ms | ActiveRecord: 1.4ms | Allocations: 3422)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 18:58:37 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 3065)
+Completed 200 OK in 76ms (Views: 64.5ms | ActiveRecord: 0.9ms | Allocations: 4623)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 18:59:17 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 51.4ms | Allocations: 3057)
+Completed 200 OK in 77ms (Views: 62.3ms | ActiveRecord: 1.5ms | Allocations: 4691)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 18:59:20 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 2389)
+Completed 200 OK in 62ms (Views: 49.1ms | ActiveRecord: 0.9ms | Allocations: 3206)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 18:59:26 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.9ms | Allocations: 367)
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 2748)
+Completed 200 OK in 75ms (Views: 57.3ms | ActiveRecord: 0.9ms | Allocations: 3561)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 18:59:28 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien>    <br>        <label for=>    <br>        <label for=", "year"=>"", "description"=>"                        The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mBook Update (2.8ms)[0m  [1m[33mUPDATE "books" SET "description" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["description", "                        The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n     \n    "], ["updated_at", "2022-09-24 16:59:28.317858"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/books/1
+Completed 302 Found in 24ms (ActiveRecord: 8.8ms | Allocations: 2753)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 18:59:28 +0200
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 2387)
+Completed 200 OK in 51ms (Views: 37.5ms | ActiveRecord: 1.0ms | Allocations: 3181)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 19:00:26 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 3065)
+Completed 200 OK in 92ms (Views: 77.3ms | ActiveRecord: 1.4ms | Allocations: 4623)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 19:00:27 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 7.8ms | Allocations: 367)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 2738)
+Completed 200 OK in 69ms (Views: 51.6ms | ActiveRecord: 0.8ms | Allocations: 3624)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 19:00:34 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien", "year"=>"", "description"=>"                                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n     \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mBook Update (3.8ms)[0m  [1m[33mUPDATE "books" SET "author" = ?, "description" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["author", "J.R.R. Tolkien"], ["description", "                                The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n     \n     \n    "], ["updated_at", "2022-09-24 17:00:34.669699"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/books/1
+Completed 302 Found in 28ms (ActiveRecord: 10.5ms | Allocations: 2786)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 19:00:34 +0200
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 2398)
+Completed 200 OK in 64ms (Views: 48.1ms | ActiveRecord: 1.2ms | Allocations: 3195)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 19:00:55 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 58.7ms | Allocations: 3069)
+Completed 200 OK in 85ms (Views: 71.1ms | ActiveRecord: 0.8ms | Allocations: 4627)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-24 19:01:00 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 7.3ms | Allocations: 364)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 2737)
+Completed 200 OK in 60ms (Views: 43.9ms | ActiveRecord: 0.8ms | Allocations: 3622)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2022-09-24 19:01:05 +0200
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"book"=>{"title"=>"The Hobbit Triolog", "author"=>"J.R.R. Tolkien", "year"=>"2022-09-23", "description"=>"                                        The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n     \n     \n     \n    "}, "id"=>"1"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mBook Update (4.2ms)[0m  [1m[33mUPDATE "books" SET "year" = ?, "description" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["year", 2022], ["description", "                                        The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children's literature. \n     \n     \n     \n     \n    "], ["updated_at", "2022-09-24 17:01:05.813903"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/books/1
+Completed 302 Found in 32ms (ActiveRecord: 12.2ms | Allocations: 2783)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-24 19:01:05 +0200
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 2404)
+Completed 200 OK in 67ms (Views: 51.7ms | ActiveRecord: 0.9ms | Allocations: 3202)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-25 10:41:08 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 56.5ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 237.1ms | Allocations: 3088)
+Completed 200 OK in 532ms (Views: 360.9ms | ActiveRecord: 25.2ms | Allocations: 4829)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-09-25 10:41:11 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | Allocations: 2386)
+Completed 200 OK in 112ms (Views: 86.0ms | ActiveRecord: 1.3ms | Allocations: 3204)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-25 10:41:24 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 91.8ms | Allocations: 4710)
+  Rendered books/edit.html.erb within layouts/application (Duration: 109.5ms | Allocations: 4948)
+  Rendered layout layouts/application.html.erb (Duration: 110.1ms | Allocations: 5019)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 1.1ms | Allocations: 5808)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `action_url' for #<ActionView::Base:0x000000000358e0>
+Did you mean?  audio_url):
+     9: 
+    10: <h1> Add A Book To Your Library </h1>
+    11: 
+    12: <form action="<%= action_url %>" method="<%= form_method %>">  
+    13:     <% if action = :edit %>
+    14:         <input type="hidden" name="_method" value="PATCH"> 
+    15:     <% end %>
+  
+app/views/books/_form.html.erb:12
+app/views/books/edit.html.erb:3
+Started GET "/books/1/edit" for 127.0.0.1 at 2022-09-25 10:42:06 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 10.6ms | Allocations: 450)
+  Rendered books/edit.html.erb within layouts/application (Duration: 24.1ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 85.2ms | Allocations: 3579)
+Completed 200 OK in 116ms (Views: 95.7ms | ActiveRecord: 1.2ms | Allocations: 5146)
+
+
+Started GET "/books/edit" for 127.0.0.1 at 2022-09-25 11:04:45 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mBook Load (2.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Redirected to http://127.0.0.1:3000/books
+Completed 302 Found in 130ms (ActiveRecord: 20.9ms | Allocations: 867)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-25 11:04:45 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 59.5ms | Allocations: 1072)
+  Rendered layout layouts/application.html.erb (Duration: 193.8ms | Allocations: 3925)
+Completed 200 OK in 307ms (Views: 243.6ms | ActiveRecord: 1.9ms | Allocations: 5076)
+
+
+Started GET "/books/edit" for 127.0.0.1 at 2022-09-25 11:04:51 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Redirected to http://127.0.0.1:3000/books
+Completed 302 Found in 22ms (ActiveRecord: 1.6ms | Allocations: 661)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-09-25 11:04:51 +0200
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:5
+  Rendered books/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 672)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 3063)
+Completed 200 OK in 66ms (Views: 52.3ms | ActiveRecord: 1.1ms | Allocations: 3403)
+
+
+Started GET "/books/1/new" for 127.0.0.1 at 2022-09-25 11:04:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/books/1/new"):
+  
+Started GET "/books/1/new" for 127.0.0.1 at 2022-09-25 11:06:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/books/1/new"):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-25 11:06:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.2ms | Allocations: 724)
+Completed 200 OK in 109ms (Views: 32.9ms | ActiveRecord: 0.0ms | Allocations: 6511)
+
+
+Started GET "/books/1/new" for 127.0.0.1 at 2022-09-25 11:06:52 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/books/1/new"):
+  
