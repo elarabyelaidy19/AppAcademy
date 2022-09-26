@@ -13,5 +13,7 @@ class User < ApplicationRecord
         through: :artwoek_shares,
         source: :artwork
 
+
+    has_many :comments, dependent: :destroy
 end
 
