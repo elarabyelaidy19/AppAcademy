@@ -36,6 +36,30 @@ class ArtworksController < ApplicationController
     else 
       render json: artwork.errors.full_messages, status: :unprocessable_entity
     end 
+  end  
+  
+
+  
+  def like 
+    like = Like.new(user_id: params[:user_id], likeable_id: params[:id], likeable_type: "Artwork") 
+
+    if like.save 
+      render json: like 
+    else 
+      render json: like.errors.full_messages 
+    end 
+  end 
+
+  def unlike 
+    like = Like.find_by(user_id: params[:user_id], likeable_id: params[:id], likeable_type: "Artwork") 
+    if like.destroy 
+      render json: like 
+    else 
+      render json: like.errors.full_messages
+    end 
+  end  
+
+  def index_all
   end 
 
   private 
