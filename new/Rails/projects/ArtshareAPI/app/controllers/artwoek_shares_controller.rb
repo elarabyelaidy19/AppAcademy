@@ -17,6 +17,24 @@ class ArtwoekSharesController < ApplicationController
     render json: artwork_share
   end
 
+  def favorite 
+    artwoek_share = ArtwoekShare.find_by(id: params[:id], viewer_id: params[:user_id]) 
+    artwoek_share.favorite = true 
+    artwoek_share.save 
+
+    render json: artwoek_share
+  end 
+
+  def unfavorite 
+    artwoek_share = ArtwoekShare.find_by(id: params[:id], viewer_id: params[:user_id]) 
+    artwoek_share.favorite = false 
+    artwoek_share.save
+
+    render json: artwoek_share
+  end 
+
+  private
+
   def artwoek_shares_params 
     params.require(:artwoek_share).permit(:artwork_id, :viewer_id)
   end 

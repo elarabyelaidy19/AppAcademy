@@ -27,14 +27,19 @@ Rails.application.routes.draw do
   resources :artworks, only: [:create, :update, :destroy, :show] do 
     member do 
       post :like, to: 'artworks#like', as: 'like' 
-      post :unlike, to: 'artworks#unlike', as: 'unlike'
+      post :unlike, to: 'artworks#unlike', as: 'unlike' 
+      post :favorite, to: 'artworks#favorite', as: 'favorite' 
+      post :unfavorite, to: 'artworks#unfavorite', as: 'unfavorite'
     end  
-
-    collection do 
-      patch :index_all
+  end 
+  
+  resources :artwoek_shares, only: [:create, :destroy] do 
+    member do 
+      post :favorite, to: 'artwoeks_shares#favorite', as: 'favorite' 
+      post :unfavorite, to: 'artwoeks_shares#unfavorite', as: 'unfavorite'
     end 
   end 
-  resources :artwoek_shares, only: [:create, :destroy]
+
 
   resources :comments, only: [:index, :create, :destroy] do
     member do 
