@@ -25,6 +25,17 @@ class Artwork < ApplicationRecord
     has_many :liked_users, 
         through: :likes, 
         source: :user
+    
+    has_many :artwork_collections 
 
 
+    def self.artworks_for_user_id(user_id) 
+        Artwork.left_outer_joins(:artwoek_shares) 
+            .where('(artworks.artist_id= :user_id) or (artwork_shares.viewer_id = :user_id', user_id: user_id)
+            .distinct 
+    end 
+
+    def self.artworks_for_collection_id(collection_id) 
+        Artwork.joins(:artwork_collections).where(artwork_collections: { collection_id: collection_id }) 
+    end  
 end

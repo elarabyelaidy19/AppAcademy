@@ -29,6 +29,9 @@ class User < ApplicationRecord
         source_type: 'Artwork' 
 
 
+    has_many :collections
+
+    
     def favorite_artworks 
         artworks.where(favorite: true) 
     end 

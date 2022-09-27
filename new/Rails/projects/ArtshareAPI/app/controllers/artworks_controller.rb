@@ -2,12 +2,18 @@ class ArtworksController < ApplicationController
   before_action :set_user, only: [:update, :destroy, :show]
   
   def index  
-    artist = User.find(params[:user_id]) 
-    render json: { 
-      artworks: artist.artworks, 
-      shared_works: artist.shared_works,
-      comments: artist.comments
-    }
+    # artist = User.find(params[:user_id]) 
+    # render json: { 
+    #   artworks: artist.artworks, 
+    #   shared_works: artist.shared_works,
+    #   comments: artist.comments
+    # } 
+
+    if params[:user_id] 
+      render json: Artwork.artworks_for_user_id(params[:user_id]) 
+    elsif  
+      render json: Artwork.artworks_for_collection_id(params[:collection_id]) 
+    end 
   end
 
   def create
