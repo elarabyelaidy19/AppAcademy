@@ -1,0 +1,597 @@
+Started POST "/users" for ::1 at 2022-09-24 10:12:20 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2022-09-24 10:12:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-09-24 10:13:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-09-24 10:14:33 +0200
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"toy_111", "toy_type"=>"ball", "user"=>{"name"=>"toy_111", "toy_type"=>"ball"}}
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 162ms (Allocations: 3438)
+
+
+Started GET "/users" for ::1 at 2022-09-24 10:15:28 +0200
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 21ms (Allocations: 168)
+
+
+Started GET "/users" for ::1 at 2022-09-24 10:16:09 +0200
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 75ms (Views: 50.6ms | Allocations: 1133)
+
+
+Started GET "/users?fav_color=black" for ::1 at 2022-09-24 10:18:43 +0200
+Processing by UsersController#index as */*
+  Parameters: {"fav_color"=>"black"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 32ms (Views: 1.2ms | Allocations: 264)
+
+
+Started GET "/users?fav_color=black" for ::1 at 2022-09-24 10:19:11 +0200
+Processing by UsersController#index as */*
+  Parameters: {"fav_color"=>"black"}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 22ms (Views: 4.1ms | Allocations: 826)
+
+
+Started POST "/users?fav_color=black&mohsen=meta7er" for ::1 at 2022-09-24 10:20:00 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users?fav_color=black&mohsen=meta7er" for ::1 at 2022-09-24 10:22:34 +0200
+Processing by UsersController#create as */*
+  Parameters: {"fav_color"=>"black", "mohsen"=>"meta7er"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (Allocations: 494)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users?fav_color=black&mohsen=meta7er" for ::1 at 2022-09-24 10:23:12 +0200
+  
+NoMethodError (undefined method `default_protect_from_forgery=' for nil:NilClass):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users?fav_color=black&mohsen=meta7er" for ::1 at 2022-09-24 10:25:03 +0200
+  
+NoMethodError (undefined method `default_protect_from_forgery=' for nil:NilClass):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users?fav_color=black&mohsen=meta7er" for ::1 at 2022-09-24 10:25:51 +0200
+Processing by UsersController#create as */*
+  Parameters: {"fav_color"=>"black", "mohsen"=>"meta7er"}
+Completed 200 OK in 14ms (Views: 1.1ms | Allocations: 335)
+
+
+Started POST "/users?fav_color=black&mohsen=meta7er" for ::1 at 2022-09-24 10:26:57 +0200
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"hammoddy", "job"=>"beddan", "fav_color"=>"black", "mohsen"=>"meta7er", "user"=>{"name"=>"hammoddy", "job"=>"beddan"}}
+Completed 200 OK in 16ms (Views: 0.3ms | Allocations: 235)
+
+
+Started POST "/users/2" for ::1 at 2022-09-24 10:29:47 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started GET "/users/2" for ::1 at 2022-09-24 10:30:01 +0200
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2022-09-24 10:30:46 +0200
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"hammoddy", "job"=>"beddan", "id"=>"2", "user"=>{"name"=>"hammoddy", "job"=>"beddan"}}
+Completed 200 OK in 21ms (Views: 0.4ms | Allocations: 336)
+
+
+Started GET "/users" for ::1 at 2022-09-24 10:35:08 +0200
+Processing by UsersController#index as */*
+  Parameters: {"user"=>"ahmed", "some_category"=>{"a_key"=>"[FILTERED]", "a second key"=>"yet another key"}}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 54ms (Views: 6.1ms | Allocations: 754)
+
+
+Started GET "/users/3" for ::1 at 2022-09-24 10:35:26 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>"ahmed", "some_category"=>{"a_key"=>"[FILTERED]", "a second key"=>"yet another key"}, "id"=>"3"}
+Completed 200 OK in 15ms (Views: 0.3ms | Allocations: 247)
+
+
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220924083743)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220924083743"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-24 08:37:59.752176"], ["updated_at", "2022-09-24 08:37:59.752176"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "ahmed"], ["email", "ahmed@yahoo"], ["created_at", "2022-09-24 08:39:11.702083"], ["updated_at", "2022-09-24 08:39:11.702083"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "ali"], ["email", "ali@yahoo"], ["created_at", "2022-09-24 08:39:11.714046"], ["updated_at", "2022-09-24 08:39:11.714046"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for ::1 at 2022-09-24 10:41:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>"ahmed", "some_category"=>{"a_key"=>"[FILTERED]", "a second key"=>"yet another key"}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 52ms (Views: 25.3ms | ActiveRecord: 9.4ms | Allocations: 16902)
+
+
+Started GET "/users" for ::1 at 2022-09-24 10:41:58 +0200
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 4.0ms | ActiveRecord: 3.2ms | Allocations: 1010)
+
+
+Started POST "/users" for ::1 at 2022-09-24 10:46:09 +0200
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abdo", "email"=>"abdo@yahoo", "user"=>{"name"=>"abdo", "email"=>"abdo@yahoo"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (6.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "abdo"], ["email", "abdo@yahoo"], ["created_at", "2022-09-24 08:46:10.316363"], ["updated_at", "2022-09-24 08:46:10.316363"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 43ms (Views: 1.2ms | ActiveRecord: 21.1ms | Allocations: 4451)
+
+
+Started POST "/users" for ::1 at 2022-09-24 10:48:50 +0200
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abdo", "user"=>{"name"=>"abdo"}}
+Completed 422 Unprocessable Entity in 176ms (ActiveRecord: 8.4ms | Allocations: 5469)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email can't be blank):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2022-09-24 10:51:37 +0200
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abdo", "user"=>{"name"=>"abdo"}}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 7.5ms | Allocations: 3543)
+
+
+  
+ArgumentError ('"Email can't be blank"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/users/2" for ::1 at 2022-09-24 12:36:40 +0200
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"abdo", "id"=>"2", "user"=>{"name"=>"abdo"}}
+Completed 200 OK in 21ms (Views: 2.1ms | ActiveRecord: 12.1ms | Allocations: 319)
+
+
+Started GET "/users/1" for ::1 at 2022-09-24 12:36:54 +0200
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"abdo", "id"=>"1", "user"=>{"name"=>"abdo"}}
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 207)
+
+
+Started GET "/users/1" for ::1 at 2022-09-24 12:37:04 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/users/2" for ::1 at 2022-09-24 12:37:12 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/users/3" for ::1 at 2022-09-24 12:37:17 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/users/4" for ::1 at 2022-09-24 12:37:22 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/users" for ::1 at 2022-09-24 12:37:27 +0200
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 43ms (Views: 26.5ms | ActiveRecord: 2.5ms | Allocations: 2465)
+
+
+Started GET "/users/1" for ::1 at 2022-09-24 12:37:43 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/users/1" for ::1 at 2022-09-24 12:38:26 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 33ms (Allocations: 3170)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x000000000413e8>
+Did you mean?  super):
+  
+app/controllers/users_controller.rb:17:in `show'
+Started GET "/users/1" for ::1 at 2022-09-24 12:38:50 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 103ms (Views: 0.7ms | ActiveRecord: 24.9ms | Allocations: 5607)
+
+
+Started GET "/users/1" for ::1 at 2022-09-24 12:40:03 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 58ms (Views: 0.7ms | ActiveRecord: 12.7ms | Allocations: 4116)
+
+
+Started PATCH "/users/1" for ::1 at 2022-09-24 12:40:08 +0200
+Processing by UsersController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.1ms | Allocations: 1078)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:23:in `update'
+Started PATCH "/users/1" for ::1 at 2022-09-24 12:41:20 +0200
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"mody", "email"=>"mody@gmail", "id"=>"1", "user"=>{"name"=>"mody", "email"=>"mody@gmail"}}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 5.2ms | Allocations: 1018)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:23:in `update'
+Started PATCH "/users/1" for ::1 at 2022-09-24 12:41:36 +0200
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"mody", "email"=>"mody@gmail", "id"=>"1", "user"=>{"name"=>"mody", "email"=>"mody@gmail"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mUser Update (5.2ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "mody"], ["email", "mody@gmail"], ["updated_at", "2022-09-24 10:41:37.007580"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+Completed 200 OK in 55ms (Views: 0.6ms | ActiveRecord: 26.0ms | Allocations: 4906)
+
+
+Started PATCH "/users" for ::1 at 2022-09-24 12:41:46 +0200
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started GET "/users" for ::1 at 2022-09-24 12:41:52 +0200
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"mody", "email"=>"mody@gmail", "user"=>{"name"=>"mody", "email"=>"mody@gmail"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 3.8ms | ActiveRecord: 1.1ms | Allocations: 1094)
+
+
+Started PATCH "/users/1" for ::1 at 2022-09-24 12:44:26 +0200
+Processing by UsersController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 400 Bad Request in 62ms (ActiveRecord: 12.1ms | Allocations: 4217)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:39:in `user_params'
+app/controllers/users_controller.rb:23:in `update'
+Started DELETE "/users/1" for ::1 at 2022-09-24 12:44:39 +0200
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mUser Destroy (4.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+Completed 200 OK in 36ms (Views: 0.7ms | ActiveRecord: 15.4ms | Allocations: 2233)
+
+
+Started DELETE "/users" for ::1 at 2022-09-24 12:44:45 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/users"):
+  
+Started GET "/users" for ::1 at 2022-09-24 12:44:50 +0200
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 3.2ms | ActiveRecord: 3.1ms | Allocations: 974)
+
+

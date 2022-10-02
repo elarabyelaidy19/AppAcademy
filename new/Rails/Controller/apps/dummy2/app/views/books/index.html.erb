@@ -5,3 +5,21 @@
         <li><%= booK.author %></li>
     <%end%> 
 </ul>
+
+<%= link_to 'click her', "URL" %>
+== 
+<a href="google.com">google</a>
+== 
+<a href="<%= link_here%>">click here </a>
+
+
+<%= button_to "add model", models_url, method: :post %> 
+
+<%= button_to "delete cat", cat_url(@cat), method: :post %> 
+
+== 
+
+<form action="<%= cat_url(@cat)%>" method="post" >
+    <input type="hidden" value="delete" name="_method"> 
+    <input type="submit" value="Delete cat">    
+</form>

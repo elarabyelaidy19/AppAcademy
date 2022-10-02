@@ -22,4 +22,28 @@ resources :books
  
 # Render 
 
-render plain: "Ok!"
+render plain: "Ok!" 
+
+
+
+
+
+
+<%= render "form" %> 
+
+
+<%= render "form", user: @user, action: :new %>
+
+<%= render "form", user: @user, action: :edit %>
+
+<% action_url = action == :edit ? user_url(user) : users_url %> 
+
+<%= form_for user, url: action_url do |f| %>
+
+    if action == :edit 
+        <input type="hidden" name="_method" value="patch">
+    else  
+        <input type="hidden" name="_method" value="post">
+    end
+
+<%end%>
