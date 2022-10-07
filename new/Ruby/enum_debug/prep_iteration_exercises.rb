@@ -3,7 +3,8 @@
 # Write a method `factors(num)` that returns an array containing all the
 # factors of a given number.
 
-def factors(num)
+def factors(num) 
+  
 end
 
 # ### Bubble Sort
